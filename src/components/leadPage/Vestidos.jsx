@@ -60,9 +60,7 @@ export const Vestidos = () => {
     (async () => {
       const reqName = await api.get("/category");
       const resName = await reqName.data;
-      const req = await api.get(
-        "/category/b81eae77-d05c-4d5b-99e1-f970e1111df5"
-      );
+      const req = await api.get("/category/b81eae77-d05c-4d5b-99e1-f970e1111df5");
       const res = await req.data[0].products_categories;
 
       setCategory(resName);
