@@ -6,6 +6,7 @@ import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../api/api";
+import cardImg from "./images/card.jpg"
 
 const Example = () => (
   /*
@@ -102,7 +103,7 @@ export const Eletronica = () => {
                       <img src={image[0]} alt="img" />
                       <h5>{name}</h5>
                       <b className="frete">Frete Gratis</b>
-                      <img src="card.jpg" alt="img" className="cartImg" />
+                      <img src={cardImg} alt="img" className="cartImg" />
                       <span>
                         <p className="p">
                           <FaCreditCard className="cartao" /> Em até 12x sem

@@ -84,7 +84,7 @@ window.env = {
   "npm_package_browserslist_development_0": "last 1 chrome version",
   "npm_package_dependencies_axios": "^1.5.1",
   "npm_package_dependencies__fortawesome_react_fontawesome": "^0.1.14",
-  "PATH": "/tmp/yarn--1734241718690-0.1802421614370706:/home/hk/PJ/store/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v21.7.3/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/root/.dotnet/tools",
+  "PATH": "/tmp/yarn--1734242820861-0.10403525810409198:/home/hk/PJ/store/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v21.7.3/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/root/.dotnet/tools",
   "NODE": "/root/.nvm/versions/node/v21.7.3/bin/node",
   "_JAVA_OPTIONS": "-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true",
   "npm_package_browserslist_development_1": "last 1 firefox version",
