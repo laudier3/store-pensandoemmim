@@ -20,8 +20,8 @@ import {
 //import cartVazio from "./cartVazio.png";
 import cartVazio from "./images/cartVazio.png";
 //import Logo from "./images/Logo.png";
-//import { Eletronica } from "../leadPage/Eletronica";
-//import { Vestidos } from "../leadPage/Vestidos";
+import { Eletronica } from "../leadPage/Eletronica";
+import { Vestidos } from "../leadPage/Vestidos";
 //teste
 
 export default function CartFinalize() {
@@ -84,8 +84,8 @@ export default function CartFinalize() {
         <ContainerImg>
           <img src={cartVazio} alt="img" />
         </ContainerImg>
-        {/*<Eletronica />
-        <Vestidos />*/}
+        <Eletronica />
+        <Vestidos />
       </>
     );
   };
