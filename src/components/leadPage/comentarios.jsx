@@ -12,10 +12,10 @@ import { GoStarFill } from "react-icons/go";
 export const Comentarios = () => {
   const [datacoment, setDatacomente] = useState([]);
 
-  let url = window.location.pathname;
-  let parts = url.split("/");
-  let localId = parts.pop() || parts.pop();
-
+  //const localId = localStorage.getItem("id");
+  //let url = window.location.pathname;
+  //let parts = url.split("/");
+  let localId = "dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11"; //parts.pop() || parts.pop();
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );

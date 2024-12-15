@@ -23,6 +23,7 @@ import {
   WhatsappShareButton,
   RedditShareButton,
 } from "react-share";
+import { SiGooglemaps } from "react-icons/si";
 
 export default function Footer() {
   const [name, setName] = useState([]);
@@ -151,7 +152,21 @@ export default function Footer() {
       </ContainerFooter>
       <ContainerFooter2>
         <div>
-          <h4>Bandeiras</h4>
+          <h4>Politicas do site</h4>
+          <a href="politica" className="links" rel="noopener noreferrer">
+            Politicas
+          </a>
+          <br />
+          <a
+            href="politicatrocadevolucao"
+            className="links"
+            rel="noopener noreferrer"
+          >
+            Devolucao
+          </a>
+        </div>
+        <div>
+          <h4>Bandeira</h4>
           {imgCart.map((img) => (
             <img src={img.img} alt="im" />
           ))}
@@ -176,12 +191,17 @@ export default function Footer() {
             produto ou devolvemos seu dinheiro d volta.
           </strong>
           <p>&copy; Todos os direitos reservado PensandoEmMim</p>
+          <p>
+            <SiGooglemaps style={{ marginRight: 5, marginTop: "-5px" }} />
+            <b>Endereço: </b> Rua Marquez de Olinda | Bairoor Jardim Munhoz |
+            Guarulhos | Sp
+          </p>
         </div>
         <div>
           <url>
             <li>E-mail: laudiersantanamei@gmail.com</li>
             <li>Phone: (75) 998239680</li>
-            <li>CNPJ: 11.363.576/0001-30</li>
+            <li>CPF: 034.322.725-88</li>
           </url>
           <br />
           <FacebookShareButton url="https://pensandoemmim.com/novidades">

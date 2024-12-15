@@ -16,7 +16,7 @@ export function HeaderList() {
     <>
       <ContainerAMR>
         <Logo>
-          <a href="/" className="a-color">
+          <a href="/desc/id" className="a-color">
             <img src={logosimples} alt="img" className="img3" />
             PensandoEmMim
           </a>
@@ -56,7 +56,7 @@ export function HeaderList() {
             </a>
           </li>
           <li>
-            <a href="/novidades/dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11">
+            <a href="/novidades">
               <AiFillAlert className="text-white h5 m-1 mb-2 p" />
               Novidade
             </a>

@@ -78,7 +78,7 @@ export const SlidsListProducts = () => {
             const { id, image } = res;
 
             return (
-              <Link to={"/desc/" + id} target="_blank">
+              <Link to={"/desc/" + id} >
                 <div key={id} className="item">
                   <div className="image">
                     <img src={image[0]} alt="img" />

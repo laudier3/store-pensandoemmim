@@ -26,8 +26,9 @@ import { MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
-import { SlidsListProducts } from "./SlidsListProducts";
+//import { SlidsListProducts } from "./SlidsListProducts";
 import { Eletronica } from "./Eletronica";
+import { Vestidos } from "./Vestidos";
 //import api from "../../api/api";
 
 export const scrollToTop = () => {
@@ -960,9 +961,10 @@ export const LoadPage = () => {
           <></>
         </footer>
       </Pricipal>
-      <Eletronica />
       <Realacionandos />
-      <SlidsListProducts />
+      <Eletronica />
+      <Vestidos />
+      {/*<SlidsListProducts />*/}
       <Comentarios />
       <Footer />
     </>

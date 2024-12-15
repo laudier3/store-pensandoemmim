@@ -66,7 +66,7 @@ export const Informatica = () => {
       const reqName = await api.get("/category");
       const resName = await reqName.data;
       const req = await api.get(
-        "/category/a8990632-bace-4550-b722-6bae4fd37b02"
+        "/category/13d29bf9-49ae-4500-a12e-865cbece096c"
       );
       const res = await req.data[0].products_categories;
 
@@ -100,34 +100,38 @@ export const Informatica = () => {
                 {categoroy == "" ? "" : NameCategory[11]}
               </h2>
 
-              {categoroyData.map((res) => {
-                const { id, name, image, price } = res.products;
+              {categoroyData == "" ? (
+                <h1>Desculpa Produto Sem Estoque!</h1>
+              ) : (
+                categoroyData.map((res) => {
+                  const { id, name, image, price } = res.products;
 
-                let percentual = 0.25;
-                let aumento = price * percentual;
-                let novo_price = price - aumento;
+                  let percentual = 0.25;
+                  let aumento = price * percentual;
+                  let novo_price = price - aumento;
 
-                //console.log("img", image[0])
+                  //console.log("img", image[0])
 
-                return (
-                  <Link to={"/desc/" + id} target="_blank">
-                    <div key={id}>
-                      <img src={image[0]} alt="img" />
-                      <h5>{name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src="card.jpg" alt="img" className="cartImg" />
-                      <span>
-                        <p className="p">
-                          <FaCreditCard className="cartao" /> Em até 12x sem
-                          juros
-                        </p>
-                      </span>
-                      <h4 className="oldPrice">R${price},00 </h4>
-                      <h4 className="oldPricereal"> R$ {novo_price},00</h4>
-                    </div>
-                  </Link>
-                );
-              })}
+                  return (
+                    <Link to={"/desc/" + id} >
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
+                          <p className="p">
+                            <FaCreditCard className="cartao" /> Em até 12x sem
+                            juros
+                          </p>
+                        </span>
+                        <h4 className="oldPrice">R${price},00 </h4>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
+                      </div>
+                    </Link>
+                  );
+                })
+              )}
             </section>
           </ProductProd>
         </div>

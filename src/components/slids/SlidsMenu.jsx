@@ -51,13 +51,13 @@ export function SlidsMenu() {
         </div>
         <div className="carousel" ref={carrousel}>
           <div>
-            <Link to="/vestido">
+            <Link to="/calcaf">
               <div className="item">
                 <div className="image">
                   <img
                     src={
                       data[0]?.image === 0
-                        ? "/imgCategory/calca-f.webp"
+                        ? "/imgCategory/vestido.webp"
                         : data[0]?.image
                     }
                     alt="img"
@@ -70,7 +70,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/calcaf">
+            <Link to="/calcados">
               <div className="item">
                 <div className="image">
                   <img
@@ -89,7 +89,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/bolsa">
+            <Link to="/vestido">
               <div className="item">
                 <div className="image">
                   <img
@@ -108,7 +108,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/acessorio">
+            <Link to="/shortf">
               <div className="item">
                 <div className="image">
                   <img
@@ -127,7 +127,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/conjuntof">
+            <Link to="/audiovideo">
               <div className="item">
                 <div className="image">
                   <img
@@ -146,7 +146,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/saia">
+            <Link to="/ferramenta">
               <div className="item">
                 <div className="image">
                   <img
@@ -166,7 +166,7 @@ export function SlidsMenu() {
           </div>
 
           <div>
-            <Link to="/body">
+            <Link to="/eletronicos">
               <div className="item">
                 <div className="image">
                   <img
@@ -185,7 +185,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/macaquinho">
+            <Link to="/estetica">
               <div className="item">
                 <div className="image">
                   <img
@@ -204,7 +204,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/intimo">
+            <Link to="/bone">
               <div className="item">
                 <div className="image">
                   <img
@@ -223,7 +223,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/eletronicos">
+            <Link to="/shortm">
               <div className="item">
                 <div className="image">
                   <img
@@ -242,7 +242,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/estetica">
+            <Link to="/calcam">
               <div className="item">
                 <div className="image">
                   <img
@@ -261,7 +261,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/camisetaf">
+            <Link to="/informatica">
               <div className="item">
                 <div className="image">
                   <img
@@ -280,7 +280,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/calcados">
+            <Link to="/smartphone">
               <div className="item">
                 <div className="image">
                   <img
@@ -299,7 +299,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/smartphone">
+            <Link to="/intimo">
               <div className="item">
                 <div className="image">
                   <img
@@ -318,7 +318,7 @@ export function SlidsMenu() {
             </Link>
           </div>
           <div>
-            <Link to="/shortf">
+            <Link to="/relogio">
               <div className="item">
                 <div className="image">
                   <img

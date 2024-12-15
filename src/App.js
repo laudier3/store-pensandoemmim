@@ -27,7 +27,7 @@ import { Informatica } from "./components/categorys/Informatica";
 import { Body } from "./components/categorys/Body"
 import { Estetica } from "./components/categorys/Estetica"
 import { Meuproduto } from "./components/Meuproduto";
-import { Products } from "./components/products/ProductsList"
+import { Products } from "./components/products/Products"
 import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
@@ -37,6 +37,9 @@ import { DescriptionProducts } from "./components/descricao/descricao-produtos";
 import { LoadPage } from "./components/leadPage/LoadPage"
 import { Acessorio } from "./components/categorys/Acessorio";
 import { ProductsLoading } from "./components/products/ProductsLoading";
+import { Ferramenta } from "./components/categorys/Ferramenta";
+import { Shortm } from "./components/categorys/Shortm";
+import { Calcam } from "./components/categorys/Calcam";
 
 //console.log("teste ls")
 
@@ -87,7 +90,7 @@ function App() {
     },
 
     {
-      path: "/novidades/:id",
+      path: "/novidades",
       element: <LoadPage />,
     },
 
@@ -160,6 +163,14 @@ function App() {
       element: <Shortf />,
     },
     {
+      path: "/shortm",
+      element: <Shortm />,
+    },
+    {
+      path: "/calcam",
+      element: <Calcam />,
+    },
+    {
       path: "/saia",
       element: <Saia />,
     },
@@ -189,6 +200,10 @@ function App() {
     {
       path: "/eletronicos",
       element: <Eletronica />,
+    },
+    {
+      path: "/ferramenta",
+      element: <Ferramenta />,
     },
     {
       path: "/smartphone",

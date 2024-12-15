@@ -37,24 +37,6 @@ export const Smartphone = () => {
     });
   }, []);
 
-  //const history = useHistory()
-
-  //const products = useSelector(productSlace => productSlace.products.items)
-
-  /*function LocalSto(e) {
-    localStorage.removeItem("id");
-    localStorage.removeItem("slug");
-    localStorage.removeItem("categoryId");
-
-    const dados = JSON.stringify(e);
-    const id = JSON.parse(dados);
-    localStorage.setItem("id", id.id);
-    localStorage.setItem("categoryId", e.id);
-    localStorage.setItem("slug", e.bar_code);
-  }*/
-  // Aqui estamos fazenso as requisição na API REstful com o axio,
-  //e recebendo os dados atraves do useState para poder manipula os estados
-
   const [categoroy, setCategory] = useState([]);
   const [categoroyData, setCategoryData] = useState([]);
 
@@ -64,7 +46,7 @@ export const Smartphone = () => {
       const reqName = await api.get("/category");
       const resName = await reqName.data;
       const req = await api.get(
-        "/category/04b2fd55-2604-49d7-b5a7-0ee7415086af"
+        "/category/eef260e6-4706-4a33-9ef6-caef4ac8ddbf"
       );
       const res = await req.data[0].products_categories;
 
@@ -90,38 +72,42 @@ export const Smartphone = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[13]}
+              {categoroy == "" ? "" : NameCategory[12]}
             </h2>
             <hr />
           </TitleProduct>
           <ProductProd>
             <section>
-              {categoroyData.map((res) => {
-                const { id, name, image, price } = res.products;
+              {categoroyData == "" ? (
+                <h1>Desculpa Produto Sem Estoque!</h1>
+              ) : (
+                categoroyData.map((res) => {
+                  const { id, name, image, price } = res.products;
 
-                let percentual = 0.25;
-                let aumento = price * percentual;
-                let novo_price = price - aumento;
+                  let percentual = 0.25;
+                  let aumento = price * percentual;
+                  let novo_price = price - aumento;
 
-                return (
-                  <Link to={"/desc/" + id} target="_blank">
-                    <div key={id}>
-                      <img src={image[0]} alt="img" />
-                      <h5>{name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src="card.jpg" alt="img" className="cartImg" />
-                      <span>
-                        <p className="p">
-                          <FaCreditCard className="cartao" /> Em até 12x sem
-                          juros
-                        </p>
-                      </span>
-                      <h4 className="oldPrice">R${price},00 </h4>
-                      <h4 className="oldPricereal"> R$ {novo_price},00</h4>
-                    </div>
-                  </Link>
-                );
-              })}
+                  return (
+                    <Link to={"/desc/" + id} >
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
+                          <p className="p">
+                            <FaCreditCard className="cartao" /> Em até 12x sem
+                            juros
+                          </p>
+                        </span>
+                        <h4 className="oldPrice">R${price},00 </h4>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
+                      </div>
+                    </Link>
+                  );
+                })
+              )}
             </section>
           </ProductProd>
         </div>
