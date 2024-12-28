@@ -3667,6 +3667,11 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vercel/speed-insights@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/speed-insights/-/speed-insights-1.1.0.tgz#d48bce27b38a35da86805cc316656344a2230108"
+  integrity sha512-rAXxuhhO4mlRGC9noa5F7HLMtGg8YF1zAN6Pjd1Ny4pII4cerhtwSG4vympbCl+pWkH7nBS9kVXRD4FAn54dlg==
+
 "@vitejs/plugin-react@^4.0.4":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-4.0.4.tgz#31c3f779dc534e045c4b134e7cf7b150af0a7646"

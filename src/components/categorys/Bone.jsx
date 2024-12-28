@@ -106,7 +106,7 @@ export const Bone = () => {
                   let novo_price = price - aumento;
 
                   return (
-                    <Link tto={"/desc/" + id} >
+                    <Link to={"/desc/" + id} >
                       <div key={id}>
                         <img src={image[0]} alt="img" />
                         <h5>{name}</h5>

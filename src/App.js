@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css'
@@ -62,6 +63,7 @@ import 'swiper/css/scrollbar';
 //ReactGA.initialize(TRACKING_ID)
 
 function App() {
+  <SpeedInsights />
 
   //var stateObj = { foo: "bar" };
   //window.history.pushState(stateObj, "page 2", "/desc");
