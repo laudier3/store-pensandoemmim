@@ -127,6 +127,14 @@ export const Pricipal = styled.div`
       border-radius: 5px;
     }
 
+    .marcaImage {
+      border: solid 1px;
+      border-color: #00ffff;
+      border-radius: 6px;
+      border-width: 2px;
+      background-color: gray;
+    }
+
     .slugImg {
       width: 40px;
       margin: 2px;
