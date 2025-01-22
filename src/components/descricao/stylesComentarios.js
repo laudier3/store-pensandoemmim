@@ -1,8 +1,27 @@
 import styled from "styled-components";
 
+export const ContainerComentarioPai = styled.div`
+  margin: auto;
+  display: flex;
+  width: 90%;
+  margin-top: 5%;
+`
+
+
 export const ContainerComentario = styled.div`
   margin-top:60px;
-  padding: 5px;
+  padding: 25px;
+  background-color: Gainsboro;
+  display: inline-block;
+  margin: 30px;
+  width: 300px;
+  //border: solid 0.5px;
+  border-radius: 5px;
+
+  @media(max-width: 923px) {
+    width: 30%;
+    margin: 5px;
+  }
 
   & .btnButtonModalImageComentario {
     border: none;
@@ -33,7 +52,8 @@ export const ContainerComentario = styled.div`
       width: 10%;
       font-size: 2.5vw;
       border-radius: 50%;
-      height: 40px;
+      height: 15px;
+      margin-top: -25px;
     }
   }
 
@@ -49,7 +69,7 @@ export const ContainerComentario = styled.div`
   }
 
   & p {
-    font-size: 1.2vw;
+    font-size: 1vw;
     display: inline-block;
 
     @media (max-width: 768px) {
@@ -64,8 +84,8 @@ export const ContainerComentario = styled.div`
     border-radius: 8px;
 
     @media (max-width: 923px) {
-      width: 80px;
-      height: 100px;
+      width: 40px;
+      height: 60px;
       margin: 3px;
       border-radius: 8px;
     }
