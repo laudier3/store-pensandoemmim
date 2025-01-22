@@ -45,7 +45,7 @@ export const DescriptionProducts = () => {
   const [dataTamanho, setTamanho] = useState("");
   const [dataImg5, setDataImm5] = useState("");
   const [categoroy, setCategory] = useState([]);
-  //const [teste, setTeste] = useState([]);
+  const [borders, setBorder] = useState("");
 
   //console.log(teste);
 
@@ -69,6 +69,8 @@ export const DescriptionProducts = () => {
   const cart = useSelector((cartItems) => cartItems.cart.cartItems.length);
   const product = useSelector((productsSlice) => productsSlice.products.items);
   const productList = [product];
+
+  //const [borderCor, setBordercor] = useState("red")
 
   const dataProductFilter = productList[0]?.filter(
     (productData) => productData.id === lastPart2
@@ -555,7 +557,7 @@ export const DescriptionProducts = () => {
                               borderRadius: 5,
                             }}
                           >
-                            {dataSlug ? (
+                            {/*dataSlug ? (
                               <img
                                 className="slugImgDiv"
                                 src={dataSlug}
@@ -563,7 +565,7 @@ export const DescriptionProducts = () => {
                               />
                             ) : (
                               dataSlug
-                            )}
+                            )*/}
                           </span>
                         </p>
 
@@ -573,18 +575,23 @@ export const DescriptionProducts = () => {
                             aria-label="Basic example"
                             style={{ width: "80%" }}
                           >
+                           
                             {slug[0]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[0]) ||
-                                  setDatacores(res.color[0]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[0]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                              
+                              <label className={dataSlug === res.slug[0] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[0]) ||
+                                    setDatacores(res.color[0]) ||
+                                    setBorder("marcaImage") ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[0]}
+                                  alt="img slug"
+                                />
+                              </label>
+                              
                             ) : (
                               <button
                                 type="button"
@@ -597,17 +604,19 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             {slug[1]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[1]) ||
-                                  setDatacores(res.color[1]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[1]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                              <label className={dataSlug === res.slug[1] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[1]) ||
+                                    setDatacores(res.color[1]) ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[1]}
+                                  alt="img slug"
+                                  srcset=""
+                                />
+                              </label>
                             ) : (
                               <button
                                 type="button"
@@ -620,17 +629,19 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             {slug[2]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[2]) ||
-                                  setDatacores(res.color[2]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[2]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                               <label className={dataSlug === res.slug[2] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[2]) ||
+                                    setDatacores(res.color[2]) ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[2]}
+                                  alt="img slug"
+                                  srcset=""
+                                />
+                              </label>
                             ) : (
                               <button
                                 type="button"
@@ -643,17 +654,19 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             {slug[3]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[3]) ||
-                                  setDatacores(res.color[3]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[3]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                               <label className={dataSlug === res.slug[3] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[3]) ||
+                                    setDatacores(res.color[3]) ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[3]}
+                                  alt="img slug"
+                                  srcset=""
+                                />
+                              </label>
                             ) : (
                               <button
                                 type="button"
@@ -666,17 +679,19 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             {slug[4]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[4]) ||
-                                  setDatacores(res.color[4]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[4]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                               <label className={dataSlug === res.slug[4] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[4]) ||
+                                    setDatacores(res.color[4]) ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[4]}
+                                  alt="img slug"
+                                  srcset=""
+                                />
+                              </label>
                             ) : (
                               <button
                                 type="button"
@@ -689,17 +704,19 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             {slug[5]?.charAt() == "h" ? (
-                              <img
-                                onClick={() =>
-                                  setdataSlug(res.slug[5]) ||
-                                  setDatacores(res.color[5]) ||
-                                  ProcessoImageCor
-                                }
-                                className="slugImg"
-                                src={res.slug[5]}
-                                alt="img slug"
-                                srcset=""
-                              />
+                               <label className={dataSlug === res.slug[5] ? borders : ""}>
+                                <img
+                                  onClick={() =>
+                                    setdataSlug(res.slug[5]) ||
+                                    setDatacores(res.color[5]) ||
+                                    ProcessoImageCor
+                                  }
+                                  className="slugImg"
+                                  src={res.slug[5]}
+                                  alt="img slug"
+                                  srcset=""
+                                />
+                              </label>
                             ) : (
                               <button
                                 type="button"
@@ -709,6 +726,7 @@ export const DescriptionProducts = () => {
                                 {color[5] ? color[5] : ""}
                               </button>
                             )}
+                            
                           </div>
                         </div>
                         <div>
@@ -844,7 +862,7 @@ export const DescriptionProducts = () => {
                             </div>
                           )}
                         </div>
-
+                       
                         <div></div>
                       </div>
                     </div>
