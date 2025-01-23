@@ -126,9 +126,7 @@ export const DescriptionProducts = () => {
       id: id,
       tm: recebeTm == "Padrão" ? recebeTm : dataTamanho,
     };
-
-    //console.log(dataTm);
-
+    
     dispatch(addTm(dataTm));
     dispatch(addCor(dataCor));
 
@@ -549,7 +547,9 @@ export const DescriptionProducts = () => {
                         </div>
                         <p style={{ fontSize: 20 }}>
                           <strong style={{ fontSize: 20 }}>Cor: </strong>
-                          {dataCores}
+                          <label className={dataCores ? "dataCor" : ""}>
+                          {dataCores.toUpperCase()}
+                          </label>
                           <span
                             style={{
                               border: "none",
