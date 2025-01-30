@@ -22,7 +22,7 @@ import { Realacionandos } from "./relacionados";
 import { ProduVideoPlay2 } from "./ReactVideoPlay";
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
-import { MarginTop, Pricipal } from "./desc";
+import { ImageMovel, MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
@@ -482,12 +482,12 @@ export const DescriptionProducts = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { name, quantity, image, color, slug, frete } = res;
+              const { name, quantity, color, slug, frete } = res; //image para videos
 
               return (
                 <>
                   <div className="div">
-                    <ProduVideoPlay2>
+                    {/*<ProduVideoPlay2>
                       {image[5] == "" ? (
                         ""
                       ) : (
@@ -495,10 +495,166 @@ export const DescriptionProducts = () => {
                           <source src={image[5]} type="video/webm" />
                         </Video>
                       )}
-                    </ProduVideoPlay2>
+                    </ProduVideoPlay2>*/}
+                    <ImageMovel>
+                      {slug[0]?.charAt() == "h" ? (
+                              
+                        <label className={dataSlug === res.slug[0] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[0]) ||
+                              setDatacores(res.color[0]) ||
+                              setBorder("marcaImage") ||
+                              ProcessoImageCor
+                            }
+                            
+                            src={res.slug[0]}
+                            alt="img slug"
+                          />
+                        </label>
+                        
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() =>
+                            ProcessoImageCor || setdataSlug(color[0])
+                          }
+                        >
+                          {color[0] ? color[0] : ""}
+                        </button>
+                      )}
+                      {slug[1]?.charAt() == "h" ? (
+                        <label className={dataSlug === res.slug[1] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[1]) ||
+                              setDatacores(res.color[1]) ||
+                              ProcessoImageCor
+                            }
+                            
+                            src={res.slug[1]}
+                            alt="img slug"
+                            srcset=""
+                          />
+                        </label>
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() =>
+                            ProcessoImageCor || setdataSlug(color[1])
+                          }
+                        >
+                          {color[1] ? color[1] : ""}
+                        </button>
+                      )}
+                      {slug[2]?.charAt() == "h" ? (
+                          <label className={dataSlug === res.slug[2] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[2]) ||
+                              setDatacores(res.color[2]) ||
+                              ProcessoImageCor
+                            }
+                            
+                            src={res.slug[2]}
+                            alt="img slug"
+                            srcset=""
+                          />
+                        </label>
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() =>
+                            ProcessoImageCor || setdataSlug(color[2])
+                          }
+                        >
+                          {color[2] ? color[2] : ""}
+                        </button>
+                      )}
+                      {slug[3]?.charAt() == "h" ? (
+                          <label className={dataSlug === res.slug[3] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[3]) ||
+                              setDatacores(res.color[3]) ||
+                              ProcessoImageCor
+                            }
+                            
+                            src={res.slug[3]}
+                            alt="img slug"
+                            srcset=""
+                          />
+                        </label>
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() =>
+                            ProcessoImageCor || setdataSlug(color[3])
+                          }
+                        >
+                          {color[3] ? color[3] : ""}
+                        </button>
+                      )}
+                      {slug[4]?.charAt() == "h" ? (
+                          <label className={dataSlug === res.slug[4] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[4]) ||
+                              setDatacores(res.color[4]) ||
+                              ProcessoImageCor
+                            }
+                            
+                            src={res.slug[4]}
+                            alt="img slug"
+                            srcset=""
+                          />
+                        </label>
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() =>
+                            ProcessoImageCor || setdataSlug(color[4])
+                          }
+                        >
+                          {color[4] ? color[4] : ""}
+                        </button>
+                      )}
+                      {slug[5]?.charAt() == "h" ? (
+                          <label className={dataSlug === res.slug[5] ? borders : ""}>
+                          <img
+                            onClick={() =>
+                              setdataSlug(res.slug[5]) ||
+                              setDatacores(res.color[5]) ||
+                              ProcessoImageCor
+                            }
+                          
+                            src={res.slug[5]}
+                            alt="img slug"
+                            srcset=""
+                          />
+                        </label>
+                      ) : (
+                        <button
+                          type="button"
+                          className="buttonColor1"
+                          onClick={() => setdataSlug(color[5])}
+                        >
+                          {color[5] ? color[5] : ""}
+                        </button>
+                      )}
+                            
+                    </ImageMovel>
+                    
                     <div className="">
-                      <div className="">
-                        <h5>{name}</h5>
+                      <div className="divMarge">
+                        <b>{name}</b>
+                        <br />
+                        <br />
                         <div>
                           <span style={{ fontSize: 15 }}>4.8</span>
                           <GoStarFill
@@ -548,7 +704,7 @@ export const DescriptionProducts = () => {
                         <p style={{ fontSize: 20 }}>
                           <strong style={{ fontSize: 20 }}>Cor: </strong>
                           <label className={dataCores ? "dataCor" : ""}>
-                          {dataCores.toUpperCase()}
+                          {dataCores.toLowerCase()}
                           </label>
                           <span
                             style={{
