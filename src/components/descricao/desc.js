@@ -130,9 +130,9 @@ export const Pricipal = styled.div`
     .dataCor {
       border: solid 1px; 
       border-radius: 6px; 
-      padding: 3; 
-      background: #DCDCDC; 
-      color: #0000FF;
+      padding: 0 5px 0 5px; 
+      background: white; 
+      color: gray;
     }
 
     .marcaImage {
@@ -210,6 +210,20 @@ export const Pricipal = styled.div`
     width: 45%;
     display: inline-flex;
     margin: 5px;
+    
+    b {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) and (max-width: 932px){
+      .divMarge {
+        margin-top: -10px;
+
+        b {
+          font-size: 20px;
+        }
+      }
+    } 
 
     & .buttonColor {
       margin: 2px;
@@ -355,3 +369,31 @@ export const MarginTop = styled.div`
     margin-top: 0px;
   }
 `;
+
+export const ImageMovel = styled.div`
+  position: absolute;
+  margin-top: -120px;
+  //border: 0.5px solid;
+  border-radius: 8px;
+  display: none;
+
+  img {
+    width: 60px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  label {
+    margin: 3px;
+    border-color: gray;
+    border: 0.5px solid;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    border-color: gray;
+
+  }
+
+`
