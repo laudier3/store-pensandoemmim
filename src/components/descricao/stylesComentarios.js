@@ -19,7 +19,7 @@ export const ContainerComentario = styled.div`
   border-radius: 5px;
 
   @media(max-width: 923px) {
-    width: 30%;
+    width: 100%;
     margin: 5px;
   }
 
@@ -52,8 +52,8 @@ export const ContainerComentario = styled.div`
       width: 10%;
       font-size: 2.5vw;
       border-radius: 50%;
-      height: 15px;
-      margin-top: -25px;
+      height: 30px;
+      margin-top: -120x;
     }
   }
 
@@ -85,7 +85,7 @@ export const ContainerComentario = styled.div`
 
     @media (max-width: 923px) {
       width: 40px;
-      height: 60px;
+      height: 40px;
       margin: 3px;
       border-radius: 8px;
     }
