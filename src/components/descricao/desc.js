@@ -217,7 +217,7 @@ export const Pricipal = styled.div`
 
     @media (max-width: 768px) and (max-width: 932px){
       .divMarge {
-        margin-top: -10px;
+        margin-top: 1px;
 
         b {
           font-size: 20px;
@@ -372,7 +372,7 @@ export const MarginTop = styled.div`
 
 export const ImageMovel = styled.div`
   position: absolute;
-  margin-top: -120px;
+  margin-top: -90px;
   //border: 0.5px solid;
   border-radius: 8px;
   display: none;
