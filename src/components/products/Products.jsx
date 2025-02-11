@@ -9,8 +9,8 @@ import { ProductsLoading } from "./ProductsLoading";
 import "./styles.css";
 import api from "../../api/api";
 import { HeaderList } from "../header/indexList";
-import { ProduVideoPlay2 } from "./ReactVideoPlay";
-import { DefaultPlayer as Video } from "react-html5video";
+//import { ProduVideoPlay2 } from "./ReactVideoPlay";
+//import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import video from "./Videos/64002613_9555186.psd.mp4";
 
@@ -378,14 +378,14 @@ export const Products = () => {
           <br />
 
           <>
-            <ProduVideoPlay2>
+            {/*<ProduVideoPlay2>
               <Video>
                 <source src={video} type="video/webm" />
               </Video>
               <a href="novidades" target="_blank" className="saibamais">
                 Ver mais Detalhis
               </a>
-            </ProduVideoPlay2>
+            </ProduVideoPlay2>*/}
           </>
           {/* <SlidsListProductsRevert />*/}
           <TitleProduct>
