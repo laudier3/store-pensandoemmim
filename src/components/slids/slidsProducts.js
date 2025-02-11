@@ -183,6 +183,7 @@ margin-top: 2px;
   & div {
     & img {
       height: 55vh;
+      background-color: transparent;
     }
   }
 

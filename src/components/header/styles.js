@@ -287,18 +287,16 @@ export const CartIconVazio = styled.div`
 export const ContainerPRT = styled.div`
   width: 100%;
   background-color: #001414;
-  display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 
   & ul {
-    display: flex;
-    margin: auto;
+    text-align: center;
 
     @media (max-width: 923px) {
-      width: 100%;
-      margin-left: 20px;
+      display: flex;
+      text-align: center;
     }
 
     & li {

@@ -41,7 +41,14 @@ export function SlidsMenu() {
   return (
     <>
       <Coontainer>
-       
+        <div className="buttons1">
+          <button onClick={(e) => hendleLeftClik(e)}>
+            <MdNavigateBefore
+              className="buttons1"
+              style={{ width: 50, height: 100 }}
+            />
+          </button>
+        </div>
         <div className="carousel" ref={carrousel}>
           <div>
             <Link to="/calcaf">
@@ -355,6 +362,14 @@ export function SlidsMenu() {
           </div>*/}
         </div>
 
+        <div className="buttons2">
+          <button onClick={(e) => hendleRigthClik(e)}>
+            <MdNavigateNext
+              className="buttons2"
+              style={{ width: 50, height: 100 }}
+            />
+          </button>
+        </div>
       </Coontainer>
     </>
   );

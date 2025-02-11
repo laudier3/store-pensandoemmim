@@ -1,4 +1,4 @@
-import { ProductProd, ContainerVerMais } from "./productsEfect";
+import { ProductProd, ContainerVerMais, TitleProduct } from "./productsEfect";
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -22,7 +22,6 @@ export const Products = () => {
   }, []);
 
   const [data, setData] = useState([]);
-  console.log(data)
 
   useEffect(() => {
     (async () => {
@@ -151,10 +150,10 @@ export const Products = () => {
   const Acessorio = dataAcessorio.map((res) => res);
   const Acessorios = [Acessorio];
 
-  //const nameCategory = "Calça Feminina";
-  //const nameCategory1 = "Conjunto Feminina";
-//
-  //console.log(data)
+  const nameCategory = "Calça Feminina";
+  const nameCategory1 = "Conjunto Feminina";
+
+  console.log(data)
 
   return (
     <>
@@ -163,14 +162,14 @@ export const Products = () => {
         <ProductsLoading />
       ) : (
         <div>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryBlusaFeminina === "Blusas"
                 ? nameCategory
                 : filterCategoryBlusaFeminina[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
           <ProductProd>
             <section>
               {BlusaFemininas[0]?.map((res) =>
@@ -204,14 +203,14 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryCalcados === ""
                 ? ""
                 : filterCategoryCalcados[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
           <ProductProd>
             <section>
               {Calcado[0]?.map((res) =>
@@ -246,14 +245,14 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryVestido === ""
                 ? ""
                 : filterCategoryVestido[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
           <ProductProd>
             <section>
               {Vestidos[0]?.map((res) =>
@@ -288,14 +287,14 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryConjuntoFeminino === "Conjunto F"
                 ? nameCategory1
                 : filterCategoryConjuntoFeminino[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
 
           <ProductProd>
             <section>
@@ -331,12 +330,12 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategorySaia === "" ? "" : filterCategorySaia[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
 
           <ProductProd>
             <section>
@@ -372,7 +371,7 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-
+          
           <>
             {/*<ProduVideoPlay2>
               <Video>
@@ -384,12 +383,12 @@ export const Products = () => {
             </ProduVideoPlay2>*/}
           </>
           {/* <SlidsListProductsRevert />*/}
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryBody === "" ? "" : filterCategoryBody[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
           <ProductProd>
             <section>
               {Bodys[0]?.map((res) =>
@@ -424,14 +423,14 @@ export const Products = () => {
               )}
             </section>
           </ProductProd>
-          {/*<TitleProduct>
+          <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryEstetica === ""
                 ? ""
                 : filterCategoryEstetica[0]?.name}
             </h2>
             <hr />
-          </TitleProduct>*/}
+          </TitleProduct>
 
           <ProductProd>
             <section>
@@ -475,14 +474,14 @@ export const Products = () => {
               </button>
             ) : (
               <>
-                {/*<TitleProduct>
+                <TitleProduct>
                   <h2 className="titleProduct">
                     {filterCategoryEletronico === ""
                       ? ""
                       : filterCategoryEletronico[0]?.name}
                   </h2>
                   <hr />
-                </TitleProduct>*/}
+                </TitleProduct>
 
                 <ProductProd>
                   <section>
@@ -570,7 +569,7 @@ export const Products = () => {
                     </section>
                   </ProductProd>
                 )}
-                {/*<TitleProduct>
+                <TitleProduct>
                   {Intimo === "" ? (
                     ""
                   ) : (
@@ -583,7 +582,7 @@ export const Products = () => {
                       <hr />
                     </>
                   )}
-                </TitleProduct>*/}
+                </TitleProduct>
 
                 {vernais2 === 0 ? (
                   <button className="vermais" onClick={() => setVermais2(1)}>
@@ -636,8 +635,8 @@ export const Products = () => {
                         </section>
                       </ProductProd>
                     )}
-                    
-                    {/*<TitleProduct>
+                    }
+                    <TitleProduct>
                       {Intimo === "" ? (
                         ""
                       ) : (
@@ -650,7 +649,7 @@ export const Products = () => {
                           <hr />
                         </>
                       )}
-                    </TitleProduct>*/}
+                    </TitleProduct>
                     <>
                       {Intimo === "" ? (
                         ""

@@ -8,8 +8,8 @@ import logosimples from "./images/LogoTop2.png";
 // Styles
 import { Container, Logo, ContainerAMR, ContainerPRT } from "./styles";
 import { SeartResults } from "./SeartResults";
-import SlidsProducts from "../slids/SlidsProducts";
-import { SlidsMenu } from "./SlidsMenu";
+//import SlidsProducts from "../slids/SlidsProducts";
+import { SlidsMenu } from "../slids/SlidsMenu";
 
 export function HeaderList() {
   return (
@@ -74,9 +74,9 @@ export function HeaderList() {
             </a>
           </li>
         </ul>
-        <SlidsProducts/>
-        <SlidsMenu />
       </ContainerPRT>
+      <SlidsProducts />
+      <SlidsMenu />
     </>
   );
 }
