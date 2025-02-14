@@ -1026,8 +1026,8 @@ export const DescriptionProducts = () => {
                           )}
                         </div>
                       </div>
-                      isso é um teste
-                      <br /><br /><br />
+                      
+                      <br />
                       
                       <div style={
                         { padding: '20px', 
