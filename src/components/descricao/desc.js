@@ -356,7 +356,7 @@ export const Pricipal = styled.div`
 
     & footer {
       //margin: 10px;
-      margin-top: 250%;
+      margin-top: 300%;
       display: flex;
       flex-wrap: wrap;
       text-align: center;
