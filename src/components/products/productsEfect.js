@@ -65,8 +65,9 @@ export const ProductProd = styled.div`
     width: 100%;
   }
 
-  & section {
+  & main {
     width: 100%;
+    text-align: center;
   
     & h2 {
       font-weight: bold;
@@ -90,18 +91,9 @@ export const ProductProd = styled.div`
       font-weight: bold;
 
       &:hover {
-        border: 1px solid;
-        border-color: cyan;
-        opacity: 0.8;
-        border-radius: 10px;
-        //box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.582);
-        color: #000000;
-        font-weight: bold;
-        font-size: 0.8rem;
-        text-align: center;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 
         @media (max-width: 923px) {
           width: 110px;
@@ -145,10 +137,7 @@ export const ProductProd = styled.div`
           margin-left: -15px;
           //color: #00FF00;
         }
-
-      &:haver {
-        opacity: 0;
-      }
+        
     }
     
     & .oldPrice {

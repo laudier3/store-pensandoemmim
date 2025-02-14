@@ -172,7 +172,7 @@ export const Products = () => {
             <hr />
           </TitleProduct>*/}
           <ProductProd>
-            <section>
+            <main>
               {BlusaFemininas[0]?.map((res) =>
                 res.map((req) => {
                   //localStorage.removeItem("id")
@@ -202,7 +202,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
@@ -213,7 +213,7 @@ export const Products = () => {
             <hr />
           </TitleProduct>*/}
           <ProductProd>
-            <section>
+            <main>
               {Calcado[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -244,7 +244,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
@@ -255,7 +255,7 @@ export const Products = () => {
             <hr />
           </TitleProduct>*/}
           <ProductProd>
-            <section>
+            <main>
               {Vestidos[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -286,7 +286,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
@@ -298,7 +298,7 @@ export const Products = () => {
           </TitleProduct>*/}
 
           <ProductProd>
-            <section>
+            <main>
               {ConjuntoFemininos[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -329,7 +329,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
@@ -339,7 +339,7 @@ export const Products = () => {
           </TitleProduct>*/}
 
           <ProductProd>
-            <section>
+            <main>
               {Saias[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -370,7 +370,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
 
           <>
@@ -391,7 +391,7 @@ export const Products = () => {
             <hr />
           </TitleProduct>*/}
           <ProductProd>
-            <section>
+            <main>
               {Bodys[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -422,7 +422,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
@@ -434,7 +434,7 @@ export const Products = () => {
           </TitleProduct>*/}
 
           <ProductProd>
-            <section>
+            <main>
               {Esteticas[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
@@ -465,7 +465,7 @@ export const Products = () => {
                   );
                 })
               )}
-            </section>
+            </main>
           </ProductProd>
 
           <ContainerVerMais>
@@ -485,7 +485,7 @@ export const Products = () => {
                 </TitleProduct>*/}
 
                 <ProductProd>
-                  <section>
+                  <main>
                     {Eletronicos[0]?.map((res) =>
                       res.map((req) => {
                         //console.log(filterCategoryVestido)
@@ -523,13 +523,13 @@ export const Products = () => {
                         );
                       })
                     )}
-                  </section>
+                  </main>
                 </ProductProd>
                 {Intimo === "" ? (
                   ""
                 ) : (
                   <ProductProd>
-                    <section>
+                    <main>
                       {BolsaFemininas[0]?.map((res) =>
                         res.map((req) => {
                           //console.log(filterCategoryVestido)
@@ -567,7 +567,7 @@ export const Products = () => {
                           );
                         })
                       )}
-                    </section>
+                    </main>
                   </ProductProd>
                 )}
                 {/*<TitleProduct>
@@ -595,7 +595,7 @@ export const Products = () => {
                       ""
                     ) : (
                       <ProductProd>
-                        <section>
+                        <main>
                           {Intimos[0]?.map((res) =>
                             res.map((req) => {
                               //console.log(filterCategoryVestido)
@@ -633,7 +633,7 @@ export const Products = () => {
                               );
                             })
                           )}
-                        </section>
+                        </main>
                       </ProductProd>
                     )}
                     
@@ -656,7 +656,7 @@ export const Products = () => {
                         ""
                       ) : (
                         <ProductProd>
-                          <section>
+                          <main>
                             {Acessorios[0]?.map((res) =>
                               res.map((req) => {
                                 //console.log(filterCategoryVestido)
@@ -696,7 +696,7 @@ export const Products = () => {
                                 );
                               })
                             )}
-                          </section>
+                          </main>
                         </ProductProd>
                       )}
                     </>

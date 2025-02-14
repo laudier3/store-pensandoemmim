@@ -270,6 +270,8 @@ export const Pricipal = styled.div`
      
     }
 
+    //f8f8f8
+
 		& .buttonCompra {
 			border: none;
 			width: 100%;
@@ -283,6 +285,26 @@ export const Pricipal = styled.div`
 			&:hover {
 				background: #03CACA;
 				box-shadow: 0 0 0 0.3px black;
+			}
+
+			@media (max-width: 932px) {
+				width: 99%;
+			}
+		}
+
+    & .buttonCard {
+			border: none;
+			width: 100%;
+			background: #f0f0f0;
+			margin: 2px;
+			padding: 10px;
+			border-radius: 6px;
+			font-weight: bold;
+      font-size: 20px;
+			
+			&:hover {
+				background: #f7f7f7;
+				box-shadow: 0 0 0 1px aqua;
 			}
 
 			@media (max-width: 932px) {

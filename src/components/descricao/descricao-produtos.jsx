@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
 import { toast } from "react-toastify";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //import LocationOnIcon from "@material-ui/icons/LocationOn";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
@@ -19,8 +19,8 @@ import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
 import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
-import { ProduVideoPlay2 } from "./ReactVideoPlay";
-import { DefaultPlayer as Video } from "react-html5video";
+//import { ProduVideoPlay2 } from "./ReactVideoPlay";
+//import { P, DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import { ImageMovel, MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
@@ -47,8 +47,34 @@ export const DescriptionProducts = () => {
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
 
-  //console.log(teste);
+  const [visitorCount, setVisitorCount] = useState(0);
+  const [city, setCity] = useState('');
 
+  const apiKey = '667c1973e05849fa9eb1972746e9f4c1'; // Substitua pela sua chave de API da ipgeolocation.io
+
+  // Função para obter o nome da cidade do visitante baseado no IP
+  const getCityByIP = async () => {
+    try {
+      const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`);
+      const data = await response.json();
+      setCity(data.city || 'Cidade não encontrada');
+    } catch (error) {
+      console.error('Erro ao obter cidade por IP', error);
+      setCity('Erro ao obter cidade');
+    }
+  };
+
+  useEffect(() => {
+    // Atualiza a contagem de visitantes e a cidade a cada 5 segundos
+    const interval = setInterval(() => {
+      setVisitorCount(Math.floor(Math.random() * 10000) + 1);
+      getCityByIP();  // Obter a cidade do visitante baseado no IP
+    }, 5000);
+
+    // Limpeza do intervalo quando o componente for desmontado
+    return () => clearInterval(interval);
+  }, []);
+  
   if (!window.location.hash) {
     window.location = window.location + "#products#description";
     window.location.reload();
@@ -82,29 +108,10 @@ export const DescriptionProducts = () => {
   const divideSizeArrey = { ...sizeFilter[0] };
 
   const imgFilterImg6 = dataProductFilter.map((img6) => img6.image[5]);
-  //const divideImgArrey = { ...sizeFilter[0] };
-
-  /*useEffect(() => {
-    (async () => {
-      //const reqName = await api.get("/category");
-      //const resName = await reqName.data;
-      const req = await api.get(`/productcategoryid/${lastPart}`);
-      const res = await req.data.products_categories[0].categories.name;
-
-      const response = await imgFilterImg6;
-      setDataImm5(response);
-      setCategory(res);
-      //setCategoryData(res);
-    })();
-  }, []);*/
 
   const ProcessoImageCor = async () => {
-    //const reqName = await api.get("/category");
-    //const resName = await reqName.data;
-    //const req = await api.get(`/productcategoryid/${lastPart}`);
-    //const res = await req.data.products_categories[0].categories.name;
+    
     const res = "category";
-
     console.log(res);
 
     const response = await imgFilterImg6;
@@ -1018,9 +1025,27 @@ export const DescriptionProducts = () => {
                             </div>
                           )}
                         </div>
-                       
-                        <div></div>
                       </div>
+                      isso é um teste
+                      <br /><br /><br />
+                      
+                      <div style={
+                        { padding: '20px', 
+                        textAlign: 'center', 
+                        backgroundColor: '#f8f8f8', 
+                        borderRadius: '8px', 
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                        color: "green",
+                        fontWeight: "bold" 
+                        }}>
+                        
+                        <p><strong style={{color: "#000000"}}>{visitorCount} pessoas em {city}</strong> estão visualizando esse conteúdo agora.</p>
+
+                        {/*<div style={{ marginTop: '20px' }}>
+                          <p><strong>Cidade:</strong> {city}</p>
+                        </div>*/}
+                      </div>
+                     
                     </div>
                   </div>
                   <div className="div">
@@ -1057,7 +1082,7 @@ export const DescriptionProducts = () => {
                           onClick={() =>
                             handlerCartAdd2(productProntoAddCard[0])
                           }
-                          className="buttonCompra"
+                          className="buttonCard"
                         >
                           Adicionar ao carrinho
                         </button>
