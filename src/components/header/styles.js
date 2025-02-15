@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const ContainerPai = styled.div`
+    display: contents;
+    
+    @media (max-width: 720px) {
+      display: none;
+    }
+`
+
 export const ContainerSearch = styled.div`
 margin-top: 2px;
   width: 200px;
@@ -307,9 +315,9 @@ export const ContainerPRT = styled.div`
 
       @media (max-width: 768px) {
         width: 100%;
-        margin: 0px 8px 1px 5px;
-        margin-left: -15px;
-        margin-bottom: 5px;
+        margin-top: -40px;
+        margin-left: -3.5px;
+        //margin-bottom: 5px;
     
         & .h4 {
           display: mome;

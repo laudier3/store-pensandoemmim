@@ -6,12 +6,12 @@ import { LuPackageSearch } from "react-icons/lu";
 import logosimples from "./images/LogoTop2.png";
 
 // Styles
-import { Container, Logo, ContainerAMR, ContainerPRT } from "./styles";
+import { Container, Logo, ContainerAMR, ContainerPRT, ContainerPai } from "./styles";
 import { SeartResults } from "./SeartResults";
 
 export function Header() {
   return (
-    <>
+    <ContainerPai>
       <ContainerAMR>
         <Logo>
           <a href="/" className="a-color">
@@ -73,6 +73,6 @@ export function Header() {
           </li>
         </ul>
       </ContainerPRT>
-    </>
+    </ContainerPai>
   );
 }

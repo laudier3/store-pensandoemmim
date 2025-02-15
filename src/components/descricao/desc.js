@@ -211,16 +211,18 @@ export const Pricipal = styled.div`
     display: inline-flex;
     margin: 5px;
     
-    b {
-      font-size: 20px;
+    & b {
+      font-size: 30px;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) and (max-width: 932px){
       .divMarge {
         margin-top: 1px;
 
-        b {
+        & b {
           font-size: 20px;
+          font-weight: bold;
         }
       }
     } 
@@ -288,7 +290,11 @@ export const Pricipal = styled.div`
 			}
 
 			@media (max-width: 932px) {
-				width: 99%;
+				width: 35%;
+        position:fixed;
+        bottom: 22px;
+        margin-left: 41%;
+        font-size: 14px;
 			}
 		}
 
@@ -308,7 +314,12 @@ export const Pricipal = styled.div`
 			}
 
 			@media (max-width: 932px) {
-				width: 99%;
+				width: 44%;
+        position:fixed;
+        bottom: 22px;
+        margin-left: -3%;
+        font-size: 14px;
+        background: aqua;
 			}
 		}
 
@@ -418,4 +429,14 @@ export const ImageMovel = styled.div`
 
   }
 
+`
+
+export const PositionCard = styled.div`
+display: none;
+  @media (max-width: 720px) {
+    display: block;
+    position:fixed;
+    bottom: 52px;
+    margin-left: 35%;
+  } 
 `

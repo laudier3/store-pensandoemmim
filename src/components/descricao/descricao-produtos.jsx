@@ -22,10 +22,13 @@ import { Realacionandos } from "./relacionados";
 //import { ProduVideoPlay2 } from "./ReactVideoPlay";
 //import { P, DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
-import { ImageMovel, MarginTop, Pricipal } from "./desc";
+import { ImageMovel, MarginTop, Pricipal } from "./desc"; //PositionCard
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
+//import Cart from "../cart";
+//import { SlBasket, SlBasketLoaded } from "react-icons/sl";
+//import { Buttons} from "../header/styles";
 //import api from "../../api/api";
 
 export const scrollToTop = () => {
@@ -46,6 +49,13 @@ export const DescriptionProducts = () => {
   const [dataImg5, setDataImm5] = useState("");
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
+  //const [cartIsVisible, setCartIsVisible] = useState(false);
+
+  //const handleCartClick = () => {
+  //  setCartIsVisible(true);
+  //};
+
+  //const length = useSelector((state) => state.cart.cartItems.length);
 
   const [visitorCount, setVisitorCount] = useState(0);
   const [city, setCity] = useState('');
@@ -478,12 +488,15 @@ export const DescriptionProducts = () => {
                         </SwiperSlide>
                       )
                     )}
+                    
                   </Swiper>
+                  
                 </div>
               );
             })
           )}
         </section>
+        
         <aside>
           {dataProductFilter == "" ? (
             <Example />
@@ -658,8 +671,9 @@ export const DescriptionProducts = () => {
                     </ImageMovel>
                     
                     <div className="">
-                      <div className="divMarge">
-                        <b>{name}</b>
+                      
+                      <div className="">
+                        <h6 className="b">{name}</h6>
                         <br />
                         <br />
                         <div>
@@ -1140,6 +1154,19 @@ export const DescriptionProducts = () => {
             })
           )}
         </aside>
+        {/*<PositionCard>
+          <Buttons>
+            <div onClick={handleCartClick}>
+              {length === 0 ? "" : <b className="bg">{length}</b>}
+              {length > 0 ? (
+                <SlBasketLoaded style={{ fontSize: 35, marginLeft: "-2px" }} />
+              ) : (
+                <SlBasket style={{ fontSize: 35 }} />
+              )}
+            </div>
+          </Buttons>
+          <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+        </PositionCard>*/}
         <footer>
           {dataProductFilter == "" ? (
             <Example />

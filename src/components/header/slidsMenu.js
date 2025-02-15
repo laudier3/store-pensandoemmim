@@ -11,7 +11,7 @@ export const Coontainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 50px;
+  //margin-top: 10px;
 
   @media(max-width: 768px) {
     height: 100px;
@@ -54,6 +54,9 @@ export const Coontainer = styled.div`
       text-decoration-line: none;
       border: solid 1px;
 
+      @media (max-width: 923px) and (max-width: 1200px)  {
+        width: 50px;
+      }
       
       &:hover {
         background-color: darkgray;
@@ -70,12 +73,12 @@ export const Coontainer = styled.div`
         }
         @media (max-width: 768px) {
           & img {
-            width: 50px;
+            width: 40px;
             height: 6vh;
             object-fit: cover;
             border-radius: 60px;
-            margin-left: -5px;
-            margin-top: -6px;
+            margin-left: -6px;
+            margin-top: -8px;
           }
         }
       }

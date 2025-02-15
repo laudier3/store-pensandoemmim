@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Coontainer } from "./slidsMenu";
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+//import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import { useQuery } from "react-query";
@@ -25,15 +25,14 @@ export function SlidsMenu() {
 
   if (!data || !data.length) return null;
 
-  const hendleLeftClik = (e) => {
-    e.preventDefault();
-    carrousel.current.scrollLeft -= carrousel.current.offsetWidth;
-  };
-
-  const hendleRigthClik = (e) => {
-    e.preventDefault();
-    carrousel.current.scrollLeft += carrousel.current.offsetWidth;
-  };
+  //const hendleLeftClik = (e) => {
+  //  e.preventDefault();
+  //  carrousel.current.scrollLeft -= carrousel.current.offsetWidth;
+  //};
+  //const hendleRigthClik = (e) => {
+  //  e.preventDefault();
+  //  carrousel.current.scrollLeft += carrousel.current.offsetWidth;
+  //};
 
   //console.log(data, "jhgjghg");
   //console.clear()
