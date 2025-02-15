@@ -80,7 +80,6 @@ export const Bolsa = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -130,6 +129,7 @@ export const Bolsa = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

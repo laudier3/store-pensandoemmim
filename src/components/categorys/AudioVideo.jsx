@@ -106,7 +106,6 @@ export const AudioVideo = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -127,11 +126,11 @@ export const AudioVideo = () => {
               ) : (
                 categoroyData.map((res) => {
                   const { id, name, image, price } = res.products;
-
+                  
                   let percentual = 0.25;
                   let aumento = price * percentual;
                   let novo_price = price - aumento;
-
+                  
                   //console.log("img", image[0])
 
                   return (
@@ -158,6 +157,7 @@ export const AudioVideo = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

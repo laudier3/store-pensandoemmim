@@ -106,7 +106,6 @@ export const Saia = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -162,6 +161,7 @@ export const Saia = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

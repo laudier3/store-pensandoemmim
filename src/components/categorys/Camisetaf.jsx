@@ -106,7 +106,6 @@ export const Camisetaf = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -162,6 +161,7 @@ export const Camisetaf = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

@@ -105,7 +105,6 @@ export const Macaquinho = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -157,6 +156,7 @@ export const Macaquinho = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

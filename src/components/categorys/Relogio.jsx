@@ -106,7 +106,6 @@ export const Relogio = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -127,13 +126,13 @@ export const Relogio = () => {
               ) : (
                 categoroyData.map((res) => {
                   const { id, name, image, price } = res.products;
-
+                  
                   let percentual = 0.25;
                   let aumento = price * percentual;
                   let novo_price = price - aumento;
-
+                  
                   //console.log("img", image[0])
-
+                  
                   return (
                     <Link to={"/desc/" + id} >
                       <div key={id}>
@@ -158,6 +157,7 @@ export const Relogio = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

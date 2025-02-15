@@ -81,7 +81,6 @@ export const Vestido = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
       {categoroy == "" && categoroyData == "" ? (
         <Example />
@@ -132,6 +131,7 @@ export const Vestido = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

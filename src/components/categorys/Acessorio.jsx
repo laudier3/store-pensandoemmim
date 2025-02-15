@@ -106,7 +106,6 @@ export const Acessorio = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -131,9 +130,9 @@ export const Acessorio = () => {
                   let percentual = 0.25;
                   let aumento = price * percentual;
                   let novo_price = price - aumento;
-
+                  
                   console.log("img", image[0]);
-
+                  
                   return (
                     <Link to={"/desc/" + id} >
                       <div key={id}>
@@ -158,6 +157,7 @@ export const Acessorio = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

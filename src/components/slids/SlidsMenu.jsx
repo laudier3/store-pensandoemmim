@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Coontainer } from "./slidsMenu";
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+//import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import { useQuery } from "react-query";
@@ -25,15 +25,14 @@ export function SlidsMenu() {
 
   if (!data || !data.length) return null;
 
-  const hendleLeftClik = (e) => {
-    e.preventDefault();
-    carrousel.current.scrollLeft -= carrousel.current.offsetWidth;
-  };
-
-  const hendleRigthClik = (e) => {
-    e.preventDefault();
-    carrousel.current.scrollLeft += carrousel.current.offsetWidth;
-  };
+  //const hendleLeftClik = (e) => {
+  //  e.preventDefault();
+  //  carrousel.current.scrollLeft -= carrousel.current.offsetWidth;
+  //};
+  //const hendleRigthClik = (e) => {
+  //  e.preventDefault();
+  //  carrousel.current.scrollLeft += carrousel.current.offsetWidth;
+  //}
 
   //console.log(data, "jhgjghg");
   //console.clear()
@@ -41,14 +40,6 @@ export function SlidsMenu() {
   return (
     <>
       <Coontainer>
-        <div className="buttons1">
-          <button onClick={(e) => hendleLeftClik(e)}>
-            <MdNavigateBefore
-              className="buttons1"
-              style={{ width: 50, height: 100 }}
-            />
-          </button>
-        </div>
         <div className="carousel" ref={carrousel}>
           <div>
             <Link to="/calcaf">
@@ -336,40 +327,17 @@ export function SlidsMenu() {
               </div>
             </Link>
           </div>
-          {/*<div>
-              <Link to="/acessorio">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[14].image === "" ? "/imgCategory/Acessorio.webp" : data[0]?.image} : data[15].image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[15].name}</span>
-                </div>
-              </Link>
-          </div>
-          <div>
-              <Link to="/relogio">
-                <div className="item">
-                  <div className="image">
-                    <img src={data[].image === 0 ? /imgCategory/relogio.webp" : data[0]?.image} alt="img" />
-                  </div>
-                </div>
-                <div className="info">
-                  <span className="name">{data[16].name}</span>
-                </div>
-              </Link>
-          </div>*/}
+          
         </div>
 
-        <div className="buttons2">
+       {/* <div className="buttons2">
           <button onClick={(e) => hendleRigthClik(e)}>
             <MdNavigateNext
               className="buttons2"
               style={{ width: 50, height: 100 }}
             />
           </button>
-        </div>
+        </div>*/}
       </Coontainer>
     </>
   );

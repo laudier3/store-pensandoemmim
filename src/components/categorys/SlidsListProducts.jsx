@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { CoontainerSlids } from "./slidsListProducts";
+import { ButtonComponent, CoontainerSlids } from "./slidsListProducts";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
@@ -67,12 +67,17 @@ export const SlidsListProducts = () => {
 
   return (
     <>
-      <CoontainerSlids>
-        <div className="">
+        <ButtonComponent>
           <button onClick={(e) => hendleLeftClik(e)}>
             <MdNavigateBefore className="buttons1" />
           </button>
-        </div>
+          <button onClick={(e) => hendleRigthClik(e)}>
+            <MdNavigateNext className="buttons2" />
+          </button>
+        </ButtonComponent>
+    
+      <CoontainerSlids>
+       
         <div className="carousel" ref={carrousel}>
           {dataStatus.map((res) => {
             const { id, image } = res;
@@ -87,11 +92,6 @@ export const SlidsListProducts = () => {
               </Link>
             );
           })}
-        </div>
-        <div className="">
-          <button onClick={(e) => hendleRigthClik(e)}>
-            <MdNavigateNext className="buttons2" />
-          </button>
         </div>
       </CoontainerSlids>
     </>

@@ -37,23 +37,6 @@ export const Calcaf = () => {
     });
   }, []);
 
-  //const history = useHistory()
-
-  //const products = useSelector(productSlace => productSlace.products.items)
-  //console.log(products)
-
-  /*function LocalSto(e) {
-    localStorage.removeItem("id");
-    localStorage.removeItem("bar_code");
-    localStorage.removeItem("categoryId");
-
-    const dados = JSON.stringify(e);
-    const id = JSON.parse(dados);
-    localStorage.setItem("id", id.id);
-    localStorage.setItem("categoryId", e.id);
-    localStorage.setItem("bar_code", e.bar_code);
-  }*/
-
   // Aqui estamos fazenso as requisição na API REstful com o axio,
   //e recebendo os dados atraves do useState para poder manipula os estados
 
@@ -66,7 +49,7 @@ export const Calcaf = () => {
       const reqName = await api.get("/category");
       const resName = await reqName.data;
       const req = await api.get(
-        "/category/d1f64724-e124-42c7-bf24-57a6c73262c5"
+        "/category/e6ad0060-6905-4964-8681-9e75e76b1523"
       );
       const res = await req.data[0].products_categories;
 
@@ -80,7 +63,6 @@ export const Calcaf = () => {
   return (
     <>
       <Header />
-      <SlidsListProducts />
       <SlidsMenu />
 
       {categoroy == "" && categoroyData == "" ? (
@@ -90,7 +72,7 @@ export const Calcaf = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[1]}
+              {categoroy == "" ? "" : NameCategory[0]}
             </h2>
             <hr />
           </TitleProduct>
@@ -101,11 +83,11 @@ export const Calcaf = () => {
               ) : (
                 categoroyData.map((res) => {
                   const { id, name, image, price } = res.products;
-
+                  
                   let percentual = 0.25;
                   let aumento = price * percentual;
                   let novo_price = price - aumento;
-
+                  
                   //.log("img", image[0])
 
                   return (
@@ -132,6 +114,7 @@ export const Calcaf = () => {
           </ProductProd>
         </div>
       )}
+      <SlidsListProducts />
       <Footer />
     </>
   );

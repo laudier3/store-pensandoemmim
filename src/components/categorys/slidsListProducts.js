@@ -89,10 +89,10 @@ export const CoontainerSlids = styled.div`
   }
 
   & .buttons1 {
-    left: 0;
+    left: 1%;
     right: 0;
     bottom: 0;
-    top: 24%;
+    //top: 100%;
     position: absolute;
     width: 60px;
     height: 170px;
@@ -105,7 +105,7 @@ export const CoontainerSlids = styled.div`
     cursor: pointer;
     opacity: 1;
     margin-left: -1%;
-    margin-top: 162px;
+    //margin-top: 162px;
 
     @media (max-width: 968px){
       width: 30%;
@@ -117,7 +117,7 @@ export const CoontainerSlids = styled.div`
 
 & .buttons2 {
   right: 0;
-  top: 144%;
+  //top: 24%;
   position: absolute;
   width: 60px;
   height: 170px;
@@ -130,7 +130,7 @@ export const CoontainerSlids = styled.div`
   cursor: pointer;
   opacity: 1;
   margin-left: 100%;
-  margin-top: -1000px;
+  //margin-top: -1000px;
 
   @media (max-width: 1650px) {
     top: 142%;
@@ -141,7 +141,7 @@ export const CoontainerSlids = styled.div`
   }  
 
   @media (max-width: 768px) {
-    margin-top: -130px;
+    //margin-top: -130px;
     width: 35%;
     height: 170px;
     color: whitesmoke;
@@ -153,4 +153,67 @@ export const CoontainerSlids = styled.div`
   border: none;
   background: transparent
 }
+`
+
+export const ButtonComponent = styled.div`
+   & .buttons1 {
+    left: 1%;
+    right: 0;
+    bottom: 0;
+    top: 160%;
+    position: absolute;
+    width: 60px;
+    height: 170px;
+    background-color:rgba(255, 255, 255, 0);
+    z-index: 99;
+    //display: flex;
+    align-items: center;
+    justify-content: center;
+    /*overflow: hidden;*/
+    cursor: pointer;
+    opacity: 1;
+    margin-left: -1%;
+    //margin-top: 162px;
+
+    @media (max-width: 968px){
+      width: 30%;
+      height: 170px;
+      color: whitesmoke;
+      display: none;
+    }
+  }
+
+  & .buttons2 {
+    right: 0;
+    top: 160%;
+    position: absolute;
+    width: 60px;
+    height: 170px;
+    background-color:rgba(255, 255, 255, 0);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*overflow: hidden;*/
+    cursor: pointer;
+    opacity: 1;
+    margin-left: 100%;
+    //margin-top: -1000px;
+
+    @media (max-width: 1650px) {
+      top: 142%;
+    }
+
+    @media (max-width: 1150px) {
+      top: 122%;
+    }  
+
+    @media (max-width: 768px) {
+      //margin-top: -130px;
+      width: 35%;
+      height: 170px;
+      color: whitesmoke;
+      display: none;
+    }
+  }
 `

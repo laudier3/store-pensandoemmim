@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TitleProduct = styled.div`
-  margin-top: 70px;
+  //margin-top: 70px;
 
   & .titleProduct {
     text-align: center;

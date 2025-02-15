@@ -46,14 +46,14 @@ export const Products = () => {
   //console.log(categorys, "teste") 790e0e23-e3ec-4084-b61d-986aa062e8c6
 
   //Filtragem de categorias por id
-  const filterCategoryBlusaFeminina = listCategory[0]?.filter(
-    (categ) => categ.id === "93158fac-7da5-4502-ab51-fd88b147fba7"
+  const filterCategoryShortFeminino = listCategory[0]?.filter(
+    (categ) => categ.id === "a1ec5c0d-b48f-4999-80f2-1c23e27073d1"
   );
-  const dataBlusaFeminina = filterCategoryBlusaFeminina.map(
+  const dataShortFeminino = filterCategoryShortFeminino.map(
     (res) => res.products_categories
   );
-  const BlusaFeminina = dataBlusaFeminina.map((res) => res);
-  const BlusaFemininas = [BlusaFeminina];
+  const ShortFeminino = dataShortFeminino.map((res) => res);
+  const ShortFemininos = [ShortFeminino];
 
   const filterCategoryBolsaFeminina = listCategory[0]?.filter(
     (categ) => categ.id === "daee8439-b25c-47a4-b1a5-72ab1cadb938"
@@ -82,21 +82,21 @@ export const Products = () => {
   const Vestido = dataVestido.map((res) => res);
   const Vestidos = [Vestido];
 
-  const filterCategoryConjuntoFeminino = listCategory[0]?.filter(
-    (categ) => categ.id === "89669525-dace-4256-a783-9ad59cd03622"
+  const filterCategoryFerramenta = listCategory[0]?.filter(
+    (categ) => categ.id === "346f1050-11fb-4156-8631-3d05f8abd209"
   );
-  const dataConjuntoFeminino = filterCategoryConjuntoFeminino.map(
+  const dataFerramenta = filterCategoryFerramenta.map(
     (res) => res.products_categories
   );
-  const ConjuntoFeminino = dataConjuntoFeminino.map((res) => res);
-  const ConjuntoFemininos = [ConjuntoFeminino];
+  const Ferramenta = dataFerramenta.map((res) => res);
+  const Ferramentas = [Ferramenta];
 
-  const filterCategorySaia = listCategory[0]?.filter(
-    (categ) => categ.id === "a8990632-bace-4550-b722-6bae4fd37b02"
+  const filterCategoryBone = listCategory[0]?.filter(
+    (categ) => categ.id === "aae813a5-f2c9-4da6-a691-f0ab2391ca40"
   );
-  const dataSaia = filterCategorySaia.map((res) => res.products_categories);
-  const Saia = dataSaia.map((res) => res);
-  const Saias = [Saia];
+  const dataBone = filterCategoryBone.map((res) => res.products_categories);
+  const Bone = dataBone.map((res) => res);
+  const Bones = [Bone];
 
   const filterCategoryEletronico = listCategory[0]?.filter(
     (categ) => categ.id === "7195f1a8-7df6-47bf-b3e6-2459e0beb7b7"
@@ -107,12 +107,12 @@ export const Products = () => {
   const Eletronico = dataEletronico.map((res) => res);
   const Eletronicos = [Eletronico];
 
-  const filterCategoryBody = listCategory[0]?.filter(
-    (categ) => categ.id === "faa46edc-e25d-49e6-9054-6a47dde483d4"
+  const filterCategoryAudioVideo = listCategory[0]?.filter(
+    (categ) => categ.id === "8b7cf3ee-29fe-46dc-9c89-4ee6a4c9b640"
   );
-  const dataBody = filterCategoryBody.map((res) => res.products_categories);
-  const Body = dataBody.map((res) => res);
-  const Bodys = [Body];
+  const dataAudioVideo = filterCategoryAudioVideo.map((res) => res.products_categories);
+  const AudioVideo = dataAudioVideo.map((res) => res);
+  const AudioVideos = [AudioVideo];
 
   const filterCategoryEstetica = listCategory[0]?.filter(
     (categ) => categ.id === "78c0fb76-a383-49d5-80ae-d0601cc855b3"
@@ -142,14 +142,14 @@ export const Products = () => {
   const Intimo = dataIntimo.map((res) => res);
   const Intimos = [Intimo];
 
-  const filterCategoryAcessorio = listCategory[0]?.filter(
-    (categ) => categ.id === "69553e36-9e1d-4807-b089-470725b510f6"
+  const filterCategoryInformatica = listCategory[0]?.filter(
+    (categ) => categ.id === "13d29bf9-49ae-4500-a12e-865cbece096c"
   );
-  const dataAcessorio = filterCategoryAcessorio.map(
+  const dataInformatica = filterCategoryInformatica.map(
     (res) => res.products_categories
   );
-  const Acessorio = dataAcessorio.map((res) => res);
-  const Acessorios = [Acessorio];
+  const Informatica = dataInformatica.map((res) => res);
+  const Informaticas = [Informatica];
 
   //const nameCategory = "Calça Feminina";
   //const nameCategory1 = "Conjunto Feminina";
@@ -165,15 +165,15 @@ export const Products = () => {
         <div>
           {/*<TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryBlusaFeminina === "Blusas"
+              {filterCategoryShortFeminino === "Blusas"
                 ? nameCategory
-                : filterCategoryBlusaFeminina[0]?.name}
+                : filterCategoryShortFeminino[0]?.name}
             </h2>
             <hr />
           </TitleProduct>*/}
           <ProductProd>
             <main>
-              {BlusaFemininas[0]?.map((res) =>
+              {ShortFemininos[0]?.map((res) =>
                 res.map((req) => {
                   //localStorage.removeItem("id")
                   const { id, name, image, price } = req.products;
@@ -290,16 +290,16 @@ export const Products = () => {
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryConjuntoFeminino === "Conjunto F"
+              {filterCategoryFerramenta === "Conjunto F"
                 ? nameCategory1
-                : filterCategoryConjuntoFeminino[0]?.name}
+                : filterCategoryFerramenta[0]?.name}
             </h2>
             <hr />
           </TitleProduct>*/}
 
           <ProductProd>
             <main>
-              {ConjuntoFemininos[0]?.map((res) =>
+              {Ferramentas[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
 
@@ -333,14 +333,14 @@ export const Products = () => {
           </ProductProd>
           {/*<TitleProduct>
             <h2 className="titleProduct">
-              {filterCategorySaia === "" ? "" : filterCategorySaia[0]?.name}
+              {filterCategoryBone === "" ? "" : filterCategoryBone[0]?.name}
             </h2>
             <hr />
           </TitleProduct>*/}
 
           <ProductProd>
             <main>
-              {Saias[0]?.map((res) =>
+              {Bones[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
 
@@ -386,13 +386,13 @@ export const Products = () => {
           {/* <SlidsListProductsRevert />*/}
           {/*<TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryBody === "" ? "" : filterCategoryBody[0]?.name}
+              {filterCategoryAudioVideo === "" ? "" : filterCategoryAudioVideo[0]?.name}
             </h2>
             <hr />
           </TitleProduct>*/}
           <ProductProd>
             <main>
-              {Bodys[0]?.map((res) =>
+              {AudioVideos[0]?.map((res) =>
                 res.map((req) => {
                   //console.log(filterCategoryVestido)
 
@@ -576,9 +576,9 @@ export const Products = () => {
                   ) : (
                     <>
                       <h2 className="titleProduct">
-                        {filterCategoryAcessorio === ""
+                        {filterCategoryInformatica === ""
                           ? ""
-                          : filterCategoryAcessorio[0]?.name}
+                          : filterCategoryInformatica[0]?.name}
                       </h2>
                       <hr />
                     </>
@@ -657,7 +657,7 @@ export const Products = () => {
                       ) : (
                         <ProductProd>
                           <main>
-                            {Acessorios[0]?.map((res) =>
+                            {Informaticas[0]?.map((res) =>
                               res.map((req) => {
                                 //console.log(filterCategoryVestido)
 
