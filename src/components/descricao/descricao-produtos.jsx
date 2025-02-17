@@ -1136,12 +1136,13 @@ export const DescriptionProducts = () => {
                                 textAlign: "center",
                                 marginTop: 9,
                                 marginLeft: 14,
-                                fontWeight: "bold"
+                                fontWeight: "bold",
+                                color: "#000000",
                               }}>{length}</b>}
                               {length > 0 ? (
-                                <SlBasketLoaded style={{ fontSize: 40, marginLeft: "-2px" }} />
+                                <SlBasketLoaded style={{ color: "#000000", fontSize: 40, marginLeft: "-2px" }} />
                               ) : (
-                                <SlBasket style={{ fontSize: 40 }} />
+                                <SlBasket style={{ color: "#000000", fontSize: 40 }} />
                               )}
                             </div>
                           </ButtonsDesc>

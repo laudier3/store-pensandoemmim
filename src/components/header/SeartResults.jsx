@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { LoadingPage } from "../products/products";
 import ReactLoading from "react-loading";
@@ -61,14 +61,16 @@ export const SeartResults = () => {
           {/*<HiMiniMagnifyingGlass className="lupaMarge" />*/}
         </form>
         <Buttons>
-          <div onClick={handleCartClick}>
-            {length === 0 ? "" : <b className="bg">{length}</b>}
-            {length > 0 ? (
-              <SlBasketLoaded style={{ fontSize: 35, marginLeft: "-2px" }} />
-            ) : (
-              <SlBasket style={{ fontSize: 35 }} />
-            )}
+          <Link to="/cartFinali">
+            <div onClick={handleCartClick} style={{color: "white"}}>
+              {length === 0 ? "" : <b className="bg">{length}</b>}
+              {length > 0 ? (
+                <SlBasketLoaded style={{ fontSize: 35, marginLeft: "-2px" }} />
+              ) : (
+                <SlBasket style={{ fontSize: 35 }} />
+              )}
           </div>
+          </Link>
         </Buttons>
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
       </Container>

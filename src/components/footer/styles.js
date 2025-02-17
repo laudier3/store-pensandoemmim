@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerFooter = styled.div`
   width: 100%;
   margin-top: 15%;
-  background-color: #001414;
+  background-color: #013D3D;
   display: flex;
   justify-content: space-between;
   color: #eee;
@@ -226,7 +226,7 @@ export const ContainerFooter = styled.div`
 
 export const ContainerFooter2 = styled.div`
   width: 100%;
-  background-color: #001414;
+  background-color: #013D3D;
   display: flex;
   justify-content: space-between;
   color: #eee;
@@ -311,7 +311,7 @@ export const ContainerFooter2 = styled.div`
 
 export const ContainerFooter1 = styled.div`
   width: 100%;
-  background-color: #001414;
+  background-color: #013D3D;
   display: flex;
   justify-content: space-between;
   color: #eee;

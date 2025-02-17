@@ -10,7 +10,7 @@ import pac from "./images/pac@2x.png";
 import sedex from "./images/sedex@2x.png";
 import trasport from "./images/transportadoras.jpg";
 import seloSeguranca from "./images/selo-seguranca.png";
-import apk from "./PensandoEmMim.apk";
+//import apk from "./PensandoEmMim.apk";
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -138,7 +138,7 @@ export default function Footer() {
           <input type="submit" value="Enviar" className="btnInput" />
           {/*<textarea name="message" id="" cols="100%" rows="4" placeholder='Message'></textarea>*/}
         </form>
-        <div className="a">
+        {/*<div className="a">
           <img
             src="https://w7.pngwing.com/pngs/638/295/png-transparent-android-software-development-logo-android-text-grass-desktop-wallpaper-thumbnail.png"
             alt="img"
@@ -147,7 +147,7 @@ export default function Footer() {
           <a href={apk} target="_blank" rel="noopener noreferrer" className="t">
             BAIXAR APK
           </a>
-        </div>
+        </div>*/}
       </ContainerFooter>
       <ContainerFooter2>
         <div>

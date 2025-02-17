@@ -130,7 +130,7 @@ export const Pricipal = styled.div`
     & .dataCor {
       //border: solid 1px; 
       border-radius: 6px; 
-      padding: 0 5px 0 1px; 
+      padding: 0 5px 0 0.5px; 
       background: white; 
       color: #000000;
       margin-left: 1px;
@@ -449,16 +449,21 @@ export const Pricipal = styled.div`
       display: flex;
       flex-wrap: wrap;
       text-align: center;
+
+      @media (max-width: 923px) {
+        margin-top: 220%;
+      }
     }
 
     & .parte1 {
-      margin-top: 10px;
       padding: 5px;
       text-align: justify;
       width: 100%;
+      //border: solid 1px;
 
       @media (max-width: 923px) {
         width: 95%;
+        //margin-top: -30px;
       }
     }
 
@@ -559,6 +564,18 @@ export const ButtonsImagesColor = styled.div`
 
   @media (max-width: 723px) and (max-width: 1200px) {
     display: none;
+  }
+`
+
+export const Footer2 = styled.div`
+  //margin: 10px;
+  margin-top: 300%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  @media (max-width: 923px) {
+    margin-top: 80%;
   }
 `
 
