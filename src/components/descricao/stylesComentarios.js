@@ -48,7 +48,7 @@ export const ContainerComentario = styled.div`
     display: inline-block;
     border: solid 1px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (max-width: 1200px) {
       width: 10%;
       font-size: 2.5vw;
       border-radius: 50%;

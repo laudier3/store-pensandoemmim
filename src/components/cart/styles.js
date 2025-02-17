@@ -50,9 +50,10 @@ export const CartContainer = styled.div`
     
   }
   @media (max-width: 923px) {
-    width: 78%;
-    margin-left: 19%;
-    margin-top: -100px;
+    width: 30%;
+    margin-left: 300px;
+    display: none;
+    margin-top: -500px;
   }
 
   p {
@@ -74,8 +75,9 @@ export const CartContent = styled.div`
   position: fixed;
 
   @media (max-width: 923px) {
-    min-width: 10%;
+    min-width: 100%;
     height: 60%;
+    //margin-left: 100%;
   }
 `;
 export const CartTitle = styled.p`

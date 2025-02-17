@@ -8,7 +8,7 @@ import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, addCor, addTm } from "../../redux/cart/cart";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -19,16 +19,17 @@ import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
 import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
-//import { ProduVideoPlay2 } from "./ReactVideoPlay";
-//import { P, DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
-import { ImageMovel, MarginTop, Pricipal } from "./desc"; //PositionCard
-//import { ImageList } from "@material-ui/core";
+import { ImageMovel, MarginTop, Pricipal, PositionCard, ButtonsImagesColor } from "./desc"; //PositionCard
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
-//import Cart from "../cart";
-//import { SlBasket, SlBasketLoaded } from "react-icons/sl";
-//import { Buttons} from "../header/styles";
+import Cart from "../cart";
+import { SlBasket, SlBasketLoaded } from "react-icons/sl";
+import { FaCartPlus } from "react-icons/fa";
+import { ButtonsDesc } from "./desc";
+//import { P, DefaultPlayer as Video } from "react-html5video";
+//import { ProduVideoPlay2 } from "./ReactVideoPlay";
+//import { ImageList } from "@material-ui/core";
 //import api from "../../api/api";
 
 export const scrollToTop = () => {
@@ -49,13 +50,13 @@ export const DescriptionProducts = () => {
   const [dataImg5, setDataImm5] = useState("");
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
-  //const [cartIsVisible, setCartIsVisible] = useState(false);
+  const [cartIsVisible, setCartIsVisible] = useState(false);
 
-  //const handleCartClick = () => {
-  //  setCartIsVisible(true);
-  //};
+  const handleCartClick = () => {
+    setCartIsVisible(true);
+  };
 
-  //const length = useSelector((state) => state.cart.cartItems.length);
+  const length = useSelector((state) => state.cart.cartItems.length);
 
   const [visitorCount, setVisitorCount] = useState(0);
   const [city, setCity] = useState('');
@@ -723,10 +724,16 @@ export const DescriptionProducts = () => {
                           </span>
                         </div>
                         <p style={{ fontSize: 20 }}>
-                          <strong style={{ fontSize: 20 }}>Cor: </strong>
-                          <label className={dataCores ? "dataCor" : ""}>
-                          {dataCores.toLowerCase()}
-                          </label>
+                          <strong style={{ fontSize: 20 }}>
+                              Cor 
+                              <div className="divBorder">
+                                <label className="dataCor">{dataCores == "" ? res.color[0] : ""}
+                                </label>
+                                <label className={dataCores ? "dataCor" : ""}>
+                                {dataCores.toLowerCase()}
+                                </label>
+                              </div>
+                            </strong>
                           <span
                             style={{
                               border: "none",
@@ -747,7 +754,7 @@ export const DescriptionProducts = () => {
                         </p>
 
                         <div>
-                          <div
+                          <ButtonsImagesColor
                             role="group"
                             aria-label="Basic example"
                             style={{ width: "80%" }}
@@ -904,7 +911,7 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                             
-                          </div>
+                          </ButtonsImagesColor>
                         </div>
                         <div>
                           {divideSizeArrey[0] == "Padrão" ||
@@ -922,7 +929,7 @@ export const DescriptionProducts = () => {
                               <br />
                               <p>
                                 <strong style={{ fontSize: 20 }}>
-                                  Tamanho:{" "}
+                                  Tamanho{" "}
                                 </strong>
                                 <span
                                   style={{
@@ -1100,7 +1107,47 @@ export const DescriptionProducts = () => {
                         >
                           Adicionar ao carrinho
                         </button>
-
+                        {/* Botão para modo celular*/}
+                        <button
+                          onClick={() =>
+                            handlerCartAdd(productProntoAddCard[0])
+                          }
+                          className="buttonCompraPhone"
+                        >
+                          Comprar agora
+                        </button>
+                        <button
+                          onClick={() =>
+                            handlerCartAdd2(productProntoAddCard[0])
+                          }
+                          className="buttonCardPhone"
+                        >
+                          Adicionar <FaCartPlus style={{ fontSize: 20, marginLeft: 5 }} />
+                        </button>
+                        <PositionCard>
+                        <Link to="/cartFinali">
+                          <ButtonsDesc>
+                            <div onClick={handleCartClick}>
+                              {length === 0 ? "" : <b style={{
+                                fontSize: 16, 
+                                borderRadius: 50,
+                                height: 18,
+                                width: 16,
+                                textAlign: "center",
+                                marginTop: 9,
+                                marginLeft: 14,
+                                fontWeight: "bold"
+                              }}>{length}</b>}
+                              {length > 0 ? (
+                                <SlBasketLoaded style={{ fontSize: 40, marginLeft: "-2px" }} />
+                              ) : (
+                                <SlBasket style={{ fontSize: 40 }} />
+                              )}
+                            </div>
+                          </ButtonsDesc>
+                          </Link>
+                          <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+                        </PositionCard>
                         <br />
                         <div>
                           <br />
@@ -1115,6 +1162,7 @@ export const DescriptionProducts = () => {
                             </span>
                           </p>
                         </div>
+                        
                         <div>
                           <p>
                             <VerifiedUserIcon />{" "}

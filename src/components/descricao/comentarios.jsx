@@ -165,23 +165,19 @@ export const Comentarios = () => {
                             type="button"
                             data-bs-dismiss="modal"
                             aria-label="Close"
-                            className="btn-outline-secondary"
+                            className=""
                             style={{
-                              fontSize: "100%",
-                              borderWidth: "bold",
-                              color: "#000000",
-                              fontWeight: "bold",
-                              margin: "auto",
-                              display: "flex",
-                              marginBottom: -30,
-                              border: "solid 1px",
-                              borderRadius: 8,
-                              borderColor: "#000000",
-                              background: "#029F9F",
-                              padding: 5,
+                              position: "absolute",
+                              marginLeft: "83%",
+                              marginTop: 30,
+                              width: 30,
+                              border: "none",
+                              background: "red",
+                              color: "white",
+                              fontWeight: "bold"
                             }}
                           >
-                            Fechar Modal
+                            X
                           </button>
                           <br />
                         </div>

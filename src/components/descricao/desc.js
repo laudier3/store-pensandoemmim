@@ -127,12 +127,28 @@ export const Pricipal = styled.div`
       border-radius: 5px;
     }
 
-    .dataCor {
-      border: solid 1px; 
+    & .dataCor {
+      //border: solid 1px; 
       border-radius: 6px; 
-      padding: 0 5px 0 5px; 
+      padding: 0 5px 0 1px; 
       background: white; 
-      color: gray;
+      color: #000000;
+      margin-left: 1px;
+      display: inline-block;
+      //text-align: left;
+    }
+
+    & .divBorder {
+      //width: 200px;
+      text-align: left;
+      border-radius: 6px; 
+      //padding: 0 5px 0 -55px;
+      margin-bottom: -15px;
+      background: white; 
+      color: #000000;
+      margin-left: 5px; 
+      border: solid 1px;
+      display: inline-block;
     }
 
     .marcaImage {
@@ -275,14 +291,17 @@ export const Pricipal = styled.div`
     //f8f8f8
 
 		& .buttonCompra {
+      background-image: linear-gradient(#03EBEB, #001414);
+      color: #f0f0f0;
 			border: none;
 			width: 100%;
-			background: aqua;
+			//background: aqua;
 			margin: 2px;
 			padding: 10px;
 			border-radius: 6px;
 			font-weight: bold;
       font-size: 20px;
+      display: block;
 			
 			&:hover {
 				background: #03CACA;
@@ -295,21 +314,25 @@ export const Pricipal = styled.div`
         bottom: 22px;
         margin-left: 41%;
         font-size: 14px;
+        display: none;
 			}
 		}
 
     & .buttonCard {
+      background-image: linear-gradient(#03EBEB, #001414);
+      color: #f7f7f7;
 			border: none;
 			width: 100%;
-			background: #f0f0f0;
+			//background: #f0f0f0;
 			margin: 2px;
 			padding: 10px;
 			border-radius: 6px;
 			font-weight: bold;
       font-size: 20px;
+      display: block;
 			
 			&:hover {
-				background: #f7f7f7;
+				background: aqua;
 				box-shadow: 0 0 0 1px aqua;
 			}
 
@@ -320,6 +343,61 @@ export const Pricipal = styled.div`
         margin-left: -3%;
         font-size: 14px;
         background: aqua;
+        display: none;
+			}
+		}
+
+    & .buttonCompraPhone {
+      display: none;
+			border: none;
+			width: 100%;
+			background-image: linear-gradient(#03EBEB, #001414);
+			margin: 2px;
+			padding: 10px;
+			font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 6px;
+      color: #f0f0f0;
+			
+			&:hover {
+				background: #03CACA;
+				box-shadow: 0 0 0 0.3px black;
+			}
+
+			@media (max-width: 932px) {
+				width: 35%;
+        position:fixed;
+        bottom: -3px;
+        margin-left: 40%;
+        font-size: 15px;
+        display: block;
+			}
+		}
+
+    & .buttonCardPhone {
+			background-image: linear-gradient(#03EBEB, #001414);
+      display: none;
+			border: none;
+			width: 100%;
+			margin: 2px;
+			padding: 10px;
+			font-weight: bold;
+      font-size: 20px;
+      color: #f0f0f0;
+			
+			&:hover {
+				background: aqua;
+				box-shadow: 0 0 0 1px aqua;
+			}
+
+			@media (max-width: 932px) {
+        display: block;
+				width: 46%;
+        position:fixed;
+        bottom: -3px;
+        margin-left: -5%;
+        font-size: 15px;
+        text-align: center;
 			}
 		}
 
@@ -436,7 +514,52 @@ display: none;
   @media (max-width: 720px) {
     display: block;
     position:fixed;
-    bottom: 52px;
-    margin-left: 35%;
+    bottom: 46px;
+    margin-left: 31%;
   } 
 `
+
+export const ButtonsDesc = styled.div`
+  float: right;
+  margin-top: -20px;
+  
+  div {
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:nth-child(1) {
+      margin-right: 40px;
+    }
+    b {
+      position: absolute;
+      margin-left: 14px;
+      margin-top: 7px;
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 923px){
+    //margin-top: -3px;
+    //margin-right: -35px;
+    width: 40px;
+    margin-left: 180px;
+    position: absolute;
+    margin-top: 5px;
+  }
+`;
+
+export const ButtonsBackground = styled.div`
+  background-image: linear-gradient(#03EBEB, #001414);
+`
+export const ButtonsImagesColor = styled.div`
+  display: block;
+
+  @media (max-width: 723px) and (max-width: 1200px) {
+    display: none;
+  }
+`
+
+//background-image: linear-gradient(#03EBEB, #001414);
