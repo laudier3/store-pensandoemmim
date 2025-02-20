@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from "./styles";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-//import { ShareSocial } from "react-share-social";
 import { toast } from "react-toastify";
 import correios from "./images/correios@2x.png";
 import pac from "./images/pac@2x.png";
 import sedex from "./images/sedex@2x.png";
 import trasport from "./images/transportadoras.jpg";
 import seloSeguranca from "./images/selo-seguranca.png";
+//import { ShareSocial } from "react-share-social";
 //import apk from "./PensandoEmMim.apk";
 import {
   FacebookIcon,

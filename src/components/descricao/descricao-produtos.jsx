@@ -27,6 +27,7 @@ import Cart from "../cart";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 import { ButtonsDesc } from "./desc";
+import { FaArrowLeftLong } from "react-icons/fa6";
 //import { P, DefaultPlayer as Video } from "react-html5video";
 //import { ProduVideoPlay2 } from "./ReactVideoPlay";
 //import { ImageList } from "@material-ui/core";
@@ -51,6 +52,10 @@ export const DescriptionProducts = () => {
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
   const [cartIsVisible, setCartIsVisible] = useState(false);
+
+  /*window.addEventListener("click", () => {
+    window.history.go(-1);
+  })*/
 
   const handleCartClick = () => {
     setCartIsVisible(true);
@@ -460,6 +465,7 @@ export const DescriptionProducts = () => {
                       </div>
                     </div>
                   </ProductImageMini>
+                  
                   <Swiper
                     className="padraoImg"
                     grabCursor={true}
@@ -480,6 +486,42 @@ export const DescriptionProducts = () => {
                         ""
                       ) : (
                         <SwiperSlide key={id}>
+                          
+                          <PositionCard>
+                            <Link to="/cartFinali">
+                              <ButtonsDesc>
+                              <Link to="/">
+                                <FaArrowLeftLong style={{
+                                  position: "absolute", 
+                                  marginTop: 10,
+                                  fontSize: 25,
+                                  marginLeft: "-330px",
+                                  color: "#000000",
+                                }} />
+                              </Link>
+                                <div onClick={handleCartClick}>
+                                  {length === 0 ? "" : <b style={{
+                                    fontSize: 16, 
+                                    borderRadius: 50,
+                                    height: 18,
+                                    width: 16,
+                                    textAlign: "center",
+                                    marginTop: 9,
+                                    marginLeft: 14,
+                                    fontWeight: "bold",
+                                    color: "#000000",
+                                  }}>{length}</b>}
+                                  {length > 0 ? (
+                                    <SlBasketLoaded style={{ color: "#000000", fontSize: 40, marginLeft: "-2px" }} />
+                                  ) : (
+                                    <SlBasket style={{ color: "#000000", fontSize: 40 }} />
+                                  )}
+                                </div>
+                              </ButtonsDesc>
+                              </Link>
+                            <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+                          </PositionCard>
+                          
                           <img
                             src={dataSlug ? dataSlug : imgData}
                             id="logo"
@@ -1124,31 +1166,7 @@ export const DescriptionProducts = () => {
                         >
                           Adicionar <FaCartPlus style={{ fontSize: 20, marginLeft: 5 }} />
                         </button>
-                        <PositionCard>
-                        <Link to="/cartFinali">
-                          <ButtonsDesc>
-                            <div onClick={handleCartClick}>
-                              {length === 0 ? "" : <b style={{
-                                fontSize: 16, 
-                                borderRadius: 50,
-                                height: 18,
-                                width: 16,
-                                textAlign: "center",
-                                marginTop: 9,
-                                marginLeft: 14,
-                                fontWeight: "bold",
-                                color: "#000000",
-                              }}>{length}</b>}
-                              {length > 0 ? (
-                                <SlBasketLoaded style={{ color: "#000000", fontSize: 40, marginLeft: "-2px" }} />
-                              ) : (
-                                <SlBasket style={{ color: "#000000", fontSize: 40 }} />
-                              )}
-                            </div>
-                          </ButtonsDesc>
-                          </Link>
-                          <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
-                        </PositionCard>
+                        
                         <br />
                         <div>
                           <br />

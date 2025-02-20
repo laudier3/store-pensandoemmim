@@ -1,5 +1,82 @@
 import styled from "styled-components";
 
+export const ProductDescImage2 = styled.div`
+  grid-area: l;
+  width: 50vw;
+  //margin-left: 110px;
+  background: white;
+  margin-top: -120px;
+
+  & .swiper {
+    width: 100%;
+    color: transparent;
+  }
+ 
+  & img {
+    width: 42vw;
+    //object-fit: cover;
+    height: 80vh;
+    margin-left: 80px;
+  }
+
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+`
+
+export const ImageProducts = styled.div`
+  width: 80%;
+  margin-top: 0px;
+  //border: solid 1px;
+  margin-left: 130px;
+
+  & img {
+    width: 100%;
+  }
+
+  @media (max-width: 720px) and (max-width: 1200px) {
+    width: 80%;
+    margin-top: 5px;
+    border: solid 1px;
+    margin-left: 0px;
+  }
+`
+
+export const ProductImageMini2 = styled.div`
+  width: 100px;
+  margin-top: -100px;
+  margin-left: -770px;
+
+  & .imgMini {
+    margin: 1px;
+    
+    & img {
+      width: 5vw;
+      height: 5vw;
+      border: solid 1px;
+      border-color: #828282;
+      padding: 5px;
+
+      &:hover {
+        border: solid 2px;
+        border-color: aqua;
+      }
+
+      @media screen and (max-width: 768px) {
+
+      }
+    
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    //display: none;
+  }
+
+`
+
 export const Pricipal = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -487,11 +564,11 @@ export const MarginTop = styled.div`
 `;
 
 export const ImageMovel = styled.div`
-  position: absolute;
-  margin-top: -90px;
+  //position: absolute;
+  //margin-top: -90px;
   //border: 0.5px solid;
   border-radius: 8px;
-  display: none;
+  //display: none;
 
   img {
     width: 60px;
@@ -520,7 +597,7 @@ display: none;
     display: block;
     position:fixed;
     bottom: 46px;
-    margin-left: 31%;
+    margin-left: 43%;
   } 
 `
 
@@ -552,7 +629,7 @@ export const ButtonsDesc = styled.div`
     width: 40px;
     margin-left: 180px;
     position: absolute;
-    margin-top: 5px;
+    margin-top: -400px;
   }
 `;
 

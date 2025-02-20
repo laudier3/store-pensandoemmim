@@ -34,13 +34,14 @@ import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
 import { register } from "swiper/element/bundle"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
-import { DescriptionProducts } from "./components/descricao/descricao-produtos";
+import { DescriptionProducts } from "./components/descricao/descricao-produtosr";
 import { LoadPage } from "./components/leadPage/LoadPage"
 import { Acessorio } from "./components/categorys/Acessorio";
 import { ProductsLoading } from "./components/products/ProductsLoading";
 import { Ferramenta } from "./components/categorys/Ferramenta";
 import { Shortm } from "./components/categorys/Shortm";
 import { Calcam } from "./components/categorys/Calcam";
+import { ContainerAppPai } from "./stylesComponents";
 
 //console.log("teste ls")
 
@@ -219,7 +220,7 @@ function App() {
   }
 
   return (
-    <>
+    <ContainerAppPai>
       <ToastContainer autoClose={3000} />
       <RouterProvider router={router}>
         <div className="page-container">
@@ -235,7 +236,7 @@ function App() {
           </div>
         </div>
       </RouterProvider>
-    </>
+    </ContainerAppPai>
   );
 }
 

@@ -13,9 +13,9 @@ export const ContainerComentario = styled.div`
   padding: 25px;
   background-color: Gainsboro;
   display: inline-block;
-  margin: 30px;
+  margin: 20px;
   width: 300px;
-  //border: solid 0.5px;
+  border: solid 0.5px;
   border-radius: 5px;
 
   @media(max-width: 923px) {
@@ -78,8 +78,8 @@ export const ContainerComentario = styled.div`
   }
 
   & .imgList {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     margin: 3px;
     border-radius: 8px;
 
