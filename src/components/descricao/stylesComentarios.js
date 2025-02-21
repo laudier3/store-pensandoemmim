@@ -83,7 +83,7 @@ export const ContainerComentario = styled.div`
   }
 
   & .imgList {
-    width: 60px;
+    width: 50px;
     height: 60px;
     margin: 3px;
     border-radius: 8px;

@@ -58,6 +58,12 @@ export const InfoSection = styled.div`
 export const Title = styled.h1`
   font-size: 24px;
   margin-bottom: 10px;
+  font-weight: bold;
+
+  @media (max-width: 720px) and (max-width: 1200px) {
+    font-size: 18px;
+    font-weight: bold;
+  }
 `;
 
 export const Price = styled.p`
@@ -343,6 +349,82 @@ export const RelationsProducts = styled.div`
       display: -webkit-box;
       -webkit-line-clamp: 2; // Quantidade de linhas
       -webkit-box-orient: vertical; 
+    }
+
+    & .oldPrice {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: gray;
+      opacity: 1;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        font-size: 0.5rem;
+      }    
+    }
+
+    & .frete {
+      font-size: 1rem;
+      color: #00A650;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        font-size: 0.5rem;
+      }
+    }
+
+    & .cartImg {
+      width: 33px;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        width: 20px;
+      }      
+    }
+
+    & .pRelation {
+      font-size: 10px;
+    }
+
+    & .cartao {
+      font-size: 10px;
+    }
+
+    & .oldPricereal {
+      font-size: 1.5rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      flex-grow: 1;
+      font-weight: bold;
+      color: #000000;
+      opacity: 0.7;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+       font-size: 1rem;
+      }    
+    }
+  }
+
+  & .divRelationLateral {
+    width: 97%;
+    border: solid 1px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 5px;
+    border-color:rgba(130, 130, 130, 0.45);
+    box-shadow: 0 0 0 0.5px rgba(130, 130, 130, 0.45);
+
+    & .h5Relation {
+      margin-top: 15px;
+      color: #000000;
+      font-size: 1rem;
+      overflow: hidden; // Removendo barra de rolagem
+      text-overflow: ellipsis; // Adicionando "..." ao final
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // Quantidade de linhas
+      -webkit-box-orient: vertical; 
+    }
+
+    & .imgRelation {
+      width: 100%;
     }
 
     & .oldPrice {

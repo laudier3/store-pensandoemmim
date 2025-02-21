@@ -32,6 +32,9 @@ export const Products = () => {
       setData(res);
     })();
   }, []);
+  
+  const ts = window.history
+  console.info(ts)//
 
   //console.log(data);
 

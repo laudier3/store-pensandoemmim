@@ -8,7 +8,7 @@ import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, addCor, addTm } from "../../redux/cart/cart";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -28,11 +28,8 @@ import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 import { ButtonsDesc } from "./desc";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, Title } from "./styles/componentDescription";
-//import { P, DefaultPlayer as Video } from "react-html5video";
-//import { ProduVideoPlay2 } from "./ReactVideoPlay";
-//import { ImageList } from "@material-ui/core";
-//import api from "../../api/api";
+import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
+import imgcart2 from "./images/card.jpg";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -57,6 +54,14 @@ export const DescriptionProducts = () => {
   /*window.addEventListener("click", () => {
     window.history.go(-1);
   })*/
+
+  //window.history.go(1);
+  //const ts = window.history.length
+  //console.info(ts)//
+//
+  //if(ts == 50){
+  //  Navigate("/")
+  //}
 
   const handleCartClick = () => {
     setCartIsVisible(true);
@@ -112,6 +117,27 @@ export const DescriptionProducts = () => {
   const cart = useSelector((cartItems) => cartItems.cart.cartItems.length);
   const product = useSelector((productsSlice) => productsSlice.products.items);
   const productList = [product];
+  const filterProducts1 = product.filter(resp => resp.id === "286a8b7b-9524-4f26-801b-e2d470496664")
+  const filterProducts2 = product.filter(resp => resp.id === "6ce49530-1272-45cb-b957-40e830100ad1")
+  const filterProducts3 = product.filter(resp => resp.id === "bf5152b4-5315-449a-925d-ad03094186cb")
+
+  const filterProduct = product.map((pro) => pro);
+  const filterListProducters = [filterProduct];
+  const dataProductFilter2 = filterListProducters[0]?.filter(
+    (productData) => productData.id === lastPart2
+  );
+
+  const filterListProducts = [filterProduct];
+
+  const filterProductBarcode = dataProductFilter2.map((pro) => pro.bar_code);
+  const dataProductFilterBarcodeList = filterListProducts[0]?.filter(
+    (productData) => productData.bar_code == filterProductBarcode[0]
+  );
+
+  const contItems = dataProductFilterBarcodeList.length;
+
+  //console.log(contItems)
+  //console.log(filterProducts1[0].image[0])
 
   //const [borderCor, setBordercor] = useState("red")
 
@@ -129,7 +155,7 @@ export const DescriptionProducts = () => {
   const ProcessoImageCor = async () => {
     
     const res = "category";
-    console.log(res);
+    //console.log(res);
 
     const response = await imgFilterImg6;
     setDataImm5(response);
@@ -399,22 +425,6 @@ export const DescriptionProducts = () => {
               dataProductFilter.map((res) => {
                 const { image } = res;
 
-                //console.log(slug, "11111");
-
-                /*const imgList = [
-                  image[0],
-                  image[1],
-                  image[2],
-                  image[3],
-                  image[4],
-                  image[5],
-                  image[6],
-                ];*/
-
-                //const mostra = image[5] == undefined ? "none" : "initial"
-
-                //console.log(mostra)
-
                 function over0() {
                   document.getElementById("logo").src = `${image[0] || image[1]}`;
                 }
@@ -525,6 +535,23 @@ export const DescriptionProducts = () => {
                 <>
                   <Title>{name}</Title>
                   <Price>
+                  <span style={{ fontSize: 20, color: "#000000" }}>4.8</span>
+                    <GoStarFill
+                      style={{ fontSize: 15, color: "#ffc107" }}
+                    />
+                    <GoStarFill
+                      style={{ fontSize: 15, color: "#ffc107" }}
+                    />
+                    <GoStarFill
+                      style={{ fontSize: 15, color: "#ffc107" }}
+                    />
+                    <GoStarFill
+                      style={{ fontSize: 15, color: "#ffc107" }}
+                    />
+                    <TiStarHalfOutline
+                      style={{ fontSize: 18, color: "#ffc107" }}
+                    />
+                    <span> | {quantity * 3} Vendido</span><br />
                     {dataTamanho == "64GB" ? (
                       <h1>R$ {novo_price0},00</h1>
                     ) : dataTamanho == "128GB" ? (
@@ -542,24 +569,6 @@ export const DescriptionProducts = () => {
                     </span>
                   </Price>
                   <div>
-                  <span style={{ fontSize: 15 }}>4.8</span>
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <TiStarHalfOutline
-                      style={{ fontSize: 18, color: "#ffc107" }}
-                    />
-                    <span> | {quantity * 3} Vendido</span><br />
-                  
                     <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
                   </div>
                   <Description>
@@ -1017,6 +1026,535 @@ export const DescriptionProducts = () => {
                   </span>
                 </p>
               </div>
+               {contItems === 6 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 9 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 9 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 8 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 8 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 7 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+               {contItems === 7 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 5 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 4 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+               {contItems === 10 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 10 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 10 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 11 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 11 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 11 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 12 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 12 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 12 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 13 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 13 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 13 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 14 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 14 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 14 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 15 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 15 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 15 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+
+              {contItems === 16 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+               {contItems === 16 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
+              
+               {contItems === 16 ? 
+                <RelationsProducts>
+                  <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <div className="divRelationLateral">
+                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                      <b className="frete">Frete Gratis</b>
+                      <img src={imgcart2} alt="img" className="cartImg" />
+                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                      <h4 className="oldPricereal h4Relation">
+                        {" "}
+                        R$ {novo_price},00
+                      </h4>
+                    </div>
+                  </Link>
+                </RelationsProducts>
+              : ""}
               
             </Description>
           </InfoSection>
