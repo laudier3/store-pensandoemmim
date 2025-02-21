@@ -16,7 +16,6 @@ export const ProductWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   gap: 20px;
-  //border: solid 1px;
   border-color: #828282;
   border-radius: 6px;
   
@@ -37,6 +36,7 @@ export const ImageSection = styled.div`
     max-width: 100%;
     border-radius: 10px;
   }
+  
 `;
 
 export const InfoSection = styled.div`
@@ -116,7 +116,7 @@ export const Description = styled.p`
     border-radius: 6px;
     border-width: 2px;
     //width: 50px;
-    height: 50px;
+    height: 60px;
   }
 
   .slugImg {
@@ -135,7 +135,6 @@ export const Description = styled.p`
       border-color: #000000;
       opacity: 0.8;
       border-radius: 5px;
-      //box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease-in-out;
       cursor: pointer;
       background-color: rgba(255, 255, 255, 0.582);
@@ -195,7 +194,6 @@ export const Description = styled.p`
       color: #f7f7f7;
 			border: none;
 			width: 94%;
-			//background: #f0f0f0;
 			margin: 2px;
 			padding: 10px;
 			border-radius: 6px;
@@ -324,3 +322,77 @@ export const ProductDetails = styled.div`
     margin-left: 20px;
   }
 `;
+
+export const RelationsProducts = styled.div`
+  & .divRelation {
+    width: 30%;
+    border: solid 1px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 5px;
+    border-color:rgba(130, 130, 130, 0.45);
+    box-shadow: 0 0 0 0.5px rgba(130, 130, 130, 0.45);
+
+    & .h5Relation {
+      margin-top: 15px;
+      color: #000000;
+      font-size: 1rem;
+      overflow: hidden; // Removendo barra de rolagem
+      text-overflow: ellipsis; // Adicionando "..." ao final
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // Quantidade de linhas
+      -webkit-box-orient: vertical; 
+    }
+
+    & .oldPrice {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      flex-grow: 1;
+      color: gray;
+      opacity: 1;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        font-size: 0.5rem;
+      }    
+    }
+
+    & .frete {
+      font-size: 1rem;
+      color: #00A650;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        font-size: 0.5rem;
+      }
+    }
+
+    & .cartImg {
+      width: 33px;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        width: 20px;
+      }      
+    }
+
+    & .pRelation {
+      font-size: 10px;
+    }
+
+    & .cartao {
+      font-size: 10px;
+    }
+
+    & .oldPricereal {
+      font-size: 1.5rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      flex-grow: 1;
+      font-weight: bold;
+      color: #000000;
+      opacity: 0.7;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+       font-size: 1rem;
+      }    
+    }
+  }
+`

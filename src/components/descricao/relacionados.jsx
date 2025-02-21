@@ -1,11 +1,11 @@
 /* eslint-disable eqeqeq */
 import { useState } from "react";
-import { ProductRelacionados } from "./Relacionados";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
 import imgcart from "./images/card.jpg";
+import { RelationsProducts } from "./styles/componentDescription";
 //import { useNavigate } from "react-router-dom"
 //import { LoadingPage } from "../products/products";
 //import ReactLoading from "react-loading";
@@ -63,39 +63,30 @@ export function Realacionandos() {
   if (!data || !data.length) return null;
 
   return (
-    <>
-      <ProductRelacionados>
-        <section className="section">
-          {dataProductFilterBarcodeList.map((res) => {
-            const { id, name, image, price } = res;
+    <RelationsProducts>
+      {dataProductFilterBarcodeList.map((res) => {
+        const { id, name, image, price } = res;
 
-            let percentual = 0.25;
-            let aumento = price * percentual;
-            let novo_price = price - aumento;
+        let percentual = 0.25;
+        let aumento = price * percentual;
+        let novo_price = price - aumento;
 
-            return (
-              <Link to={"/desc/" + id}>
-                <div key={id} className="divRelation">
-                  <img src={image[0]} alt="img" className="imgRelation" />
-                  <h5 className="h5Relation">{name}</h5>
-                  <b className="frete">Frete Gratis</b>
-                  <img src={imgcart} alt="img" className="cartImg" />
-                  <span>
-                    <p className="pRelation">
-                      <FaCreditCard className="cartao" /> Em até 12x sem juros
-                    </p>
-                  </span>
-                  <h3 className="oldPrice h3Relation">R${price},00 </h3>
-                  <h4 className="oldPricereal h4Relation">
-                    {" "}
-                    R$ {novo_price},00
-                  </h4>
-                </div>
-              </Link>
-            );
-          })}
-        </section>
-      </ProductRelacionados>
-    </>
+        return (
+          <Link to={"/desc/" + id}>
+            <div key={id} className="divRelation">
+              <img src={image[0]} alt="img" className="imgRelation" />
+              <h5 className="h5Relation">{name}</h5>
+              <b className="frete">Frete Gratis</b>
+              <img src={imgcart} alt="img" className="cartImg" />
+              <h3 className="oldPrice">R${price},00 </h3>
+              <h4 className="oldPricereal h4Relation">
+                {" "}
+                R$ {novo_price},00
+              </h4>
+            </div>
+          </Link>
+        );
+      })}
+    </RelationsProducts>
   );
 }

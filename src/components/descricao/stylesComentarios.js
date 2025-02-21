@@ -71,6 +71,11 @@ export const ContainerComentario = styled.div`
   & p {
     font-size: 1vw;
     display: inline-block;
+    overflow: hidden; // Removendo barra de rolagem
+    text-overflow: ellipsis; // Adicionando "..." ao final
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Quantidade de linhas
+    -webkit-box-orient: vertical; 
 
     @media (max-width: 768px) {
       font-size: 2.5vw;

@@ -81,7 +81,7 @@ export const DescriptionProducts = () => {
     }
   };
 
-  useEffect(() => {
+  {/*useEffect(() => {
     // Atualiza a contagem de visitantes e a cidade a cada 5 segundos
     const interval = setInterval(() => {
       setVisitorCount(Math.floor(Math.random() * 10000) + 1);
@@ -90,7 +90,7 @@ export const DescriptionProducts = () => {
 
     // Limpeza do intervalo quando o componente for desmontado
     return () => clearInterval(interval);
-  }, []);
+  }, []);*/}
   
   if (!window.location.hash) {
     window.location = window.location + "#products#description";
@@ -380,7 +380,7 @@ export const DescriptionProducts = () => {
     "https://dermogral.com.br/wp-content/uploads/2023/03/FARMACIA-DERMOGRAL-SEM-FOTO.png";*/
 
   const imgs = dataProductFilter.map((res) => res.image[0] )
-  console.log(imgs)
+  //console.log(imgs)
 
   return (
     <>
@@ -397,11 +397,11 @@ export const DescriptionProducts = () => {
               <Example />
             ) : (
               dataProductFilter.map((res) => {
-                const { id, image } = res;
+                const { image } = res;
 
                 //console.log(slug, "11111");
 
-                const imgList = [
+                /*const imgList = [
                   image[0],
                   image[1],
                   image[2],
@@ -409,7 +409,7 @@ export const DescriptionProducts = () => {
                   image[4],
                   image[5],
                   image[6],
-                ];
+                ];*/
 
                 //const mostra = image[5] == undefined ? "none" : "initial"
 
@@ -419,59 +419,95 @@ export const DescriptionProducts = () => {
                   document.getElementById("logo").src = `${image[0] || image[1]}`;
                 }
                 function over1() {
-                  document.getElementById("logo").src = `${image[1] || image[4]}`;
+                  document.getElementById("logo").src = `${image[1] || image[2]}`;
                 }
                 function over2() {
-                  document.getElementById("logo").src = `${image[2] || image[1]}`;
+                  document.getElementById("logo").src = `${image[2] || image[3]}`;
                 }
 
                 function over3() {
-                  document.getElementById("logo").src = `${image[3] || image[0]}`;
+                  document.getElementById("logo").src = `${image[3] || image[4]}`;
                 }
 
                 function over4() {
-                  document.getElementById("logo").src = `${image[4] || image[1]}`;
+                  document.getElementById("logo").src = `${image[4] || image[5]}`;
+                }
+
+                function over5() {
+                  document.getElementById("logo").src = `${image[5] || image[2]}`;
+                }
+
+                function over6() {
+                  document.getElementById("logo").src = `${image[6] || image[0]}`;
                 }
 
                 return (
                   <div>
                     <ProductImageMini2>
                       <div className="imgMini">
+                      {image[0] ? 
                         <div className="imgMini">
                           <img
                             src={image[0] || image[1]}
                             alt="img0"
                             onMouseOver={() => over0(over0)}
-                          />
-                        </div>
+                          /> 
+                        </div> : ""
+                        }
+                        {image[1] ? 
                         <div className="imgMini">
                           <img
                             src={image[1] || image[0]}
                             alt="img0"
                             onMouseOver={() => over1(over1)}
                           />
-                        </div>
+                        </div> : ""
+                        }
+                        {image[2] ? 
                         <div className="imgMini">
                           <img
                             src={image[2] || image[0]}
                             alt="img0"
                             onMouseOver={() => over2(over2)}
                           />
-                        </div>
+                        </div> : ""
+                        }
+                        {image[3] ? 
                         <div className="imgMini">
                           <img
                             src={image[3] || image[2]}
                             alt="img0"
                             onMouseOver={() => over3(over3)}
                           />
-                        </div>
+                        </div> : ""
+                        }
+                        {image[4] ? 
                         <div className="imgMini">
                           <img
                             src={image[4] || image[1]}
                             alt="img0"
                             onMouseOver={() => over4(over4)}
                           />
-                        </div>
+                        </div> : ""
+                        }
+                        {image[5] ? 
+                        <div className="imgMini">
+                          <img
+                            src={image[5] || image[1]}
+                            alt="img0"
+                            onMouseOver={() => over5(over5)}
+                          />
+                        </div> : ""
+                        }
+                        {image[6] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[6] || image[1]}
+                              alt="img0"
+                              onMouseOver={() => over6(over6)}
+                            />
+                          </div> : ""
+                        }
                       </div>
                     </ProductImageMini2>
                     
@@ -483,7 +519,7 @@ export const DescriptionProducts = () => {
           </ImageSection>
           <InfoSection>
           { dataProductFilter.map((res) => {
-              const { name, quantity, color, slug, frete, price } = res; //image para videos
+              const { name, quantity, color, slug, frete} = res; //image para videos
 
               return (
                 <>
@@ -532,9 +568,7 @@ export const DescriptionProducts = () => {
                     <p style={{ fontSize: 20 }}>
                       <strong style={{ fontSize: 20, display: "inline-block" }}>
                         <div className="divBorder">
-                        Cor:
-                          <label className="dataCor">{dataCores == "" ? res.color[0] : ""}
-                          </label>
+                          Cor:
                           <label className={dataCores ? "dataCor" : ""} 
                             style={{
                               border: "solid 1px",
@@ -544,7 +578,7 @@ export const DescriptionProducts = () => {
                               textAlign: "center",
                               padding: 3,
                             }}>
-                          {dataCores.toLowerCase()}
+                            {dataCores == "" ? res.color[0] : dataCores.toLowerCase()}
                           </label>
                         </div>
                         <br />
@@ -937,33 +971,20 @@ export const DescriptionProducts = () => {
           <InfoSection>
             <Description>
             { dataProductFilter.map((res) => {
-              const { name, quantity, color, slug, frete, price } = res; //image para videos
+              const { quantity } = res; //image para videos
 
               return (
                 <>
                   <div>
                     <div>
                       <strong className="EnvioParaTodoPais">
-                        Envio para todo o país
+                        Envio para todo Brasil
                       </strong>
                       <br />
                       <span>
-                        Saiba os prazos de entrega e as formas de envio.
+                        Entregamos seu produto o mais rapido possivel, e com a melhor qualidae.
                       </span>
-                      <div>
-                        <p>
-                          <strong className="EnvioParaTodoPais">
-                            Disponivel em Estoque
-                          </strong>
-                          <div className="EnvioParaTodoPais">
-                            disponivel ({quantity})
-                          </div>
-                        </p>
-                      </div>
-
                       
-                      
-                      <br />
                       <div>
                         <br />
                         <p>
@@ -994,52 +1015,9 @@ export const DescriptionProducts = () => {
                     Receba o produto que está esperando ou devolvemos
                     o dinheiro.
                   </span>
-                  <br />
-                  <span className="cartDosesVezes">
-                    <FaCreditCard /> Em até 12x sem juros
-                    <br />
-                    {imgCart.map((imgCard) => (
-                      <img
-                        src={imgCard.img}
-                        alt="img"
-                        style={{
-                          width: "12%",
-                          height: 25,
-                          display: "inline-block",
-                          margin: "5PX",
-                          border: "solid 1px",
-                        }}
-                      />
-                    ))}
-                  </span>
                 </p>
               </div>
-              { dataProductFilter.map((res) => {
-              const { name, quantity, color, slug, frete, price } = res; //image para videos
-
-              return (
-                <div>
-                  <span style={{ fontSize: 15 }}>4.8</span>
-                  <GoStarFill
-                    style={{ fontSize: 15, color: "#ffc107" }}
-                  />
-                  <GoStarFill
-                    style={{ fontSize: 15, color: "#ffc107" }}
-                  />
-                  <GoStarFill
-                    style={{ fontSize: 15, color: "#ffc107" }}
-                  />
-                  <GoStarFill
-                    style={{ fontSize: 15, color: "#ffc107" }}
-                  />
-                  <TiStarHalfOutline
-                    style={{ fontSize: 18, color: "#ffc107" }}
-                  />
-                  <span> | {quantity * 3} Vendido</span><br />
-                
-                  <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
-                </div>
-              )})}
+              
             </Description>
           </InfoSection>
         </ProductWrapper>
