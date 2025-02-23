@@ -36,10 +36,19 @@ export const ImageProducts = styled.div`
     width: 100%;
   }
 
+  & .padraoImg {
+    width: 620px;
+
+    @media (max-width: 720px) and (max-width: 1200px)  {
+      width: 380px;
+      margin-left: -32px;
+    }
+  }
+
   @media (max-width: 720px) and (max-width: 1200px) {
     width: 80%;
     margin-top: 5px;
-    border: solid 1px;
+    //border: solid 1px;
     margin-left: 0px;
   }
 `
@@ -592,18 +601,22 @@ export const ImageMovel = styled.div`
 `
 
 export const PositionCard = styled.div`
-display: none;
+  display: block;
+
   @media (max-width: 720px) {
-    display: block;
-    position:fixed;
+    display: flex;
+    position:absolute;
+    margin-top: 300px;
     bottom: 46px;
-    margin-left: 43%;
+    margin-left: 30%;
+    background: red;
+    //margin-top: 810px;
   } 
 `
 
 export const ButtonsDesc = styled.div`
-  float: right;
-  margin-top: -20px;
+  //float: right;
+  //margin-top: -20px;
   
   div {
     font-weight: 500;
@@ -624,12 +637,9 @@ export const ButtonsDesc = styled.div`
   }
 
   @media (max-width: 923px){
-    //margin-top: -3px;
-    //margin-right: -35px;
     width: 40px;
-    margin-left: 180px;
+    margin-left: 320px;
     position: absolute;
-    margin-top: -400px;
   }
 `;
 

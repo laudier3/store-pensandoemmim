@@ -1,14 +1,14 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
 import { toast } from "react-toastify";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //import LocationOnIcon from "@material-ui/icons/LocationOn";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, addCor, addTm } from "../../redux/cart/cart";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -20,15 +20,14 @@ import { EffectCreative } from "swiper/modules";
 import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
-import { ImageMovel, MarginTop, Pricipal, PositionCard, ButtonsImagesColor, ProductImageMini2, ProductDescImage2, ImageProducts } from "./desc"; //PositionCard
-import { ProductImageMini } from "./products_desc";
+import { MarginTop, ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
 import Cart from "../cart";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 import { ButtonsDesc } from "./desc";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
+import { Container, Description, EspacoTop, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 
 export const scrollToTop = () => {
@@ -49,6 +48,7 @@ export const DescriptionProducts = () => {
   const [dataImg5, setDataImm5] = useState("");
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
+  const [bordersTamnho, setBorderTamnho] = useState("");
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
   /*window.addEventListener("click", () => {
@@ -69,7 +69,7 @@ export const DescriptionProducts = () => {
 
   const length = useSelector((state) => state.cart.cartItems.length);
 
-  const [visitorCount, setVisitorCount] = useState(0);
+  /*const [visitorCount, setVisitorCount] = useState(0);
   const [city, setCity] = useState('');
 
   const apiKey = '667c1973e05849fa9eb1972746e9f4c1'; // Substitua pela sua chave de API da ipgeolocation.io
@@ -84,19 +84,9 @@ export const DescriptionProducts = () => {
       console.error('Erro ao obter cidade por IP', error);
       setCity('Erro ao obter cidade');
     }
-  };
+  };*/
 
-  {/*useEffect(() => {
-    // Atualiza a contagem de visitantes e a cidade a cada 5 segundos
-    const interval = setInterval(() => {
-      setVisitorCount(Math.floor(Math.random() * 10000) + 1);
-      getCityByIP();  // Obter a cidade do visitante baseado no IP
-    }, 5000);
 
-    // Limpeza do intervalo quando o componente for desmontado
-    return () => clearInterval(interval);
-  }, []);*/}
-  
   if (!window.location.hash) {
     window.location = window.location + "#products#description";
     window.location.reload();
@@ -400,23 +390,93 @@ export const DescriptionProducts = () => {
     },
   ];
 
-  //console.log(productProntoAddCard, " t");
-
-  /*const semImagem =
-    "https://dermogral.com.br/wp-content/uploads/2023/03/FARMACIA-DERMOGRAL-SEM-FOTO.png";*/
-
-  const imgs = dataProductFilter.map((res) => res.image[0] )
-  //console.log(imgs)
-
   return (
     <>
       <Header />
       <MarginTop />
       <Container>
         <ProductWrapper>
+          <EspacoTop>
+            <Link to="/cartFinali">
+              <ButtonsDesc>
+              <Link to="/">
+                <FaArrowLeftLong style={{
+                  position: "absolute", 
+                  marginTop: 10,
+                  fontSize: 25,
+                  marginLeft: "-330px",
+                  color: "#000000",
+                }} />
+              </Link>
+                <div onClick={handleCartClick}>
+                  {length === 0 ? "" : <b style={{
+                    fontSize: 16, 
+                    borderRadius: 50,
+                    height: 18,
+                    width: 16,
+                    textAlign: "center",
+                    marginTop: 9,
+                    marginLeft: 14,
+                    fontWeight: "bold",
+                    color: "#000000",
+                  }}>{length}</b>}
+                  {length > 0 ? (
+                    <SlBasketLoaded style={{ color: "#000000", fontSize: 40, marginLeft: "-2px" }} />
+                  ) : (
+                    <SlBasket style={{ color: "#000000", fontSize: 40 }} />
+                  )}
+                </div>
+              </ButtonsDesc>
+              </Link>
+            <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+          </EspacoTop>
           <ImageSection>
             <ImageProducts>
-              <img id="logo" src={imgs[0]} alt="img"/>
+              {/*<img id="logo" src={imgs[0]} alt="img"/>*/}
+              {dataProductFilter == "" ? <Example /> : 
+                dataProductFilter.map((res) => {
+                  const { id, image } = res;
+
+                  const imgList = [
+                    image[0],
+                    image[1],
+                    image[2],
+                    image[3],
+                    image[4],
+                    image[5],
+                    image[6],
+                  ];
+               
+                  return (
+                    <Swiper
+                      className="padraoImg"
+                      grabCursor={true}
+                      effect={"creative"}
+                      creativeEffect={{
+                        prev: {
+                          shadow: true,
+                          translate: [0, 0, -400],
+                        },
+                        next: {
+                          translate: ["100%", 0, 0],
+                        },
+                      }}
+                      modules={[EffectCreative]}
+                    >
+                      {imgList.map((resImg) => (
+                      <SwiperSlide key={id}>
+                        <img
+                          src={dataSlug ? dataSlug : resImg}
+                          id="logo"
+                          alt="img"
+                          className="imgDiv"
+                        />
+                      </SwiperSlide>
+                        
+                      ))}
+                    </Swiper>
+                  )
+              })}
             </ImageProducts>
             <>
             {dataProductFilter == "" ? (
@@ -586,6 +646,7 @@ export const DescriptionProducts = () => {
                               fontWeight: "lighter",
                               textAlign: "center",
                               padding: 3,
+                              borderRadius: 6
                             }}>
                             {dataCores == "" ? res.color[0] : dataCores.toLowerCase()}
                           </label>
@@ -828,103 +889,163 @@ export const DescriptionProducts = () => {
                                 : divideSizeArrey[0]}
                             </span>
                           </p>
+                          
                           {divideSizeArrey[0] ? (
-                            <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[0])}
-                            >
-                              {divideSizeArrey[0]}
-                            </button>
+                            <label className={dataTamanho == divideSizeArrey[0] ? bordersTamnho : ""}>
+                              <button
+                                style={{borderRadius: 8, width: divideSizeArrey[0].length > 2 ? "100%" : 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[0]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                              >
+                                {divideSizeArrey[0]}
+                              </button>
+                            </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[1] ? (
-                            <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[1])}
-                            >
-                              {divideSizeArrey[1]}
-                            </button>
+                             <label className={dataTamanho === divideSizeArrey[1] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[1]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[1]}
+                              </button>
+                            </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[2] ? (
-                            <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[2])}
-                            >
-                              {divideSizeArrey[2]}
-                            </button>
+                             <label className={dataTamanho === divideSizeArrey[2] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[2]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[2]}
+                              </button>
+                            </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[3] ? (
-                            <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[3])}
-                            >
-                              {divideSizeArrey[3]}
-                            </button>
+                             <label className={dataTamanho === divideSizeArrey[3] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[3]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                              >
+                                {divideSizeArrey[3]}
+                              </button>
+                            </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[4] ? (
-                            <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[4])}
-                            >
-                              {divideSizeArrey[4]}
-                            </button>
+                            <label className={dataTamanho === divideSizeArrey[4] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[4]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[4]}
+                              </button>
+                            </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[5] ? (
+                             <label className={dataTamanho === divideSizeArrey[5] ? bordersTamnho : ""}>
                             <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[5])}
-                            >
+                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                              onClick={() => 
+                                setTamanho(divideSizeArrey[5]) ||
+                                setBorderTamnho("marcaTamanho") 
+                              }
+                              >
                               {divideSizeArrey[5]}
                             </button>
+                              </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[6] ? (
+                             <label className={dataTamanho === divideSizeArrey[6] ? bordersTamnho : ""}>
                             <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[6])}
-                            >
+                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                              onClick={() => 
+                                setTamanho(divideSizeArrey[6]) ||
+                                setBorderTamnho("marcaTamanho") 
+                              }
+                              >
                               {divideSizeArrey[6]}
                             </button>
+                              </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[7] ? (
+                             <label className={dataTamanho === divideSizeArrey[7] ? bordersTamnho : ""}>
                             <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[7])}
-                            >
+                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                              onClick={() => 
+                                setTamanho(divideSizeArrey[7]) ||
+                                setBorderTamnho("marcaTamanho") 
+                              }
+                              >
                               {divideSizeArrey[7]}
                             </button>
+                              </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[8] ? (
+                             <label className={dataTamanho === divideSizeArrey[8] ? bordersTamnho : ""}>
                             <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[8])}
-                            >
+                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                              onClick={() => 
+                                setTamanho(divideSizeArrey[8]) ||
+                                setBorderTamnho("marcaTamanho") 
+                              }
+                              >
                               {divideSizeArrey[8]}
                             </button>
+                              </label>
                           ) : (
                             ""
                           )}
                           {divideSizeArrey[9] ? (
+                             <label className={dataTamanho === divideSizeArrey[9] ? bordersTamnho : ""}>
                             <button
-                              className="btnButtonTamanho"
-                              onClick={() => setTamanho(divideSizeArrey[9])}
-                            >
+                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                              onClick={() => 
+                                setTamanho(divideSizeArrey[9]) ||
+                                setBorderTamnho("marcaTamanho") 
+                              }
+                              >
                               {divideSizeArrey[9]}
                             </button>
+                              </label>
                           ) : (
                             ""
                           )}
@@ -979,40 +1100,32 @@ export const DescriptionProducts = () => {
           </ImageSection>
           <InfoSection>
             <Description>
-            { dataProductFilter.map((res) => {
-              const { quantity } = res; //image para videos
-
-              return (
-                <>
+              <div>
+                <div>
+                  <strong className="EnvioParaTodoPais">
+                    Envio para todo Brasil
+                  </strong>
+                  <br />
+                  <span>
+                    Entregamos seu produto o mais rapido possivel, e com a melhor qualidae.
+                  </span>
+                  
                   <div>
-                    <div>
-                      <strong className="EnvioParaTodoPais">
-                        Envio para todo Brasil
-                      </strong>
+                    <br />
+                    <p>
+                      <SwapHorizIcon />{" "}
+                      <stron className="EnvioParaTodoPais" g>
+                        Devolução Gratis
+                      </stron>{" "}
                       <br />
                       <span>
-                        Entregamos seu produto o mais rapido possivel, e com a melhor qualidae.
+                        Você tem 7 dias a partir da data de recebimento.
                       </span>
-                      
-                      <div>
-                        <br />
-                        <p>
-                          <SwapHorizIcon />{" "}
-                          <stron className="EnvioParaTodoPais" g>
-                            Devolução Gratis
-                          </stron>{" "}
-                          <br />
-                          <span>
-                            Você tem 7 dias a partir da data de recebimento.
-                          </span>
-                        </p>
-                      </div>
-                      
-                    </div>
+                    </p>
                   </div>
-                  </>
-                )
-              })}
+                  
+                </div>
+              </div>
               <div>
                 <p>
                   <VerifiedUserIcon />{" "}
@@ -1581,14 +1694,7 @@ export const DescriptionProducts = () => {
                         ""
                       ) : (
                         <p>
-                          <br />
-                          <br />
-                          <br />
-                          <br />
-                          <br />
-                          <br />
-                          <br />
-                          <br />
+                          
                         </p>
                       )}
 
@@ -1596,10 +1702,10 @@ export const DescriptionProducts = () => {
                         ""
                       ) : (
                         <p>
-                          <br />
-                          <br />
+                          
                         </p>
                       )}
+                      <br /><br />
                       <h4>
                         <strong>DESCRIÇÃO</strong>
                       </h4>
@@ -1610,6 +1716,7 @@ export const DescriptionProducts = () => {
               })
             )}
           </ImageSection>
+          
           <InfoSection>
             <Description>
               <div>

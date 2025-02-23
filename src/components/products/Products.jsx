@@ -5,14 +5,10 @@ import { useEffect, useState } from "react";
 import Footer from "../footer/footer";
 import { useSelector } from "react-redux";
 import { ProductsLoading } from "./ProductsLoading";
-//import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
 import api from "../../api/api";
 import { HeaderList } from "../header/indexList";
-//import { ProduVideoPlay2 } from "./ReactVideoPlay";
-//import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
-//import video from "./Videos/64002613_9555186.psd.mp4";
 
 export const Products = () => {
   useEffect(() => {
@@ -33,15 +29,14 @@ export const Products = () => {
     })();
   }, []);
   
-  const ts = window.history
-  console.info(ts)//
+  //const ts = window.history
+  //console.info(ts)//
 
   //console.log(data);
 
   const [vernais, setVermais] = useState(0);
   const [vernais2, setVermais2] = useState(0);
 
-  //chamada api via redux e axios
   const categorys = useSelector((productSlace) => productSlace.categorys);
   const tsLoading = [categorys];
   const listCategory = tsLoading.map((res) => res.items);
@@ -153,6 +148,11 @@ export const Products = () => {
   );
   const Informatica = dataInformatica.map((res) => res);
   const Informaticas = [Informatica];
+
+  //window.onpopstate = function(event) {
+  //  var count = parseInt(localStorage.getItem('history-changes-count'), 10);
+  //  localStorage.setItem('history-changes-count', ++count);
+  //};
 
   //const nameCategory = "Calça Feminina";
   //const nameCategory1 = "Conjunto Feminina";

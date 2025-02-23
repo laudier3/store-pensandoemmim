@@ -31,13 +31,47 @@ export const ImageSection = styled.div`
   justify-content: center;
   align-items: center;
   border-color: #828282;
+  //border: solid 1px;
   
-  img {
+  & img {
     max-width: 100%;
     border-radius: 10px;
   }
+
+  & p {
+    //border: solid 1px;
+    width: 90%;
+    margin-left: 20px;
+    text-align: justify;
+  }
+
+  & strong {
+    //border: solid 1px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 720px) and (max-width: 1200px) {
+    margin-top: -25px;
+    max-width: 500px;
+    width: 400px;
+    border: none;
+  }
   
 `;
+
+export const EspacoTop = styled.div`
+  display: none;
+
+  @media (max-width: 720px) and (max-width: 1200px) {
+    width: 100%;
+    height: 45px;
+    //border: solid 1px;
+    margin-top: -17px;
+    margin-bottom: -5px;
+    display: block;
+  }
+ 
+`
 
 export const InfoSection = styled.div`
   max-width: 30%;
@@ -52,6 +86,8 @@ export const InfoSection = styled.div`
 
   @media (max-width: 720px) and (max-width: 1200px) {
     max-width: 100%;
+    width: 100%;
+    border: none;
   }
 `;
 
@@ -123,6 +159,15 @@ export const Description = styled.p`
     border-width: 2px;
     //width: 50px;
     height: 60px;
+  }
+
+  .marcaTamanho {
+    border: solid 1px;
+    border-color: #00ffff;
+    border-radius: 6px;
+    border-width: 2px;
+    //width: 50px;
+    height: 40px;
   }
 
   .slugImg {
@@ -241,11 +286,11 @@ export const Description = styled.p`
 			}
 
 			@media (max-width: 932px) {
-				width: 35%;
+				width: 54%;
         position:fixed;
         bottom: -3px;
         margin-left: 40%;
-        font-size: 15px;
+        font-size: 20px;
         display: block;
 			}
 		}
@@ -268,11 +313,11 @@ export const Description = styled.p`
 
 			@media (max-width: 932px) {
         display: block;
-				width: 46%;
+				width: 50%;
         position:fixed;
         bottom: -3px;
-        margin-left: -5%;
-        font-size: 15px;
+        margin-left: -10%;
+        font-size: 20px;
         text-align: center;
 			}
 		}
@@ -317,6 +362,7 @@ export const ProductDetails = styled.div`
   max-width: 100%;
   text-align: left;
   border: solid 1px;
+  border-radius: 8px;
   
   h2 {
     font-size: 20px;
@@ -330,6 +376,13 @@ export const ProductDetails = styled.div`
 `;
 
 export const RelationsProducts = styled.div`
+  //border: solid 1px;
+
+  @media (max-width: 720px) and (max-width: 1200px) {
+    margin-top: 30px;
+    width: 95%;
+  }
+
   & .divRelation {
     width: 30%;
     border: solid 1px;
@@ -340,6 +393,16 @@ export const RelationsProducts = styled.div`
     border-color:rgba(130, 130, 130, 0.45);
     box-shadow: 0 0 0 0.5px rgba(130, 130, 130, 0.45);
 
+    & .imgRelation {
+      width: 200px;
+      height: 220px;
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        width: 80px;
+        height: 90px;
+      }  
+    }
+
     & .h5Relation {
       margin-top: 15px;
       color: #000000;
@@ -349,6 +412,10 @@ export const RelationsProducts = styled.div`
       display: -webkit-box;
       -webkit-line-clamp: 2; // Quantidade de linhas
       -webkit-box-orient: vertical; 
+
+      @media (max-width: 720px) and (max-width: 1200px) {
+        font-size: 0.8rem;
+      }   
     }
 
     & .oldPrice {
@@ -478,3 +545,43 @@ export const RelationsProducts = styled.div`
     }
   }
 `
+
+ // Estilos do SliderContainer
+ export  const SliderContainer = styled.div`
+    margin-top: -105px;
+    width: 100%;
+    max-width: 85%;
+    //margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-left: 140px;
+    border: solid 1px;
+
+      //Variaveis de tamnahos
+    --tamanho1: 555px;
+    --tamanho2: 250px;
+    --tamanho3: 200px;
+    --tamanho4: 150px;
+    --tamanho5: 350px;
+    --tamanho6: 182px;
+    --tamanho7: 280px;
+    --tamanho8: 360px;
+    --tamanho9: 310px;
+
+    @media (max-width: 768px) and (max-width: 1200px)  {
+      width: var(--tamanho8)
+    }
+  `;
+  
+  // Estilos do Slide (as imagens)
+ export  const Slide = styled.div`
+    display: flex;
+    transition: transform 0.5s ease;
+  `;
+  
+  // Estilo da imagem
+ export  const Image = styled.img`
+    width: 800px;
+    height: 70vh;
+  `;
+

@@ -166,7 +166,7 @@ export const ProductRelacionados = styled.div`
 
     @media (max-width: 923px) {
       width: 30%;
-
+      
       & h5 {
         font-size: 0.9rem;
       }
