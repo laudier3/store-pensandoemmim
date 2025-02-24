@@ -25,7 +25,7 @@ import Footer from "./footer/footer";
 import Cart from "../cart";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
-import { ButtonsDesc } from "./desc";
+//import { ButtonsDesc } from "./desc";
 //import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Container, Description, EspacoTop, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
@@ -395,21 +395,6 @@ export const DescriptionProducts = () => {
     <>
       <Header />
       <MarginTop />
-      {dataProductFilter == "" ? <Example /> : 
-    dataProductFilter.map((res) => {
-      const { id, image } = res;
-
-      const imgList = [
-        image[0],
-        image[1],
-        image[2],
-        image[3],
-        image[4],
-        image[5],
-        image[6],
-      ];
-
-      return (
       <EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
@@ -455,8 +440,6 @@ export const DescriptionProducts = () => {
           </Link>
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
       </EspacoTop>
-      )
-      })}
       <Container>
         <ProductWrapper>
           <ImageSection>
