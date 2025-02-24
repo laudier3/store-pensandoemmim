@@ -18,7 +18,6 @@ export const ProductWrapper = styled.div`
   gap: 20px;
   border-color: #828282;
   border-radius: 6px;
-  border: solid 1px;
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -37,7 +36,6 @@ export const ImageSection = styled.div`
   & img {
     max-width: 100%;
     border-radius: 10px;
-    border: solid 1px;
   }
 
   & p {
@@ -297,7 +295,7 @@ export const Description = styled.p`
         bottom: -3px;
         margin-left: 40%;
         font-size: 20px;
-        //display: block;
+        display: block;
 			}
 		}
 
@@ -318,7 +316,7 @@ export const Description = styled.p`
 			}
 
 			@media (max-width: 932px) {
-        //display: block;
+        display: block;
 				width: 50%;
         position:fixed;
         bottom: -3px;
