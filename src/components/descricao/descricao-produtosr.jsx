@@ -395,7 +395,6 @@ export const DescriptionProducts = () => {
     <>
       <Header />
       <MarginTop />
-      <Container>
       <EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
@@ -439,8 +438,9 @@ export const DescriptionProducts = () => {
             </div>
           
           </Link>
-        
+        <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
       </EspacoTop>
+      <Container>
         <ProductWrapper>
           <ImageSection>
             <ImageProducts>
