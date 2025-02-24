@@ -65,14 +65,13 @@ export const EspacoTop = styled.div`
   @media (max-width: 720px) and (max-width: 1200px) {
     //border: solid 1px;
     width: 100%;
-    height: 50px;
+    height: 60px;
     margin-top: 0px;
     margin-bottom: -5px;
     display: flex;
     position: fixed;
     margin: auto;
     background-image: linear-gradient(#03EBEB, #001414);
-
     //background:rgba(38, 46, 49, 0.4);
   }
  

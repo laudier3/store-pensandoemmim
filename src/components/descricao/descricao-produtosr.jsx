@@ -398,7 +398,7 @@ export const DescriptionProducts = () => {
       <EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
-            marginTop: 10,
+            marginTop: 25,
             fontSize: 25,
             marginLeft: "10px",
             color: "white",
@@ -413,7 +413,7 @@ export const DescriptionProducts = () => {
                 height: 18,
                 width: 16,
                 textAlign: "center",
-                marginTop: 17,
+                marginTop: 32,
                 marginLeft: 300,
                 fontWeight: "bold",
                 color: "#000000",
@@ -425,14 +425,14 @@ export const DescriptionProducts = () => {
                   color: "white", 
                   fontSize: 30, 
                   marginLeft: 290,
-                  marginTop: 10,
+                  marginTop: 25,
                 }} />
               ) : (
                 <SlBasket style={{ 
                   color: "white",
                   fontSize: 30,
                   marginLeft: 290, 
-                  marginTop: 10 
+                  marginTop: 25 
                 }} />
               )}
             </div>
