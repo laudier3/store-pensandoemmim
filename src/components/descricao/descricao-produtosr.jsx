@@ -26,7 +26,8 @@ import Cart from "../cart";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 import { ButtonsDesc } from "./desc";
-import { FaArrowLeftLong } from "react-icons/fa6";
+//import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Container, Description, EspacoTop, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 
@@ -394,42 +395,70 @@ export const DescriptionProducts = () => {
     <>
       <Header />
       <MarginTop />
+      {dataProductFilter == "" ? <Example /> : 
+    dataProductFilter.map((res) => {
+      const { id, image } = res;
+
+      const imgList = [
+        image[0],
+        image[1],
+        image[2],
+        image[3],
+        image[4],
+        image[5],
+        image[6],
+      ];
+
+      return (
+      <EspacoTop>
+        <Link to="/">
+          <FaArrowAltCircleLeft style={{
+            marginTop: 10,
+            fontSize: 25,
+            marginLeft: "10px",
+            color: "white",
+          }} />
+        </Link>
+        <Link to="/cartFinali">
+          
+            <div onClick={handleCartClick}>
+              {length === 0 ? "" : <b style={{
+                fontSize: 12, 
+                borderRadius: 50,
+                height: 18,
+                width: 16,
+                textAlign: "center",
+                marginTop: 17,
+                marginLeft: 300,
+                fontWeight: "bold",
+                color: "#000000",
+                position: "absolute",
+                //border: "solid 1px"
+              }}>{length}</b>}
+              {length > 0 ? (
+                <SlBasketLoaded style={{ 
+                  color: "white", 
+                  fontSize: 30, 
+                  marginLeft: 290,
+                  marginTop: 10,
+                }} />
+              ) : (
+                <SlBasket style={{ 
+                  color: "white",
+                  fontSize: 30,
+                  marginLeft: 290, 
+                  marginTop: 10 
+                }} />
+              )}
+            </div>
+          
+          </Link>
+        <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+      </EspacoTop>
+      )
+      })}
       <Container>
         <ProductWrapper>
-          <EspacoTop>
-            <Link to="/cartFinali">
-              <ButtonsDesc>
-              <Link to="/">
-                <FaArrowLeftLong style={{
-                  position: "absolute", 
-                  marginTop: 10,
-                  fontSize: 25,
-                  marginLeft: "-330px",
-                  color: "#000000",
-                }} />
-              </Link>
-                <div onClick={handleCartClick}>
-                  {length === 0 ? "" : <b style={{
-                    fontSize: 16, 
-                    borderRadius: 50,
-                    height: 18,
-                    width: 16,
-                    textAlign: "center",
-                    marginTop: 9,
-                    marginLeft: 14,
-                    fontWeight: "bold",
-                    color: "#000000",
-                  }}>{length}</b>}
-                  {length > 0 ? (
-                    <SlBasketLoaded style={{ color: "#000000", fontSize: 40, marginLeft: "-2px" }} />
-                  ) : (
-                    <SlBasket style={{ color: "#000000", fontSize: 40 }} />
-                  )}
-                </div>
-              </ButtonsDesc>
-              </Link>
-            <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
-          </EspacoTop>
           <ImageSection>
             <ImageProducts>
               {/*<img id="logo" src={imgs[0]} alt="img"/>*/}
@@ -449,6 +478,7 @@ export const DescriptionProducts = () => {
                
                   return (
                     <Swiper
+                      style={{marginTop: 60}}
                       className="padraoImg"
                       grabCursor={true}
                       effect={"creative"}

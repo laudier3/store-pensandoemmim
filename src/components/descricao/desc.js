@@ -638,8 +638,9 @@ export const ButtonsDesc = styled.div`
 
   @media (max-width: 923px){
     width: 40px;
-    margin-left: 320px;
-    position: absolute;
+    margin-left: 335px;
+    margin-top: 10px;
+    //position: absolute;
   }
 `;
 
