@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
-import { FaCreditCard } from "react-icons/fa";
+//import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
 import imgcart from "./images/card.jpg";
 import { RelationsProducts } from "./styles/componentDescription";
@@ -74,7 +74,7 @@ export function Realacionandos() {
         return (
           <Link to={"/desc/" + id}>
             <div key={id} className="divRelation">
-              <img src={image[0]} alt="img" className="imgRelatio" />
+              <img src={image[0]} alt="img" className="imgRelation" />
               <h5 className="h5Relation">{name}</h5>
               <b className="frete">Frete Gratis</b>
               <img src={imgcart} alt="img" className="cartImg" />

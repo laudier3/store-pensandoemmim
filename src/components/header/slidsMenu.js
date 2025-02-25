@@ -107,7 +107,7 @@ export const Coontainer = styled.div`
         text-decoration: none;
 
         @media (max-width: 923px){
-          font-size: 10px;
+          font-size: 9px;
           margin-left: 10px;
           text-align: center;
         }
