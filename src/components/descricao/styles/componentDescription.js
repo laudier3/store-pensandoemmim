@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,7 +276,7 @@ export const Description = styled.p`
     & .buttonCompraPhone {
       display: none;
 			border: none;
-			width: 100%;
+			//width: 100%;
 			background-image: linear-gradient(#03EBEB, #001414);
 			margin: 2px;
 			padding: 10px;
@@ -290,7 +291,7 @@ export const Description = styled.p`
 			}
 
 			@media (max-width: 932px) {
-				width: 54%;
+				width: 50%;
         position:fixed;
         bottom: -3px;
         margin-left: 40%;

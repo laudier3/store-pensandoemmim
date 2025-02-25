@@ -22,7 +22,7 @@ import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
 import { MarginTop, ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
-import Cart from "../cart";
+//import Cart from "../cart";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 //import { ButtonsDesc } from "./desc";
@@ -30,6 +30,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Container, Description, EspacoTop, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
+import * as JivoSite from "react-jivosite";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -50,7 +51,7 @@ export const DescriptionProducts = () => {
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
   const [bordersTamnho, setBorderTamnho] = useState("");
-  const [cartIsVisible, setCartIsVisible] = useState(false);
+  const [ setCartIsVisible] = useState(false);
 
   /*window.addEventListener("click", () => {
     window.history.go(-1);
@@ -395,6 +396,8 @@ export const DescriptionProducts = () => {
     <>
       <Header />
       <MarginTop />
+      {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
+      <JivoSite.Widget id="OArtCYonnR" /> 
       <EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
@@ -438,7 +441,7 @@ export const DescriptionProducts = () => {
             </div>
           
           </Link>
-        <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
+        
       </EspacoTop>
       <Container>
         <ProductWrapper>

@@ -49,13 +49,14 @@ export const TitleProduct = styled.div`
 `
 
 export const ProductProd = styled.div`
-  width: 85vw;
+  width: 80%;
   display: flex;
   margin: auto;
   background: white;
   margin-top: 50px;
   border-radius: 6px;
   padding: 12px;
+  border: "solid 1px";
 
   @media (max-width: 1650px) {
     width: 93.5%;
@@ -82,22 +83,19 @@ export const ProductProd = styled.div`
     }
 
     & div {
-      width: 220px;
+      width: 12%;
       height: 230px;
       display: inline-block;
       margin-left: 10px;
       margin-top: 20px;
       text-align: center;
       font-weight: bold;
+      border: "solid 1px";
 
       &:hover {
         background-color: #f8f8f8;
         border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-
-        @media (max-width: 923px) {
-          width: 110px;
-        }
+        //box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       }
 
       & img {
