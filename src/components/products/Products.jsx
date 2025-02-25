@@ -9,7 +9,7 @@ import "./styles.css";
 import api from "../../api/api";
 import { HeaderList } from "../header/indexList";
 import "react-html5video/dist/styles.css";
-import * as JivoSite from "react-jivosite";
+//import * as JivoSite from "react-jivosite";
 
 export const Products = () => {
   useEffect(() => {
@@ -176,7 +176,7 @@ export const Products = () => {
             <hr />
           </TitleProduct>*/}
           
-          <JivoSite.Widget id="OArtCYonnR" /> 
+          {/*<JivoSite.Widget id="OArtCYonnR" /> */}
           <ProductProd>
             <main>
               {ShortFemininos[0]?.map((res) =>

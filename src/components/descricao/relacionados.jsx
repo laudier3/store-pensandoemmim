@@ -74,7 +74,7 @@ export function Realacionandos() {
         return (
           <Link to={"/desc/" + id}>
             <div key={id} className="divRelation">
-              <img src={image[0]} alt="img" className="imgRelation" />
+              <img src={image[0]} alt="img" className="imgRelatio" />
               <h5 className="h5Relation">{name}</h5>
               <b className="frete">Frete Gratis</b>
               <img src={imgcart} alt="img" className="cartImg" />

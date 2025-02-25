@@ -56,7 +56,7 @@ export const ProductProd = styled.div`
   margin-top: 50px;
   border-radius: 6px;
   padding: 12px;
-  border: "solid 1px";
+  //border: "solid 1px";
 
   @media (max-width: 1650px) {
     width: 93.5%;
@@ -69,6 +69,7 @@ export const ProductProd = styled.div`
   & main {
     width: 100%;
     text-align: center;
+    border: "solid 1px";
   
     & h2 {
       font-weight: bold;
@@ -171,7 +172,7 @@ export const ProductProd = styled.div`
     }
 
     & .oldPricereal {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       flex-grow: 1;
       font-weight: bold;
@@ -221,11 +222,6 @@ export const ProductProd = styled.div`
     }
     
     & .oldPricereal {
-      font-size: 1.2rem;
-      flex-grow: 1;
-      color: #000000;
-      opacity: 0.7;
-      padding: 3px;
       
     }
     
