@@ -59,7 +59,7 @@ export const ProductProd = styled.div`
   //border: "solid 1px";
 
   @media (max-width: 1650px) {
-    width: 93.5%;
+    width: 100%;
   }
 
   @media (max-width: 923px) {
@@ -231,11 +231,11 @@ export const ProductProd = styled.div`
       width: 30%;
 
       & h5 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
       }
 
       & .oldPricereal {
-        font-size: 1.1;
+        font-size: 0.9rem;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;
@@ -255,7 +255,7 @@ export const ProductProd = styled.div`
         color: #000000;
         opacity: 0.7;
         padding: 3px;
-  
+        margin-top: 5px;
       }
 
       & b {
