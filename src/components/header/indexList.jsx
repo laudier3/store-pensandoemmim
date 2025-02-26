@@ -75,8 +75,8 @@ export function HeaderList() {
           </li>
         </ul>
         <SlidsProducts/>
+        </ContainerPRT>
         <SlidsMenu />
-      </ContainerPRT>
     </>
   );
 }

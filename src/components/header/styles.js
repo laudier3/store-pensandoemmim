@@ -4,12 +4,12 @@ export const ContainerPai = styled.div`
     display: contents;
     
     @media (max-width: 720px) {
-      display: none;
+      //display: none;
     }
 `
 
 export const ContainerSearch = styled.div`
-margin-top: 2px;
+  margin-top: 2px;
   width: 200px;
   display: inline-block;
 
@@ -54,6 +54,7 @@ export const Container = styled.div`
   color: #eee;
   padding: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border: none;
   //border: solid 1px;
 
   & .bg {
@@ -211,6 +212,7 @@ export const ContainerAMR = styled.div`
   padding: 2px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
+  border: none;
 
   & .img3 {
     position: absolute;
@@ -298,6 +300,7 @@ export const ContainerPRT = styled.div`
   justify-content: space-between;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  border: none;
 
   & ul {
     text-align: center;

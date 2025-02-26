@@ -69,7 +69,6 @@ export const ProductProd = styled.div`
   & main {
     width: 100%;
     text-align: center;
-    border: "solid 1px";
   
     & h2 {
       font-weight: bold;
@@ -84,14 +83,17 @@ export const ProductProd = styled.div`
     }
 
     & div {
-      width: 12%;
+      width: 14%;
       height: 230px;
       display: inline-block;
-      margin-left: 10px;
+      padding: 5px;
       margin-top: 20px;
       text-align: center;
       font-weight: bold;
       border: "solid 1px";
+      border-radius: 8px;
+      border-color: red;
+      border-width: 10px;
 
       &:hover {
         background-color: #f8f8f8;
@@ -101,9 +103,10 @@ export const ProductProd = styled.div`
 
       & img {
         width: 100%;
-        height: 30vh;
+        height: 26vh;
         border-radius: 1px;
         margin-bottom: 5px;
+        border-radius: 8px;
       }
 
       & h5 {

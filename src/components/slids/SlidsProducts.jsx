@@ -2,7 +2,7 @@ import React from "react";
 import { ContainerSlid } from "./slidsProducts";
 import img1 from "./images/Black Friday Ecommerce Website Banner Design.psd (1).png"
 import img2 from "./images/E- Commerce Product Facebook Cover Design.psd.png"
-import img3 from "./images/freepik__a-transparent-banner-for-an-ecommerce-site-styled-__38119.png"
+import img3 from "./images/banner-25.png"
 
 export default function SlidsProducts() {
   return (
@@ -26,6 +26,9 @@ export default function SlidsProducts() {
             </div>
             <div className="carousel-item">
               <img src={img2} className="d-block w-100" alt="img" />
+            </div>
+            <div className="carousel-item">
+              <img src={img3} className="d-block w-100" alt="img" />
             </div>
           </ContainerSlid>
         </div>

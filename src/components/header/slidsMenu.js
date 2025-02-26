@@ -4,13 +4,14 @@ import styled from "styled-components"
 
 export const Coontainer = styled.div`
   //background-image: linear-gradient(#03EBEB, #000000);
-  background-image: linear-gradient(#001414,rgb(33, 128, 128));
+  background-image: linear-gradient(#001414,rgb(33, 128, 128), #EDEDED);
   //background-color: transparent;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
+  border: none;
   //margin-top: 10px;
 
   @media(max-width: 768px) {
@@ -93,7 +94,7 @@ export const Coontainer = styled.div`
       
       & span {
         text-decoration: none;
-        color: #fff;
+        color: #000000;
         text-align: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }

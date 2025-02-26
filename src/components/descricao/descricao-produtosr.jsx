@@ -398,7 +398,7 @@ export const DescriptionProducts = () => {
       <MarginTop />
       {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
       <JivoSite.Widget id="OArtCYonnR" /> 
-      <EspacoTop>
+      {/*<EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
             marginTop: 25,
@@ -442,7 +442,7 @@ export const DescriptionProducts = () => {
           
           </Link>
         
-      </EspacoTop>
+      </EspacoTop>*/}
       <Container>
         <ProductWrapper>
           <ImageSection>
