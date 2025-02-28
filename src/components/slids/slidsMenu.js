@@ -34,7 +34,7 @@ export const Coontainer = styled.div`
       display: flex;
       margin: auto;
       overflow-x: auto;
-      background: red;
+      //background: red;
     }
 
     &::-webkit-scrollbar {

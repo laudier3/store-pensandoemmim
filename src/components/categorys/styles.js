@@ -63,7 +63,7 @@ export const ProductProd = styled.div`
 
   @media (max-width: 923px) {
     width: 100%;
-    border: solid 1px;
+    //border: solid 1px;
   }
 
   & section {

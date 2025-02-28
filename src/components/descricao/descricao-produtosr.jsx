@@ -20,12 +20,13 @@ import { EffectCreative } from "swiper/modules";
 import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
-import { MarginTop, ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
+import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
 import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
+import { BrowserHistory } from 'react-history'
 //import ReactImageZoom from 'react-image-zoom';
 //import Cart from "../cart";
 //import { SlBasket, SlBasketLoaded } from "react-icons/sl";
@@ -53,6 +54,14 @@ export const DescriptionProducts = () => {
   const [borders, setBorder] = useState("");
   const [bordersTamnho, setBorderTamnho] = useState("");
   //const [ setCartIsVisible] = useState(false);
+
+  <BrowserHistory
+    basename=""               // The base URL of the app (see below)
+    forceRefresh={false}      // Set true to force full page refreshes
+    keyLength={6}             // The length of location.key
+    // A function to use to confirm navigation with the user (see below)
+    getUserConfirmation={(message, callback) => callback(window.confirm(message))}
+  />
 
   /*window.addEventListener("click", () => {
     window.history.go(-1);
@@ -396,7 +405,6 @@ export const DescriptionProducts = () => {
   return (
     <>
       <Header />
-      <MarginTop />
       {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
      {<JivoSite.Widget id="OArtCYonnR" />}
       {/*<EspacoTop>
