@@ -4,14 +4,15 @@ import styled from "styled-components"
 
 export const Coontainer = styled.div`
   //background-image: linear-gradient(#03EBEB, #000000);
-  background-image: linear-gradient(#001414,rgb(33, 128, 128));
+  background-image: linear-gradient(#001414,rgb(33, 128, 128), #EDEDED);
   //background-color: transparent;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: -16px;
+  border: none;
+  //margin-top: 10px;
 
   @media(max-width: 768px) {
     height: 100px;
@@ -30,11 +31,9 @@ export const Coontainer = styled.div`
 
     @media (max-width: 923px) and (max-width: 1200px) {
       width: 100%;
-      height: 100%;
       display: flex;
       margin: auto;
-      overflow-x: auto;
-      //background: red;
+      overflow-x: auto
     }
 
     &::-webkit-scrollbar {
@@ -46,20 +45,19 @@ export const Coontainer = styled.div`
       margin: auto;
       display: flex;
       padding: 10px;
-      width: 70px;
+      width: 60px;
       height: 7vh;
       border-radius: 50px;
       flex: none;
       cursor: pointer;
       color: aqua;
-      margin-top: 40px;
+      margin-top: 5px;
       text-decoration-line: none;
       border: solid 1px;
 
-      @media (max-width: 720px) and (max-width: 1200px){
-        margin-top: 14px;
+      @media (max-width: 923px) and (max-width: 1200px)  {
+        width: 50px;
       }
-
       
       &:hover {
         background-color: darkgray;
@@ -76,12 +74,12 @@ export const Coontainer = styled.div`
         }
         @media (max-width: 768px) {
           & img {
-            width: 55px;
+            width: 40px;
             height: 6vh;
             object-fit: cover;
             border-radius: 60px;
-            margin-left: -5px;
-            margin-top: -6px;
+            margin-left: -6px;
+            margin-top: -8px;
           }
         }
       }
@@ -96,7 +94,7 @@ export const Coontainer = styled.div`
       
       & span {
         text-decoration: none;
-        color: #fff;
+        color: #000000;
         text-align: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
@@ -108,14 +106,11 @@ export const Coontainer = styled.div`
         cursor: pointer;
         padding: 5px;
         text-decoration: none;
-        //border: solid 1px;
-        margin-bottom: 20px;
 
-        @media (max-width: 720px) and (max-width: 1200px){
-          font-size: 10px;
+        @media (max-width: 923px){
+          font-size: 9px;
           margin-left: 10px;
           text-align: center;
-          margin-bottom: 400px;
         }
       }
 
