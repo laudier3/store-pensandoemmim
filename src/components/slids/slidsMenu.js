@@ -30,9 +30,11 @@ export const Coontainer = styled.div`
 
     @media (max-width: 923px) and (max-width: 1200px) {
       width: 100%;
+      height: 100%;
       display: flex;
       margin: auto;
-      overflow-x: auto
+      overflow-x: auto;
+      background: red;
     }
 
     &::-webkit-scrollbar {

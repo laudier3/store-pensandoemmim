@@ -22,15 +22,16 @@ import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
 import { MarginTop, ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
-//import Cart from "../cart";
-import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
-//import { ButtonsDesc } from "./desc";
-//import { FaArrowLeftLong } from "react-icons/fa6";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
-import { Container, Description, EspacoTop, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
+import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
+//import ReactImageZoom from 'react-image-zoom';
+//import Cart from "../cart";
+//import { SlBasket, SlBasketLoaded } from "react-icons/sl";
+//import { ButtonsDesc } from "./desc";
+//import { FaArrowLeftLong } from "react-icons/fa6";
+//import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -51,7 +52,7 @@ export const DescriptionProducts = () => {
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
   const [bordersTamnho, setBorderTamnho] = useState("");
-  const [ setCartIsVisible] = useState(false);
+  //const [ setCartIsVisible] = useState(false);
 
   /*window.addEventListener("click", () => {
     window.history.go(-1);
@@ -65,11 +66,11 @@ export const DescriptionProducts = () => {
   //  Navigate("/")
   //}
 
-  const handleCartClick = () => {
+  /*const handleCartClick = () => {
     setCartIsVisible(true);
-  };
+  };*/
 
-  const length = useSelector((state) => state.cart.cartItems.length);
+  //const length = useSelector((state) => state.cart.cartItems.length);
 
   /*const [visitorCount, setVisitorCount] = useState(0);
   const [city, setCity] = useState('');
@@ -397,7 +398,7 @@ export const DescriptionProducts = () => {
       <Header />
       <MarginTop />
       {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
-      <JivoSite.Widget id="OArtCYonnR" /> 
+     {<JivoSite.Widget id="OArtCYonnR" />}
       {/*<EspacoTop>
         <Link to="/">
           <FaArrowAltCircleLeft style={{
@@ -452,6 +453,8 @@ export const DescriptionProducts = () => {
                 dataProductFilter.map((res) => {
                   const { id, image } = res;
 
+                  //const props = {width: 700, height: 350, zoomWidth: 2000, img: image[0]}
+
                   const imgList = [
                     image[0],
                     image[1],
@@ -463,8 +466,9 @@ export const DescriptionProducts = () => {
                   ];
                
                   return (
+                    <>
+                    {/*<ReactImageZoom {...props} />*/}
                     <Swiper
-                      style={{marginTop: 60}}
                       className="padraoImg"
                       grabCursor={true}
                       effect={"creative"}
@@ -491,6 +495,7 @@ export const DescriptionProducts = () => {
                         
                       ))}
                     </Swiper>
+                    </>
                   )
               })}
             </ImageProducts>
