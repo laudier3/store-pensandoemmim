@@ -42,7 +42,7 @@ export const ImageProducts = styled.div`
     @media (max-width: 720px) and (max-width: 1200px)  {
       width: 380px;
       margin-left: -32px;
-      border: solid 1px;
+      //border: solid 1px;
       margin-top: -15px;
     }
   }
