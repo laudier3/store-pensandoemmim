@@ -3,7 +3,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
-import logosimples from "./images/LogoTop2.png";
+import logosimples from "./images/Logo.png";
 
 // Styles
 import { Container, Logo, ContainerAMR, ContainerPRT } from "./styles";
@@ -18,7 +18,7 @@ export function HeaderList() {
         <Logo>
           <a href="/desc/id" className="a-color">
             <img src={logosimples} alt="img" className="img3" />
-            PensandoEmMim
+            
           </a>
         </Logo>
         <a href="/" style={{ fontSize: 13 }}>
