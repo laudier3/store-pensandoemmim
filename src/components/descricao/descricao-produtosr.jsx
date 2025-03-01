@@ -93,10 +93,10 @@ export const DescriptionProducts = () => {
   };*/
 
 
-  if (!window.location.hash) {
-    window.location = window.location + "#products#description";
-    window.location.reload();
-  }
+  //if (!window.location.hash) {
+  //  window.location = window.location + "#products#description";
+  //  window.location.reload();
+  //}
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
@@ -107,6 +107,8 @@ export const DescriptionProducts = () => {
   let parts = url.split("/");
   let lastPart2 = parts.pop() || parts.pop();
   //console.log(lastPart2);
+
+  window.history.pushState({}, "", `/desc/${lastPart2}`);
 
   const navigate = useNavigate();
 

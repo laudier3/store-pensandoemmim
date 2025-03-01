@@ -42,7 +42,6 @@ import { Ferramenta } from "./components/categorys/Ferramenta";
 import { Shortm } from "./components/categorys/Shortm";
 import { Calcam } from "./components/categorys/Calcam";
 import { ContainerAppPai } from "./stylesComponents";
-//import { HistoryProvider } from "./components/Context/HistoryContext";
 
 //console.log("teste ls")
 
