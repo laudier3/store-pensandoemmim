@@ -5,7 +5,7 @@ import api from "../../api/api";
 //import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
 import imgcart from "./images/card.jpg";
-import { RelationsProducts } from "./styles/componentDescription";
+import { RelationsProducts } from "../leadPage/styles/componentDescription";
 //import { useNavigate } from "react-router-dom"
 //import { LoadingPage } from "../products/products";
 //import ReactLoading from "react-loading";

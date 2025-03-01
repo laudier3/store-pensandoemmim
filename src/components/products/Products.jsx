@@ -189,7 +189,7 @@ export const Products = () => {
                   let novo_price = price - aumento;
 
                   return (
-                    <Link to={"/desc/" + id}>
+                    <Link to={`/desc/${id}`}>
                       <div key={id}>
                         <img src={image[0]} alt="img" />
                         <h5>{name}</h5>

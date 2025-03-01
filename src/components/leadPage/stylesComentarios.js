@@ -1,8 +1,27 @@
 import styled from "styled-components";
 
+export const ContainerComentarioPai = styled.div`
+  margin: auto;
+  display: flex;
+  width: 90%;
+  margin-top: 5%;
+`
+
+
 export const ContainerComentario = styled.div`
   margin-top:60px;
-  padding: 5px;
+  padding: 25px;
+  background-color: Gainsboro;
+  display: inline-block;
+  margin: 20px;
+  width: 300px;
+  border: solid 0.5px;
+  border-radius: 5px;
+
+  @media(max-width: 923px) {
+    width: 100%;
+    margin: 5px;
+  }
 
   & .btnButtonModalImageComentario {
     border: none;
@@ -29,11 +48,12 @@ export const ContainerComentario = styled.div`
     display: inline-block;
     border: solid 1px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (max-width: 1200px) {
       width: 10%;
       font-size: 2.5vw;
       border-radius: 50%;
-      height: 40px;
+      height: 30px;
+      margin-top: -120x;
     }
   }
 
@@ -49,8 +69,13 @@ export const ContainerComentario = styled.div`
   }
 
   & p {
-    font-size: 1.2vw;
+    font-size: 1vw;
     display: inline-block;
+    overflow: hidden; // Removendo barra de rolagem
+    text-overflow: ellipsis; // Adicionando "..." ao final
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Quantidade de linhas
+    -webkit-box-orient: vertical; 
 
     @media (max-width: 768px) {
       font-size: 2.5vw;
@@ -58,14 +83,14 @@ export const ContainerComentario = styled.div`
   }
 
   & .imgList {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 60px;
     margin: 3px;
     border-radius: 8px;
 
     @media (max-width: 923px) {
-      width: 80px;
-      height: 100px;
+      width: 40px;
+      height: 40px;
       margin: 3px;
       border-radius: 8px;
     }

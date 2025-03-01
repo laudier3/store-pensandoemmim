@@ -2,7 +2,6 @@
 /* eslint-disable eqeqeq */
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-//import LocationOnIcon from "@material-ui/icons/LocationOn";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
@@ -23,9 +22,13 @@ import "react-html5video/dist/styles.css";
 import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
 import { FaCartPlus } from "react-icons/fa";
-import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
+import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "../leadPage/styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
+//import { ProduVideoPlay, ProduVideoPlay2 } from './ReactVideoPlay'
+//import { DefaultPlayer  as Video } from "react-html5video"
+//import "react-html5video/dist/styles.css"
+//import LocationOnIcon from "@material-ui/icons/LocationOn";
 //import ReactImageZoom from 'react-image-zoom';
 //import Cart from "../cart";
 //import { SlBasket, SlBasketLoaded } from "react-icons/sl";
@@ -461,7 +464,6 @@ export const DescriptionProducts = () => {
                     image[3],
                     image[4],
                     image[5],
-                    image[6],
                   ];
                
                   return (
@@ -523,14 +525,6 @@ export const DescriptionProducts = () => {
                   document.getElementById("logo").src = `${image[4] || image[5]}`;
                 }
 
-                function over5() {
-                  document.getElementById("logo").src = `${image[5] || image[2]}`;
-                }
-
-                function over6() {
-                  document.getElementById("logo").src = `${image[6] || image[0]}`;
-                }
-
                 return (
                   <div>
                     <ProductImageMini2>
@@ -580,24 +574,16 @@ export const DescriptionProducts = () => {
                           />
                         </div> : ""
                         }
-                        {image[5] ? 
-                        <div className="imgMini">
-                          <img
-                            src={image[5] || image[1]}
-                            alt="img0"
-                            onMouseOver={() => over5(over5)}
-                          />
-                        </div> : ""
-                        }
-                        {image[6] ? 
+                        {/*
+                          image[5] ? 
                           <div className="imgMini">
-                            <img
-                              src={image[6] || image[1]}
-                              alt="img0"
-                              onMouseOver={() => over6(over6)}
-                            />
+                            <ProduVideoPlay>
+                              <Video>
+                                <source src={image[5]} type='video/webm'/>
+                              </Video>
+                            </ProduVideoPlay>
                           </div> : ""
-                        }
+                        */}
                       </div>
                     </ProductImageMini2>
                     

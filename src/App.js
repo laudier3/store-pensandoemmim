@@ -42,8 +42,6 @@ import { Ferramenta } from "./components/categorys/Ferramenta";
 import { Shortm } from "./components/categorys/Shortm";
 import { Calcam } from "./components/categorys/Calcam";
 import { ContainerAppPai } from "./stylesComponents";
-import { FeedXML } from "./feedXML/FreedXML";
-
 
 //console.log("teste ls")
 
@@ -82,11 +80,6 @@ function App() {
     {
       path: "/",
       element: <Products />,
-    },
-
-    {
-      path: "/feedxml",
-      element: <FeedXML />,
     },
 
     {
