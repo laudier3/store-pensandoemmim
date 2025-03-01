@@ -25,6 +25,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "../leadPage/styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
+import { useEffect } from "react";
 //import { ProduVideoPlay, ProduVideoPlay2 } from './ReactVideoPlay'
 //import { DefaultPlayer  as Video } from "react-html5video"
 //import "react-html5video/dist/styles.css"
@@ -109,6 +110,18 @@ export const DescriptionProducts = () => {
   //console.log(lastPart2);
 
   window.history.pushState({}, "", `/desc/${lastPart2}`);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      return window.history.pushState({}, "", `/`) || window.location.reload()
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   const navigate = useNavigate();
 
