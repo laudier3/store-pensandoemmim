@@ -9,9 +9,6 @@ export function SlidsMenu() {
   const [data, setData] = useState([]);
   const carrousel = useRef(null);
 
-  //const convertName = data[13].name.slice(6)
-  //console.log(convertName)
-
   const { isLoading } = useQuery("meuproduto", async () => {
     const req = await api.get(`/category`);
     const res = await req.data;
@@ -24,18 +21,6 @@ export function SlidsMenu() {
   });
 
   if (!data || !data.length) return null;
-
-  //const hendleLeftClik = (e) => {
-  //  e.preventDefault();
-  //  carrousel.current.scrollLeft -= carrousel.current.offsetWidth;
-  //};
-  //const hendleRigthClik = (e) => {
-  //  e.preventDefault();
-  //  carrousel.current.scrollLeft += carrousel.current.offsetWidth;
-  //};
-
-  //console.log(data, "jhgjghg");
-  //console.clear()
 
   return (
     <>

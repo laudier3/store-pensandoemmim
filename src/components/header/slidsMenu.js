@@ -12,10 +12,11 @@ export const Coontainer = styled.div`
   justify-content: center;
   margin: auto;
   border: none;
-  //margin-top: 10px;
+  margin-top: -90px;
 
   @media(max-width: 768px) {
     height: 100px;
+    margin-top: -76px;
   }
 
   & .carousel {
@@ -56,7 +57,8 @@ export const Coontainer = styled.div`
       border: solid 1px;
 
       @media (max-width: 923px) and (max-width: 1200px)  {
-        width: 50px;
+        width: 35px;
+        height: 35px;
       }
       
       &:hover {
@@ -74,12 +76,12 @@ export const Coontainer = styled.div`
         }
         @media (max-width: 768px) {
           & img {
-            width: 40px;
-            height: 6vh;
+            width: 30px;
+            height: 4vh;
             object-fit: cover;
             border-radius: 60px;
-            margin-left: -6px;
-            margin-top: -8px;
+            margin-left: -9px;
+            margin-top: -13px;
           }
         }
       }
@@ -108,8 +110,8 @@ export const Coontainer = styled.div`
         text-decoration: none;
 
         @media (max-width: 923px){
-          font-size: 9px;
-          margin-left: 10px;
+          font-size: 5px;
+          //margin-left: 2px;
           text-align: center;
         }
       }
