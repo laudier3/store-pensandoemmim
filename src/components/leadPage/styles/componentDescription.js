@@ -574,7 +574,7 @@ export const RelationsProducts = styled.div`
     --tamanho9: 310px;
 
     @media (max-width: 768px) and (max-width: 1200px)  {
-      width: var(--tamanho8)
+      width: var(--tamanho8);
     }
   `;
   

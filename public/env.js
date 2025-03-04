@@ -86,7 +86,7 @@ window.env = {
   "npm_package_browserslist_development_0": "last 1 chrome version",
   "npm_package_dependencies_axios": "^1.5.1",
   "npm_package_dependencies__fortawesome_react_fontawesome": "^0.1.14",
-  "PATH": "/tmp/yarn--1740962104725-0.5226543646029358:/home/hk/projetos/store-pensandoemmim/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/root/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts",
+  "PATH": "/tmp/yarn--1741052555100-0.08678538811856895:/home/hk/projetos/store-pensandoemmim/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/root/.vscode/extensions/ms-python.debugpy-2025.0.1-linux-x64/bundled/scripts/noConfigScripts",
   "NODE": "/usr/bin/node",
   "npm_package_browserslist_development_1": "last 1 firefox version",
   "npm_package_dependencies_swiper": "^11.0.7",

@@ -210,7 +210,7 @@ export const ContainerAMR = styled.div`
   justify-content: space-between;
   color: #eee;
   padding: 2px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
   border: none;
 

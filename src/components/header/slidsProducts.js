@@ -178,13 +178,13 @@ export const buttonContainer = styled.button`
 
 export const ContainerSlid = styled.div`
 width: 100%;
-margin-top: 2px;
+//margin-top: 2px;
 
   & .imgSlids {
     height: 70vh;
 
     @media (max-width: 968px)  {
-      height: 30vh;
+      height: 22vh;
     }
   }
 

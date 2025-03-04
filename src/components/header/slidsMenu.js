@@ -7,22 +7,24 @@ export const Coontainer = styled.div`
   background-image: linear-gradient(#001414,rgb(33, 128, 128), #EDEDED);
   //background-color: transparent;
   width: 100%;
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  //margin: auto;
   border: none;
-  margin-top: -90px;
+  margin-top: -100px;
 
   @media(max-width: 768px) {
-    height: 100px;
-    margin-top: -76px;
+    height: 30px;
+    margin-top: -42px;
   }
 
   & .carousel {
     //border: solid 1px;
     width: 82%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -46,8 +48,8 @@ export const Coontainer = styled.div`
       margin: auto;
       display: flex;
       padding: 10px;
-      width: 60px;
-      height: 7vh;
+      width: 65px;
+      height: 65px;
       border-radius: 50px;
       flex: none;
       cursor: pointer;
@@ -67,8 +69,8 @@ export const Coontainer = styled.div`
 
       & .image {
         & img {
-          width: 50px;
-          height: 6vh;
+          width: 55px;
+          height: 55px;
           object-fit: cover;
           border-radius: 60px;
           margin-left: -5px;
@@ -110,9 +112,11 @@ export const Coontainer = styled.div`
         text-decoration: none;
 
         @media (max-width: 923px){
-          font-size: 5px;
-          //margin-left: 2px;
+          font-size: 10px;
+          margin-left: -6px;
           text-align: center;
+          width: 50px;
+          //border: 1px solid red;
         }
       }
 
