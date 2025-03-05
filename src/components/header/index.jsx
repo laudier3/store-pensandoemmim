@@ -4,10 +4,10 @@ import { BsTruck } from "react-icons/bs";
 import { BsJournalText } from "react-icons/bs";
 import { LuPackageSearch } from "react-icons/lu";
 import logosimples from "./images/LogoTop2.png";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
+//import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 // Styles
-import { Logo, ContainerAMR, ContainerPRT, ContainerPai, MostrarOcutar } from "./styles";
+import { Logo, ContainerAMR, ContainerPRT, ContainerPai } from "./styles";
 import { SeartResults } from "./SeartResults";
 
 export function Header() {
