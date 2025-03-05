@@ -257,6 +257,7 @@ export const TableCartFinalize = styled.div`
           & img {
             width: 60%;
             height: 90px;
+            margin-top: 5px;
           }
           //margin-top: -5px;
         }
