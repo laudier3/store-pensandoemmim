@@ -10,15 +10,15 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Logo, ContainerAMR, ContainerPRT, ContainerPai, MostrarOcutar } from "./styles";
 import { SeartResults } from "./SeartResults";
 
-export function Header() {
+export function HeaderDesc() {
   return (
     <ContainerPai>
       <ContainerAMR>
         <Logo>
           <a href="/" className="a-color">
-          {/*<MostrarOcutar>
+          <MostrarOcutar>
             <FaArrowAltCircleLeft />
-          </MostrarOcutar>*/}
+          </MostrarOcutar>
             <img src={logosimples} alt="img" className="img3" />
             PensandoEmMim
           </a>

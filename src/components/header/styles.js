@@ -164,10 +164,19 @@ export const Logo = styled.div`
 
     @media (max-width: 923px) {
       font-size: 7vw;
-      margin-left: -15px;
+      margin-left: 25px;
     }
   }
 `;
+
+export const MostrarOcutar = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+  }
+`
 
 export const Buttons = styled.div`
   float: right;
@@ -264,7 +273,7 @@ export const ContainerAMR = styled.div`
     }
 
     @media(max-width: 923px) {
-      margin-left: -60px;
+      margin-left: -50px;
       margin-top: -6px;
       width: 14%;
     }

@@ -11,7 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
-import { Header } from "../header";
+import { HeaderDesc } from "../header/indexDesc";
 import { LoadingPage } from "../products/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
@@ -413,7 +413,7 @@ export const DescriptionProducts = () => {
 
   return (
     <>
-      <Header />
+      <HeaderDesc />
       {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
      {<JivoSite.Widget id="OArtCYonnR" />}
       {/*<EspacoTop>

@@ -8,8 +8,8 @@ export const Coontainer = styled.div`
   //background-color: transparent;
   width: 100%;
   //display: flex;
-  align-items: center;
-  justify-content: center;
+  //align-items: center;
+  //justify-content: center;
   //margin: auto;
   border: none;
   margin-top: -100px;
@@ -34,8 +34,9 @@ export const Coontainer = styled.div`
 
     @media (max-width: 923px) and (max-width: 1200px) {
       width: 100%;
-      display: flex;
-      margin: auto;
+      justify-content: start;
+      //display: flex;
+      //margin: auto;
       overflow-x: auto
     }
 

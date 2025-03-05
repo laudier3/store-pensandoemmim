@@ -10,6 +10,10 @@ export const Container = styled.div`
   margin: auto;
   background: #ffffff;
   border-radius: 8px;
+
+  & .iconhome {
+    position: absolute;
+  }
 `;
 
 export const ProductWrapper = styled.div`
