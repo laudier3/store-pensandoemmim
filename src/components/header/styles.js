@@ -214,6 +214,17 @@ export const ContainerAMR = styled.div`
   text-align: center;
   border: none;
 
+  & a {
+    @media (max-width: 768px) {
+      margin-top: -5px;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: ;
+  }  
+
   & .img3 {
     position: absolute;
     width: 4%;
@@ -302,6 +313,10 @@ export const ContainerPRT = styled.div`
   cursor: pointer;
   border: none;
 
+  @media (max-width: 768px) {
+    margin-top: 18px;
+  }
+
   & ul {
     text-align: center;
 
@@ -372,11 +387,19 @@ export const ContainerPRT = styled.div`
         font-weight: bold;
         font-size: 20px;
 
+        & .p {
+          margin: 6px;
+          margin-top: -1px;
+          
+          @media (max-width: 768px) {
+            
+          }
+        }
+
         @media (max-width: 768px) {
           width: 100%;
           margin-left: -10px;
-          font-size: 2.5vw;
-          margin-left: 1px;
+          font-size: 5px;
         }
       }
     }
