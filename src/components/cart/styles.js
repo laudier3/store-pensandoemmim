@@ -248,14 +248,14 @@ export const TableCartFinalize = styled.div`
           //margin-top: -5px;
         }
 
-      @media screen and (max-width: 923px) {
+      @media screen and (max-width: 620px) and (max-width: 1200px) {
         font-size: 3vw;
 
         & .divimg {
           position: absolute;
 
           & img {
-            width: 65px;
+            width: 60%;
             height: 90px;
           }
           //margin-top: -5px;
