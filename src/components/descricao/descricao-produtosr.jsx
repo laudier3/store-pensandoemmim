@@ -7,7 +7,7 @@ import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, addCor, addTm } from "../../redux/cart/cart";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaCreditCard } from "react-icons/fa";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
@@ -58,8 +58,8 @@ export const DescriptionProducts = () => {
   const [bordersTamnho, setBorderTamnho] = useState("");
   //const [ setCartIsVisible] = useState(false);
 
-  /*window.addEventListener("click", () => {
-    window.history.go(-1);
+ /*window.addEventListener("click", () => {
+    window.location.reload()
   })*/
 
   //window.history.go(1);
@@ -1120,7 +1120,7 @@ export const DescriptionProducts = () => {
                 </div>
                   {contItems === 6 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1132,12 +1132,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 9 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1149,13 +1149,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 9 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1167,13 +1167,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 8 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1185,12 +1185,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 8 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1202,13 +1202,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 7 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1220,13 +1220,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                   {contItems === 7 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1238,12 +1238,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 5 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1255,13 +1255,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 4 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1273,13 +1273,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                   {contItems === 10 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1291,12 +1291,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 10 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1308,13 +1308,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 10 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1326,13 +1326,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 11 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1344,12 +1344,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 11 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1361,13 +1361,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 11 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1379,13 +1379,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 12 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1397,12 +1397,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 12 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1414,13 +1414,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 12 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1432,13 +1432,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 13 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1450,12 +1450,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 13 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1467,13 +1467,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 13 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1485,13 +1485,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 14 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1503,12 +1503,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 14 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1520,13 +1520,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 14 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1538,13 +1538,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 15 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1556,12 +1556,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 15 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1573,13 +1573,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 15 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1591,13 +1591,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
 
                 {contItems === 16 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                    <a href={"/desc/" + filterProducts1[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
@@ -1609,12 +1609,12 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                   {contItems === 16 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                    <a href={"/desc/" + filterProducts2[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
@@ -1626,13 +1626,13 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 
                   {contItems === 16 ? 
                   <RelationsProducts>
-                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                    <a href={"/desc/" + filterProducts3[0]?.id}>
                       <div className="divRelationLateral">
                         <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
                         <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
@@ -1644,7 +1644,7 @@ export const DescriptionProducts = () => {
                           R$ {novo_price},00
                         </h4>
                       </div>
-                    </Link>
+                    </a>
                   </RelationsProducts>
                 : ""}
                 

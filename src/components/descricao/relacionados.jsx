@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import api from "../../api/api";
 //import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
@@ -72,7 +72,7 @@ export function Realacionandos() {
         let novo_price = price - aumento;
 
         return (
-          <Link to={"/desc/" + id}>
+          <a href={`/desc/${id}`}>
             <div key={id} className="divRelation">
               <img src={image[0]} alt="img" className="imgRelation" />
               <h5 className="h5Relation">{name}</h5>
@@ -84,7 +84,7 @@ export function Realacionandos() {
                 R$ {novo_price},00
               </h4>
             </div>
-          </Link>
+          </a>
         );
       })}
     </RelationsProducts>
