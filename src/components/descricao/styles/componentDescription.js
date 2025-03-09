@@ -16,6 +16,10 @@ export const Container = styled.div`
   }
 `;
 
+export const ProductWrapperts = styled.div`
+  width: 100%;
+`
+
 export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: row;

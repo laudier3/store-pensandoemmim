@@ -357,7 +357,7 @@ export const DescriptionProducts = () => {
     { img: "img_outras/horizontal_logo.png" },
   ];
 
-  const Example = () => (
+  const CarregandoPagina = () => (
     /*
     blank
     balls
@@ -411,1374 +411,1333 @@ export const DescriptionProducts = () => {
     },
   ];
 
+  /*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/
+
   return (
     <>
       <HeaderDesc />
-      {/*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/}
-     {<JivoSite.Widget id="OArtCYonnR" />}
-      {/*<EspacoTop>
-        <Link to="/">
-          <FaArrowAltCircleLeft style={{
-            marginTop: 25,
-            fontSize: 25,
-            marginLeft: "10px",
-            color: "white",
-          }} />
-        </Link>
-        <Link to="/cartFinali">
-          
-            <div onClick={handleCartClick}>
-              {length === 0 ? "" : <b style={{
-                fontSize: 12, 
-                borderRadius: 50,
-                height: 18,
-                width: 16,
-                textAlign: "center",
-                marginTop: 32,
-                marginLeft: 300,
-                fontWeight: "bold",
-                color: "#000000",
-                position: "absolute",
-                //border: "solid 1px"
-              }}>{length}</b>}
-              {length > 0 ? (
-                <SlBasketLoaded style={{ 
-                  color: "white", 
-                  fontSize: 30, 
-                  marginLeft: 290,
-                  marginTop: 25,
-                }} />
-              ) : (
-                <SlBasket style={{ 
-                  color: "white",
-                  fontSize: 30,
-                  marginLeft: 290, 
-                  marginTop: 25 
-                }} />
-              )}
-            </div>
-          
-          </Link>
-        
-      </EspacoTop>*/}
-      <Container>
-        <ProductWrapper>
-          <ImageSection>
-            <ImageProducts>
-              {/*<img id="logo" src={imgs[0]} alt="img"/>*/}
-              {dataProductFilter == "" ? <Example /> : 
-                dataProductFilter.map((res) => {
-                  const { id, image } = res;
+      {dataProductFilter[0]?.id ?
+      <div>
+        <JivoSite.Widget id="OArtCYonnR" />
+        <Container>
+          <ProductWrapper>
+            <ImageSection>
+              <ImageProducts>
+                {/*<img id="logo" src={imgs[0]} alt="img"/>*/}
+                {dataProductFilter == "" ? <CarregandoPagina /> : 
+                  dataProductFilter.map((res) => {
+                    const { id, image } = res;
 
-                  //const props = {width: 700, height: 350, zoomWidth: 2000, img: image[0]}
+                    //const props = {width: 700, height: 350, zoomWidth: 2000, img: image[0]}
 
-                  const imgList = [
-                    image[0],
-                    image[1],
-                    image[2],
-                    image[3],
-                    image[4],
-                    image[5],
-                  ];
-               
-                  return (
-                    <>
-                    {/*<ReactImageZoom {...props} />*/}
-                    <Swiper
-                      className="padraoImg"
-                      grabCursor={true}
-                      effect={"creative"}
-                      creativeEffect={{
-                        prev: {
-                          shadow: true,
-                          translate: [0, 0, -400],
-                        },
-                        next: {
-                          translate: ["100%", 0, 0],
-                        },
-                      }}
-                      modules={[EffectCreative]}
-                    >
-                      {imgList.map((resImg) => (
-                      <SwiperSlide key={id}>
-                        <img
-                          src={dataSlug ? dataSlug : resImg}
-                          id="logo"
-                          alt="img"
-                          className="imgDiv"
-                        />
-                      </SwiperSlide>
-                        
-                      ))}
-                    </Swiper>
-                    </>
-                  )
-              })}
-            </ImageProducts>
-            <>
-            {dataProductFilter == "" ? (
-              <Example />
-            ) : (
-              dataProductFilter.map((res) => {
-                const { image } = res;
-
-                function over0() {
-                  document.getElementById("logo").src = `${image[0] || image[1]}`;
-                }
-                function over1() {
-                  document.getElementById("logo").src = `${image[1] || image[2]}`;
-                }
-                function over2() {
-                  document.getElementById("logo").src = `${image[2] || image[3]}`;
-                }
-
-                function over3() {
-                  document.getElementById("logo").src = `${image[3] || image[4]}`;
-                }
-
-                function over4() {
-                  document.getElementById("logo").src = `${image[4] || image[5]}`;
-                }
-
-                return (
-                  <div>
-                    <ProductImageMini2>
-                      <div className="imgMini">
-                      {image[0] ? 
-                        <div className="imgMini">
+                    const imgList = [
+                      image[0],
+                      image[1],
+                      image[2],
+                      image[3],
+                      image[4],
+                      image[5],
+                    ];
+                  
+                    return (
+                      <>
+                      {/*<ReactImageZoom {...props} />*/}
+                      <Swiper
+                        className="padraoImg"
+                        grabCursor={true}
+                        effect={"creative"}
+                        creativeEffect={{
+                          prev: {
+                            shadow: true,
+                            translate: [0, 0, -400],
+                          },
+                          next: {
+                            translate: ["100%", 0, 0],
+                          },
+                        }}
+                        modules={[EffectCreative]}
+                      >
+                        {imgList.map((resImg) => (
+                        <SwiperSlide key={id}>
                           <img
-                            src={image[0] || image[1]}
-                            alt="img0"
-                            onMouseOver={() => over0(over0)}
-                          /> 
-                        </div> : ""
-                        }
-                        {image[1] ? 
-                        <div className="imgMini">
-                          <img
-                            src={image[1] || image[0]}
-                            alt="img0"
-                            onMouseOver={() => over1(over1)}
+                            src={dataSlug ? dataSlug : resImg}
+                            id="logo"
+                            alt="img"
+                            className="imgDiv"
                           />
-                        </div> : ""
-                        }
-                        {image[2] ? 
-                        <div className="imgMini">
-                          <img
-                            src={image[2] || image[0]}
-                            alt="img0"
-                            onMouseOver={() => over2(over2)}
-                          />
-                        </div> : ""
-                        }
-                        {image[3] ? 
-                        <div className="imgMini">
-                          <img
-                            src={image[3] || image[2]}
-                            alt="img0"
-                            onMouseOver={() => over3(over3)}
-                          />
-                        </div> : ""
-                        }
-                        {image[4] ? 
-                        <div className="imgMini">
-                          <img
-                            src={image[4] || image[1]}
-                            alt="img0"
-                            onMouseOver={() => over4(over4)}
-                          />
-                        </div> : ""
-                        }
-                        {/*
-                          image[5] ? 
-                          <div className="imgMini">
-                            <ProduVideoPlay>
-                              <Video>
-                                <source src={image[5]} type='video/webm'/>
-                              </Video>
-                            </ProduVideoPlay>
-                          </div> : ""
-                        */}
-                      </div>
-                    </ProductImageMini2>
-                    
-                  </div>
-                );
-              })
-            )}
-          </>
-          </ImageSection>
-          <InfoSection>
-          { dataProductFilter.map((res) => {
-              const { name, quantity, color, slug, frete} = res; //image para videos
-
-              return (
-                <>
-                  <Title>{name}</Title>
-                  <Price>
-                  <span style={{ fontSize: 20, color: "#000000" }}>4.8</span>
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <GoStarFill
-                      style={{ fontSize: 15, color: "#ffc107" }}
-                    />
-                    <TiStarHalfOutline
-                      style={{ fontSize: 18, color: "#ffc107" }}
-                    />
-                    <span> | {quantity * 3} Vendido</span><br />
-                    {dataTamanho == "64GB" ? (
-                      <h1>R$ {novo_price0},00</h1>
-                    ) : dataTamanho == "128GB" ? (
-                      <h1>R$ {novo_price},00</h1>
-                    ) : dataTamanho == "256GB" ? (
-                      <h1>R$ {novo_price2},00</h1>
-                    ) : dataTamanho == "512GB" ? (
-                      <h1>R$ {novo_price3},00</h1>
-                    ) : (
-                      <h1>R$ {novo_price},00</h1>
-                    )}
-
-                    <span>
-                      Frete {frete || "Gratis"}
-                    </span>
-                  </Price>
-                  <div>
-                    <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
-                  </div>
-                  <Description>
-                    Disponivel: {quantity}/un
-                    
-                    <p style={{ fontSize: 20 }}>
-                      <strong style={{ fontSize: 20, display: "inline-block" }}>
-                        <div className="divBorder">
-                          Cor:
-                          <label className={dataCores ? "dataCor" : ""} 
-                            style={{
-                              border: "solid 1px",
-                              borderColor: "#9f8f8f",
-                              color: "#474040",
-                              fontWeight: "lighter",
-                              textAlign: "center",
-                              padding: 3,
-                              borderRadius: 6
-                            }}>
-                            {dataCores == "" ? res.color[0] : dataCores.toLowerCase()}
-                          </label>
-                        </div>
-                        <br />
-                        <>
-                          {slug[0]?.charAt() == "h" ? (
-                                  
-                            <label className={dataSlug === res.slug[0] ? borders : ""} style={{marginTop: 10}}>
-                              <img
-                               style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                className={dataSlug === res.slug[0] ? borders : ""}
-                                onClick={() =>
-                                  setdataSlug(res.slug[0]) ||
-                                  setDatacores(res.color[0]) ||
-                                  setBorder("marcaImageColor") ||
-                                  ProcessoImageCor
-                                }
-                                
-                                src={res.slug[0]}
-                                alt="img slug"
-                              />
-                            </label>
-                            
-                            ) : (
-                              slug[0]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() =>
-                                  ProcessoImageCor || setdataSlug(color[0])
-                                }
-                              >
-                                {color[0] ? color[0] : ""}
-                              </button> : ""
-                            )}
-                            {slug[1]?.charAt() == "h" ? (
-                              <label className={dataSlug === res.slug[1] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[1]) ||
-                                    setDatacores(res.color[1]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                  
-                                  src={res.slug[1]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[1]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() =>
-                                  ProcessoImageCor || setdataSlug(color[1])
-                                }
-                              >
-                                {color[1] ? color[1] : ""}
-                              </button> : ""
-                            )}
-                            {slug[2]?.charAt() == "h" ? (
-                                <label className={dataSlug === res.slug[2] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[2]) ||
-                                    setDatacores(res.color[2]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                  
-                                  src={res.slug[2]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[2]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() =>
-                                  ProcessoImageCor || setdataSlug(color[2])
-                                }
-                              >
-                                {color[2] ? color[2] : ""}
-                              </button> : ""
-                            )}
-                            {slug[3]?.charAt() == "h" ? (
-                                <label className={dataSlug === res.slug[3] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[3]) ||
-                                    setDatacores(res.color[3]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                  
-                                  src={res.slug[3]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[3]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() =>
-                                  ProcessoImageCor || setdataSlug(color[3])
-                                }
-                              >
-                                {color[3] ? color[3] : ""}
-                              </button> : ""
-                            )}
-                            {slug[4]?.charAt() == "h" ? (
-                                <label className={dataSlug === res.slug[4] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[4]) ||
-                                    setDatacores(res.color[4]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                  
-                                  src={res.slug[4]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[4]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() =>
-                                  ProcessoImageCor || setdataSlug(color[4])
-                                }
-                              >
-                                {color[4] ? color[4] : ""}
-                              </button> : ""
-                            )}
-                            {slug[5]?.charAt() == "h" ? (
-                                <label className={dataSlug === res.slug[5] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[5]) ||
-                                    setDatacores(res.color[5]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                
-                                  src={res.slug[5]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[5]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() => setdataSlug(color[5])}
-                              >
-                                {color[5] ? color[5] : ""}
-                              </button> : ""
-                            )}
-                            {slug[6]?.charAt() == "h"? (
-                                <label className={dataSlug === res.slug[5] ? borders : ""}>
-                                <img
-                                 style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
-                                  className={dataSlug === res.slug[0] ? borders : ""}
-                                  onClick={() =>
-                                    setdataSlug(res.slug[6]) ||
-                                    setDatacores(res.color[6]) ||
-                                    setBorder("marcaImageColor") ||
-                                    ProcessoImageCor
-                                  }
-                                
-                                  src={res.slug[6]}
-                                  alt="img slug"
-                                  srcset=""
-                                />
-                              </label>
-                            ) : (
-                              slug[6]?.charAt() == "h" ?
-                              <button
-                                type="button"
-                                className="buttonColor1"
-                                onClick={() => setdataSlug(color[6])}
-                              >
-                                {color[6] ? color[6] : ""}
-                              </button> : ""
-                            )}
-                                  
-                          </>
-                      </strong>
-                    </p>
-
-          
-                    <div>
-                      {divideSizeArrey[0] == "Padrão" ||
-                      divideSizeArrey[0] == "padrao" ||
-                      divideSizeArrey[0] == "PADRÃO" ||
-                      divideSizeArrey[0] == "Padrao" ||
-                      divideSizeArrey[0] == "Ùnico" ||
-                      divideSizeArrey[0] == "padrão" ||
-                      divideSizeArrey[0] == "único" ||
-                      divideSizeArrey[0] == "unico" ||
-                      divideSizeArrey[0] == "Unico" ? (
-                        ""
-                      ) : (
-                        <div>
-                         
-                          <p>
-                            <strong style={{ fontSize: 20, color: "#000000", marginRight: 5 }}>
-                              Tamanho:
-                            </strong>
-                            <span
-                              style={{
-                                border: "solid 1px",
-                                padding: 5,
-                                borderRadius: 5,
-                              }}
-                            >
-                              {dataTamanho
-                                ? dataTamanho
-                                : divideSizeArrey[0]}
-                            </span>
-                          </p>
+                        </SwiperSlide>
                           
-                          {divideSizeArrey[0] ? (
-                            <label className={dataTamanho == divideSizeArrey[0] ? bordersTamnho : ""}>
-                              <button
-                                style={{borderRadius: 8, width: divideSizeArrey[0].length > 2 ? "100%" : 30, height: 30, border: "solid 1px", margin: 3}}
-                                onClick={() => 
-                                  setTamanho(divideSizeArrey[0]) ||
-                                  setBorderTamnho("marcaTamanho") 
-                                }
-                              >
-                                {divideSizeArrey[0]}
-                              </button>
-                            </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[1] ? (
-                             <label className={dataTamanho === divideSizeArrey[1] ? bordersTamnho : ""}>
-                              <button
-                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                                onClick={() => 
-                                  setTamanho(divideSizeArrey[1]) ||
-                                  setBorderTamnho("marcaTamanho") 
-                                }
-                                >
-                                {divideSizeArrey[1]}
-                              </button>
-                            </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[2] ? (
-                             <label className={dataTamanho === divideSizeArrey[2] ? bordersTamnho : ""}>
-                              <button
-                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                                onClick={() => 
-                                  setTamanho(divideSizeArrey[2]) ||
-                                  setBorderTamnho("marcaTamanho") 
-                                }
-                                >
-                                {divideSizeArrey[2]}
-                              </button>
-                            </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[3] ? (
-                             <label className={dataTamanho === divideSizeArrey[3] ? bordersTamnho : ""}>
-                              <button
-                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                                onClick={() => 
-                                  setTamanho(divideSizeArrey[3]) ||
-                                  setBorderTamnho("marcaTamanho") 
-                                }
-                              >
-                                {divideSizeArrey[3]}
-                              </button>
-                            </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[4] ? (
-                            <label className={dataTamanho === divideSizeArrey[4] ? bordersTamnho : ""}>
-                              <button
-                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                                onClick={() => 
-                                  setTamanho(divideSizeArrey[4]) ||
-                                  setBorderTamnho("marcaTamanho") 
-                                }
-                                >
-                                {divideSizeArrey[4]}
-                              </button>
-                            </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[5] ? (
-                             <label className={dataTamanho === divideSizeArrey[5] ? bordersTamnho : ""}>
-                            <button
-                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                              onClick={() => 
-                                setTamanho(divideSizeArrey[5]) ||
-                                setBorderTamnho("marcaTamanho") 
-                              }
-                              >
-                              {divideSizeArrey[5]}
-                            </button>
-                              </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[6] ? (
-                             <label className={dataTamanho === divideSizeArrey[6] ? bordersTamnho : ""}>
-                            <button
-                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                              onClick={() => 
-                                setTamanho(divideSizeArrey[6]) ||
-                                setBorderTamnho("marcaTamanho") 
-                              }
-                              >
-                              {divideSizeArrey[6]}
-                            </button>
-                              </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[7] ? (
-                             <label className={dataTamanho === divideSizeArrey[7] ? bordersTamnho : ""}>
-                            <button
-                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                              onClick={() => 
-                                setTamanho(divideSizeArrey[7]) ||
-                                setBorderTamnho("marcaTamanho") 
-                              }
-                              >
-                              {divideSizeArrey[7]}
-                            </button>
-                              </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[8] ? (
-                             <label className={dataTamanho === divideSizeArrey[8] ? bordersTamnho : ""}>
-                            <button
-                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                              onClick={() => 
-                                setTamanho(divideSizeArrey[8]) ||
-                                setBorderTamnho("marcaTamanho") 
-                              }
-                              >
-                              {divideSizeArrey[8]}
-                            </button>
-                              </label>
-                          ) : (
-                            ""
-                          )}
-                          {divideSizeArrey[9] ? (
-                             <label className={dataTamanho === divideSizeArrey[9] ? bordersTamnho : ""}>
-                            <button
-                              className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
-                              style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
-                              onClick={() => 
-                                setTamanho(divideSizeArrey[9]) ||
-                                setBorderTamnho("marcaTamanho") 
-                              }
-                              >
-                              {divideSizeArrey[9]}
-                            </button>
-                              </label>
-                          ) : (
-                            ""
-                          )}
+                        ))}
+                      </Swiper>
+                      </>
+                    )
+                })}
+              </ImageProducts>
+              <>
+              {dataProductFilter == "" ? (
+                <CarregandoPagina />
+              ) : (
+                dataProductFilter.map((res) => {
+                  const { image } = res;
+
+                  function over0() {
+                    document.getElementById("logo").src = `${image[0] || image[1]}`;
+                  }
+                  function over1() {
+                    document.getElementById("logo").src = `${image[1] || image[2]}`;
+                  }
+                  function over2() {
+                    document.getElementById("logo").src = `${image[2] || image[3]}`;
+                  }
+
+                  function over3() {
+                    document.getElementById("logo").src = `${image[3] || image[4]}`;
+                  }
+
+                  function over4() {
+                    document.getElementById("logo").src = `${image[4] || image[5]}`;
+                  }
+
+                  return (
+                    <div>
+                      <ProductImageMini2>
+                        <div className="imgMini">
+                        {image[0] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[0] || image[1]}
+                              alt="img0"
+                              onMouseOver={() => over0(over0)}
+                            /> 
+                          </div> : ""
+                          }
+                          {image[1] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[1] || image[0]}
+                              alt="img0"
+                              onMouseOver={() => over1(over1)}
+                            />
+                          </div> : ""
+                          }
+                          {image[2] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[2] || image[0]}
+                              alt="img0"
+                              onMouseOver={() => over2(over2)}
+                            />
+                          </div> : ""
+                          }
+                          {image[3] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[3] || image[2]}
+                              alt="img0"
+                              onMouseOver={() => over3(over3)}
+                            />
+                          </div> : ""
+                          }
+                          {image[4] ? 
+                          <div className="imgMini">
+                            <img
+                              src={image[4] || image[1]}
+                              alt="img0"
+                              onMouseOver={() => over4(over4)}
+                            />
+                          </div> : ""
+                          }
+                          {/*
+                            image[5] ? 
+                            <div className="imgMini">
+                              <ProduVideoPlay>
+                                <Video>
+                                  <source src={image[5]} type='video/webm'/>
+                                </Video>
+                              </ProduVideoPlay>
+                            </div> : ""
+                          */}
                         </div>
-                      )}
+                      </ProductImageMini2>
+                      
                     </div>
-                    <button
-                        onClick={() =>
-                          handlerCartAdd(productProntoAddCard[0])
-                        }
-                        className="buttonCompra"
-                      >
-                        Comprar agora
-                      </button>
-
-                      <button
-                        onClick={() =>
-                          handlerCartAdd2(productProntoAddCard[0])
-                        }
-                        className="buttonCard"
-                      >
-                        Adicionar ao carrinho
-                      </button>
-                      {/* Botão para modo celular*/}
-                      <button
-                        onClick={() =>
-                          handlerCartAdd(productProntoAddCard[0])
-                        }
-                        className="buttonCompraPhone"
-                      >
-                        Comprar agora
-                      </button>
-                      <button
-                        onClick={() =>
-                          handlerCartAdd2(productProntoAddCard[0])
-                        }
-                        className="buttonCardPhone"
-                      >
-                        Adicionar <FaCartPlus style={{ fontSize: 20, marginLeft: 5 }} />
-                      </button>
-                    
-                  </Description>
-                </>
-              )
-            })}
-          </InfoSection>
-        </ProductWrapper>
-        
-        <ProductWrapper>
-          <ImageSection>
-            <Realacionandos />
-          </ImageSection>
-          <InfoSection>
-            <Description>
-              <div>
-                <div>
-                  <strong className="EnvioParaTodoPais">
-                    Envio para todo Brasil
-                  </strong>
-                  <br />
-                  <span>
-                    Entregamos seu produto o mais rapido possivel, e com a melhor qualidae.
-                  </span>
-                  
-                  <div>
-                    <br />
-                    <p>
-                      <SwapHorizIcon />{" "}
-                      <stron className="EnvioParaTodoPais" g>
-                        Devolução Gratis
-                      </stron>{" "}
-                      <br />
-                      <span>
-                        Você tem 7 dias a partir da data de recebimento.
-                      </span>
-                    </p>
-                  </div>
-                  
-                </div>
-              </div>
-              <div>
-                <p>
-                  <VerifiedUserIcon />{" "}
-                  <strong className="EnvioParaTodoPais">
-                    Compra Garantida
-                  </strong>{" "}
-                  <br />
-                  <span>
-                    Receba o produto que está esperando ou devolvemos
-                    o dinheiro.
-                  </span>
-                </p>
-              </div>
-               {contItems === 6 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 9 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 9 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 8 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 8 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 7 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-               {contItems === 7 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 5 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 4 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-               {contItems === 10 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 10 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 10 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 11 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 11 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 11 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 12 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 12 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 12 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 13 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 13 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 13 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 14 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 14 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 14 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 15 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 15 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 15 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-
-              {contItems === 16 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts1[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-               {contItems === 16 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts2[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-               {contItems === 16 ? 
-                <RelationsProducts>
-                  <Link to={"/desc/" + filterProducts3[0]?.id}>
-                    <div className="divRelationLateral">
-                      <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
-                      <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
-                      <b className="frete">Frete Gratis</b>
-                      <img src={imgcart2} alt="img" className="cartImg" />
-                      <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
-                      <h4 className="oldPricereal h4Relation">
-                        {" "}
-                        R$ {novo_price},00
-                      </h4>
-                    </div>
-                  </Link>
-                </RelationsProducts>
-              : ""}
-              
-            </Description>
-          </InfoSection>
-        </ProductWrapper>
-        <ProductWrapper>
-          <ImageSection>
-            {dataProductFilter == "" ? (
-              <Example />
-            ) : (
-              dataProductFilter.map((res) => {
-                const { description, image } = res;
+                  );
+                })
+              )}
+            </>
+            </ImageSection>
+            <InfoSection>
+            { dataProductFilter.map((res) => {
+                const { name, quantity, color, slug, frete} = res; //image para videos
 
                 return (
                   <>
-                    <div className="parte1">
-                      <div>
-                        {dataImg5 ? (
-                          <div className="espaco"></div>
-                        ) : (
-                          <div className="espaco2"></div>
-                        )}
-                      </div>
-                      {image[5] == "" ? (
-                        ""
+                    <Title>{name}</Title>
+                    <Price>
+                    <span style={{ fontSize: 20, color: "#000000" }}>4.8</span>
+                      <GoStarFill
+                        style={{ fontSize: 15, color: "#ffc107" }}
+                      />
+                      <GoStarFill
+                        style={{ fontSize: 15, color: "#ffc107" }}
+                      />
+                      <GoStarFill
+                        style={{ fontSize: 15, color: "#ffc107" }}
+                      />
+                      <GoStarFill
+                        style={{ fontSize: 15, color: "#ffc107" }}
+                      />
+                      <TiStarHalfOutline
+                        style={{ fontSize: 18, color: "#ffc107" }}
+                      />
+                      <span> | {quantity * 3} Vendido</span><br />
+                      {dataTamanho == "64GB" ? (
+                        <h1>R$ {novo_price0},00</h1>
+                      ) : dataTamanho == "128GB" ? (
+                        <h1>R$ {novo_price},00</h1>
+                      ) : dataTamanho == "256GB" ? (
+                        <h1>R$ {novo_price2},00</h1>
+                      ) : dataTamanho == "512GB" ? (
+                        <h1>R$ {novo_price3},00</h1>
                       ) : (
-                        <p>
-                          
-                        </p>
+                        <h1>R$ {novo_price},00</h1>
                       )}
 
-                      {dataSlug == "" ? (
-                        ""
-                      ) : (
-                        <p>
-                          
-                        </p>
-                      )}
-                      <br /><br />
-                      <h4>
-                        <strong>DESCRIÇÃO</strong>
-                      </h4>
-                      <p>{description}</p>
+                      <span>
+                        Frete {frete || "Gratis"}
+                      </span>
+                    </Price>
+                    <div>
+                      <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
                     </div>
+                    <Description>
+                      Disponivel: {quantity}/un
+                      
+                      <p style={{ fontSize: 20 }}>
+                        <strong style={{ fontSize: 20, display: "inline-block" }}>
+                          <div className="divBorder">
+                            Cor:
+                            <label className={dataCores ? "dataCor" : ""} 
+                              style={{
+                                border: "solid 1px",
+                                borderColor: "#9f8f8f",
+                                color: "#474040",
+                                fontWeight: "lighter",
+                                textAlign: "center",
+                                padding: 3,
+                                borderRadius: 6
+                              }}>
+                              {dataCores == "" ? res.color[0] : dataCores.toLowerCase()}
+                            </label>
+                          </div>
+                          <br />
+                          <>
+                            {slug[0]?.charAt() == "h" ? (
+                                    
+                              <label className={dataSlug === res.slug[0] ? borders : ""} style={{marginTop: 10}}>
+                                <img
+                                  style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                  className={dataSlug === res.slug[0] ? borders : ""}
+                                  onClick={() =>
+                                    setdataSlug(res.slug[0]) ||
+                                    setDatacores(res.color[0]) ||
+                                    setBorder("marcaImageColor") ||
+                                    ProcessoImageCor
+                                  }
+                                  
+                                  src={res.slug[0]}
+                                  alt="img slug"
+                                />
+                              </label>
+                              
+                              ) : (
+                                slug[0]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() =>
+                                    ProcessoImageCor || setdataSlug(color[0])
+                                  }
+                                >
+                                  {color[0] ? color[0] : ""}
+                                </button> : ""
+                              )}
+                              {slug[1]?.charAt() == "h" ? (
+                                <label className={dataSlug === res.slug[1] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[1]) ||
+                                      setDatacores(res.color[1]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                    
+                                    src={res.slug[1]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[1]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() =>
+                                    ProcessoImageCor || setdataSlug(color[1])
+                                  }
+                                >
+                                  {color[1] ? color[1] : ""}
+                                </button> : ""
+                              )}
+                              {slug[2]?.charAt() == "h" ? (
+                                  <label className={dataSlug === res.slug[2] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[2]) ||
+                                      setDatacores(res.color[2]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                    
+                                    src={res.slug[2]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[2]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() =>
+                                    ProcessoImageCor || setdataSlug(color[2])
+                                  }
+                                >
+                                  {color[2] ? color[2] : ""}
+                                </button> : ""
+                              )}
+                              {slug[3]?.charAt() == "h" ? (
+                                  <label className={dataSlug === res.slug[3] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[3]) ||
+                                      setDatacores(res.color[3]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                    
+                                    src={res.slug[3]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[3]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() =>
+                                    ProcessoImageCor || setdataSlug(color[3])
+                                  }
+                                >
+                                  {color[3] ? color[3] : ""}
+                                </button> : ""
+                              )}
+                              {slug[4]?.charAt() == "h" ? (
+                                  <label className={dataSlug === res.slug[4] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[4]) ||
+                                      setDatacores(res.color[4]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                    
+                                    src={res.slug[4]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[4]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() =>
+                                    ProcessoImageCor || setdataSlug(color[4])
+                                  }
+                                >
+                                  {color[4] ? color[4] : ""}
+                                </button> : ""
+                              )}
+                              {slug[5]?.charAt() == "h" ? (
+                                  <label className={dataSlug === res.slug[5] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[5]) ||
+                                      setDatacores(res.color[5]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                  
+                                    src={res.slug[5]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[5]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() => setdataSlug(color[5])}
+                                >
+                                  {color[5] ? color[5] : ""}
+                                </button> : ""
+                              )}
+                              {slug[6]?.charAt() == "h"? (
+                                  <label className={dataSlug === res.slug[5] ? borders : ""}>
+                                  <img
+                                    style={{borderRadius: 8, width: 50, height: 50, border: "solid 1px", margin: 3}}
+                                    className={dataSlug === res.slug[0] ? borders : ""}
+                                    onClick={() =>
+                                      setdataSlug(res.slug[6]) ||
+                                      setDatacores(res.color[6]) ||
+                                      setBorder("marcaImageColor") ||
+                                      ProcessoImageCor
+                                    }
+                                  
+                                    src={res.slug[6]}
+                                    alt="img slug"
+                                    srcset=""
+                                  />
+                                </label>
+                              ) : (
+                                slug[6]?.charAt() == "h" ?
+                                <button
+                                  type="button"
+                                  className="buttonColor1"
+                                  onClick={() => setdataSlug(color[6])}
+                                >
+                                  {color[6] ? color[6] : ""}
+                                </button> : ""
+                              )}
+                                    
+                            </>
+                        </strong>
+                      </p>
+
+            
+                      <div>
+                        {divideSizeArrey[0] == "Padrão" ||
+                        divideSizeArrey[0] == "padrao" ||
+                        divideSizeArrey[0] == "PADRÃO" ||
+                        divideSizeArrey[0] == "Padrao" ||
+                        divideSizeArrey[0] == "Ùnico" ||
+                        divideSizeArrey[0] == "padrão" ||
+                        divideSizeArrey[0] == "único" ||
+                        divideSizeArrey[0] == "unico" ||
+                        divideSizeArrey[0] == "Unico" ? (
+                          ""
+                        ) : (
+                          <div>
+                            
+                            <p>
+                              <strong style={{ fontSize: 20, color: "#000000", marginRight: 5 }}>
+                                Tamanho:
+                              </strong>
+                              <span
+                                style={{
+                                  border: "solid 1px",
+                                  padding: 5,
+                                  borderRadius: 5,
+                                }}
+                              >
+                                {dataTamanho
+                                  ? dataTamanho
+                                  : divideSizeArrey[0]}
+                              </span>
+                            </p>
+                            
+                            {divideSizeArrey[0] ? (
+                              <label className={dataTamanho == divideSizeArrey[0] ? bordersTamnho : ""}>
+                                <button
+                                  style={{borderRadius: 8, width: divideSizeArrey[0].length > 2 ? "100%" : 30, height: 30, border: "solid 1px", margin: 3}}
+                                  onClick={() => 
+                                    setTamanho(divideSizeArrey[0]) ||
+                                    setBorderTamnho("marcaTamanho") 
+                                  }
+                                >
+                                  {divideSizeArrey[0]}
+                                </button>
+                              </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[1] ? (
+                                <label className={dataTamanho === divideSizeArrey[1] ? bordersTamnho : ""}>
+                                <button
+                                  className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                  style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                  onClick={() => 
+                                    setTamanho(divideSizeArrey[1]) ||
+                                    setBorderTamnho("marcaTamanho") 
+                                  }
+                                  >
+                                  {divideSizeArrey[1]}
+                                </button>
+                              </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[2] ? (
+                                <label className={dataTamanho === divideSizeArrey[2] ? bordersTamnho : ""}>
+                                <button
+                                  className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                  style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                  onClick={() => 
+                                    setTamanho(divideSizeArrey[2]) ||
+                                    setBorderTamnho("marcaTamanho") 
+                                  }
+                                  >
+                                  {divideSizeArrey[2]}
+                                </button>
+                              </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[3] ? (
+                                <label className={dataTamanho === divideSizeArrey[3] ? bordersTamnho : ""}>
+                                <button
+                                  className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                  style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                  onClick={() => 
+                                    setTamanho(divideSizeArrey[3]) ||
+                                    setBorderTamnho("marcaTamanho") 
+                                  }
+                                >
+                                  {divideSizeArrey[3]}
+                                </button>
+                              </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[4] ? (
+                              <label className={dataTamanho === divideSizeArrey[4] ? bordersTamnho : ""}>
+                                <button
+                                  className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                  style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                  onClick={() => 
+                                    setTamanho(divideSizeArrey[4]) ||
+                                    setBorderTamnho("marcaTamanho") 
+                                  }
+                                  >
+                                  {divideSizeArrey[4]}
+                                </button>
+                              </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[5] ? (
+                                <label className={dataTamanho === divideSizeArrey[5] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[5]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[5]}
+                              </button>
+                                </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[6] ? (
+                                <label className={dataTamanho === divideSizeArrey[6] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[6]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[6]}
+                              </button>
+                                </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[7] ? (
+                                <label className={dataTamanho === divideSizeArrey[7] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[7]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[7]}
+                              </button>
+                                </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[8] ? (
+                                <label className={dataTamanho === divideSizeArrey[8] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[8]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[8]}
+                              </button>
+                                </label>
+                            ) : (
+                              ""
+                            )}
+                            {divideSizeArrey[9] ? (
+                                <label className={dataTamanho === divideSizeArrey[9] ? bordersTamnho : ""}>
+                              <button
+                                className={dataTamanho === divideSizeArrey[0] ? bordersTamnho : ""}
+                                style={{borderRadius: 8, width: 30, height: 30, border: "solid 1px", margin: 3}}
+                                onClick={() => 
+                                  setTamanho(divideSizeArrey[9]) ||
+                                  setBorderTamnho("marcaTamanho") 
+                                }
+                                >
+                                {divideSizeArrey[9]}
+                              </button>
+                                </label>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        )}
+                      </div>
+                      <button
+                          onClick={() =>
+                            handlerCartAdd(productProntoAddCard[0])
+                          }
+                          className="buttonCompra"
+                        >
+                          Comprar agora
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            handlerCartAdd2(productProntoAddCard[0])
+                          }
+                          className="buttonCard"
+                        >
+                          Adicionar ao carrinho
+                        </button>
+                        {/* Botão para modo celular*/}
+                        <button
+                          onClick={() =>
+                            handlerCartAdd(productProntoAddCard[0])
+                          }
+                          className="buttonCompraPhone"
+                        >
+                          Comprar agora
+                        </button>
+                        <button
+                          onClick={() =>
+                            handlerCartAdd2(productProntoAddCard[0])
+                          }
+                          className="buttonCardPhone"
+                        >
+                          Adicionar <FaCartPlus style={{ fontSize: 20, marginLeft: 5 }} />
+                        </button>
+                      
+                    </Description>
                   </>
-                );
-              })
-            )}
-          </ImageSection>
+                )
+              })}
+            </InfoSection>
+          </ProductWrapper>
           
-          <InfoSection>
-            <Description>
-              <div>
-                <p>
-                  <VerifiedUserIcon />{" "}
-                  <strong className="EnvioParaTodoPais">
-                    Compra Garantida
-                  </strong>{" "}
-                  <br />
-                  <span>
-                    Receba o produto que está esperando ou devolvemos
-                    o dinheiro.
-                  </span>
-                  <br />
-                  <span className="cartDosesVezes">
-                    <FaCreditCard /> Em até 12x sem juros
+          <ProductWrapper>
+            <ImageSection>
+              <Realacionandos />
+            </ImageSection>
+            <InfoSection>
+              <Description>
+                <div>
+                  <div>
+                    <strong className="EnvioParaTodoPais">
+                      Envio para todo Brasil
+                    </strong>
                     <br />
-                    {imgCart.map((imgCard) => (
-                      <img
-                        src={imgCard.img}
-                        alt="img"
-                        style={{
-                          width: "12%",
-                          height: 25,
-                          display: "inline-block",
-                          margin: "5PX",
-                          border: "solid 1px",
-                        }}
-                      />
-                    ))}
-                  </span>
-                </p>
-              </div>
-            </Description>
-          </InfoSection>
-        </ProductWrapper>
-        
-      <ProductDetails>
-        <Comentarios />
-      </ProductDetails>
-    </Container>
+                    <span>
+                      Entregamos seu produto o mais rapido possivel, e com a melhor qualidae.
+                    </span>
+                    
+                    <div>
+                      <br />
+                      <p>
+                        <SwapHorizIcon />{" "}
+                        <stron className="EnvioParaTodoPais" g>
+                          Devolução Gratis
+                        </stron>{" "}
+                        <br />
+                        <span>
+                          Você tem 7 dias a partir da data de recebimento.
+                        </span>
+                      </p>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div>
+                  <p>
+                    <VerifiedUserIcon />{" "}
+                    <strong className="EnvioParaTodoPais">
+                      Compra Garantida
+                    </strong>{" "}
+                    <br />
+                    <span>
+                      Receba o produto que está esperando ou devolvemos
+                      o dinheiro.
+                    </span>
+                  </p>
+                </div>
+                  {contItems === 6 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 9 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 9 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 8 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 8 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 7 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                  {contItems === 7 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 5 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 4 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                  {contItems === 10 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 10 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 10 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 11 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 11 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 11 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 12 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 12 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 12 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 13 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 13 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 13 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 14 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 14 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 14 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 15 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 15 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 15 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+
+                {contItems === 16 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts1[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts1[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts1[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts1[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                  {contItems === 16 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts2[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts2[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts2[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts2[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+                  {contItems === 16 ? 
+                  <RelationsProducts>
+                    <Link to={"/desc/" + filterProducts3[0]?.id}>
+                      <div className="divRelationLateral">
+                        <img src={filterProducts3[0]?.image[0]} alt="img" className="imgRelation" />
+                        <h5 className="h5Relation">{filterProducts3[0]?.name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src={imgcart2} alt="img" className="cartImg" />
+                        <h3 className="oldPrice">R${filterProducts3[0]?.price[0]},00 </h3>
+                        <h4 className="oldPricereal h4Relation">
+                          {" "}
+                          R$ {novo_price},00
+                        </h4>
+                      </div>
+                    </Link>
+                  </RelationsProducts>
+                : ""}
+                
+              </Description>
+            </InfoSection>
+          </ProductWrapper>
+          <ProductWrapper>
+            <ImageSection>
+              {dataProductFilter == "" ? (
+                <CarregandoPagina />
+              ) : (
+                dataProductFilter.map((res) => {
+                  const { description, image } = res;
+
+                  return (
+                    <>
+                      <div className="parte1">
+                        <div>
+                          {dataImg5 ? (
+                            <div className="espaco"></div>
+                          ) : (
+                            <div className="espaco2"></div>
+                          )}
+                        </div>
+                        {image[5] == "" ? (
+                          ""
+                        ) : (
+                          <p>
+                            
+                          </p>
+                        )}
+
+                        {dataSlug == "" ? (
+                          ""
+                        ) : (
+                          <p>
+                            
+                          </p>
+                        )}
+                        <br /><br />
+                        <h4>
+                          <strong>DESCRIÇÃO</strong>
+                        </h4>
+                        <p>{description}</p>
+                      </div>
+                    </>
+                  );
+                })
+              )}
+            </ImageSection>
+            
+            <InfoSection>
+              <Description>
+                <div>
+                  <p>
+                    <VerifiedUserIcon />{" "}
+                    <strong className="EnvioParaTodoPais">
+                      Compra Garantida
+                    </strong>{" "}
+                    <br />
+                    <span>
+                      Receba o produto que está esperando ou devolvemos
+                      o dinheiro.
+                    </span>
+                    <br />
+                    <span className="cartDosesVezes">
+                      <FaCreditCard /> Em até 12x sem juros
+                      <br />
+                      {imgCart.map((imgCard) => (
+                        <img
+                          src={imgCard.img}
+                          alt="img"
+                          style={{
+                            width: "12%",
+                            height: 25,
+                            display: "inline-block",
+                            margin: "5PX",
+                            border: "solid 1px",
+                          }}
+                        />
+                      ))}
+                    </span>
+                  </p>
+                </div>
+              </Description>
+            </InfoSection>
+          </ProductWrapper>
+          
+        <ProductDetails>
+          <Comentarios />
+        </ProductDetails>
+      </Container>
+      </div> : CarregandoPagina()}
     <ProductDetails>
       <Footer />
     </ProductDetails>
