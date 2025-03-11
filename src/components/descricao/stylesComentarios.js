@@ -18,6 +18,17 @@ export const ContainerComentario = styled.div`
   border: solid 0.5px;
   border-radius: 5px;
 
+  & .xmodal {
+    position: absolute;
+    margin-left: "83%";
+    margin-top: "25px";
+    width: "30px";
+    border: none;
+    background: "red";
+    color: white;
+    font-weight: bold;
+  }
+
   @media(max-width: 923px) {
     width: 100%;
     margin: 5px;

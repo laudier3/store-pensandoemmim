@@ -16,7 +16,7 @@ export const Coontainer = styled.div`
 
   @media(max-width: 768px) {
     height: 30px;
-    margin-top: -42px;
+    margin-top: -2px;
   }
 
   & .carousel {

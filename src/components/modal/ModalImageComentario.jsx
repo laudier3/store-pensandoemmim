@@ -47,9 +47,10 @@ export const ModalImageComentario = ({ data, comnetario }) => {
                       >
                         <img
                           src={res}
-                          style={{ width: "100%", height: "70vh" }}
+                          //style={{ width: "100%", height: "70vh" }}
                           id="logo"
                           alt="Imagem não encontrada"
+                          className="imageModalComente"
                         />
                       </SwiperSlide>
                     ) : (

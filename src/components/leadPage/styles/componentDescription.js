@@ -10,7 +10,15 @@ export const Container = styled.div`
   margin: auto;
   background: #ffffff;
   border-radius: 8px;
+
+  & .iconhome {
+    position: absolute;
+  }
 `;
+
+export const ProductWrapperts = styled.div`
+  width: 100%;
+`
 
 export const ProductWrapper = styled.div`
   display: flex;
@@ -44,11 +52,17 @@ export const ImageSection = styled.div`
     width: 90%;
     margin-left: 20px;
     text-align: justify;
+
+    @media (max-width: 720px) and (max-width: 1200px) {
+      width: 85%;
+    }
   }
 
   & strong {
     //border: solid 1px;
     margin-left: 20px;
+
+    @media (max-width: 720px) and (max-width: 1200px) {}
   }
 
   @media (max-width: 720px) and (max-width: 1200px) {
@@ -385,7 +399,12 @@ export const RelationsProducts = styled.div`
 
   @media (max-width: 720px) and (max-width: 1200px) {
     margin-top: 30px;
-    width: 95%;
+    width: 90%;
+    //display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    //border: 1px solid red
   }
 
   & .divRelation {
@@ -403,7 +422,7 @@ export const RelationsProducts = styled.div`
       height: 220px;
 
       @media (max-width: 720px) and (max-width: 1200px) {
-        width: 80px;
+        width: 100%;
         height: 90px;
       }  
     }

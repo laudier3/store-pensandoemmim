@@ -1,11 +1,11 @@
 /* eslint-disable eqeqeq */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import api from "../../api/api";
 //import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
 import imgcart from "./images/card.jpg";
-import { RelationsProducts } from "../leadPage/styles/componentDescription";
+import { RelationsProducts } from "./styles/componentDescription";
 //import { useNavigate } from "react-router-dom"
 //import { LoadingPage } from "../products/products";
 //import ReactLoading from "react-loading";
@@ -38,19 +38,20 @@ export function Realacionandos() {
 
   //const lastPart = localStorage.getItem("id");
   //const BNT = localStorage.getItem("name")
-//
+
   //let url = window.location.pathname;
   //let parts = url.split("/");
-  let lastPart2 ="f7bdbd1d-cf6e-49b8-a716-9b1690360388"
+  //let lastPart2 = parts.pop() || parts.pop();
 
   //const productFilter = product?.filter(product => product)
   //const prodFilter = [...productFilter]
   //const dataProductFilter2 = prodFilter?.filter(productData => (productData.id === localId))
+  //let lastPart2 = "abd5d33a-ebe1-4670-9c7d-bdf71231db7d"
 
   const filterProduct = data.map((pro) => pro);
   const filterListProducters = [filterProduct];
   const dataProductFilter = filterListProducters[0]?.filter(
-    (productData) => productData.id === lastPart2
+    (productData) => productData.id === "8e33da79-81fa-4b22-9e70-f703b5bfe863"
   );
 
   const filterListProducts = [filterProduct];
@@ -72,7 +73,7 @@ export function Realacionandos() {
         let novo_price = price - aumento;
 
         return (
-          <Link to={"/desc/" + id}>
+          <a href={`/desc/${id}`}>
             <div key={id} className="divRelation">
               <img src={image[0]} alt="img" className="imgRelation" />
               <h5 className="h5Relation">{name}</h5>
@@ -84,7 +85,7 @@ export function Realacionandos() {
                 R$ {novo_price},00
               </h4>
             </div>
-          </Link>
+          </a>
         );
       })}
     </RelationsProducts>

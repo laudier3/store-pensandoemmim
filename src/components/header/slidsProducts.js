@@ -176,6 +176,15 @@ export const buttonContainer = styled.button`
   }
 `
 
+export const SlidContainer = styled.div`
+  margin-top: -15px;
+
+@media (max-width: 968px)  {
+   margin-top: -32px;
+  }
+
+`
+
 export const ContainerSlid = styled.div`
 width: 100%;
 //margin-top: 2px;

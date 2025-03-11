@@ -6,11 +6,12 @@ export const ProduVideoPlay = styled.div`
   background: transparent;
   display: flex;
   margin: auto;
+  margin-bottom: 20px;
 
   @media (max-width: 923px) {
     width: 100%;
     margin: auto;
-    display: none;
+    //display: none;
   }
 `
 

@@ -99,6 +99,15 @@ export const ConatinerModal = styled.div`
 
 export const ConatinerModalImageSlids = styled.div`
   background: transparent;
+
+  & .imageModalComente {
+    width: 100%;
+    height: 70vh;
+
+    @media screen and (max-width: 768px) {
+
+    }
+  }
 `
 
 export const CFontainerImageProduct = styled.div`

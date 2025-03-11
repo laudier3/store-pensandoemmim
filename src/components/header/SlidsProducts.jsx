@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerSlid } from "./slidsProducts";
+import { ContainerSlid, SlidContainer } from "./slidsProducts";
 //import img from "./images/banner_yellow.png"
 import img1 from "./images/banner-casal.png"
 import img2 from "./images/E- Commerce Product Facebook Cover Design.psd.gif"
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export default function SlidsProducts() {
   return (
-    <>
+    <SlidContainer>
       <div
         id="carouselExampleSlidesOnly"
         class="carousel slide"
@@ -51,6 +51,6 @@ export default function SlidsProducts() {
         </ContainerSlid>
         <SlidsMenu/>
       </div>
-    </>
+    </SlidContainer>
   );
 }

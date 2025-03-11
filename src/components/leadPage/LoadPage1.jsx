@@ -25,8 +25,8 @@ import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
-import { ProduVideoPlay } from './ReactVideoPlay'
-import { DefaultPlayer  as Video } from "react-html5video"
+//import { ProduVideoPlay, ProduVideoPlay2 } from './ReactVideoPlay'
+//import { DefaultPlayer  as Video } from "react-html5video"
 //import "react-html5video/dist/styles.css"
 //import LocationOnIcon from "@material-ui/icons/LocationOn";
 //import ReactImageZoom from 'react-image-zoom';
@@ -105,7 +105,7 @@ export const LoadPage = () => {
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
-  let lastPart2 = "8e33da79-81fa-4b22-9e70-f703b5bfe863"
+  let lastPart2 = "f7bdbd1d-cf6e-49b8-a716-9b1690360388"
   //console.log(lastPart2);
 
   const navigate = useNavigate();
@@ -579,7 +579,7 @@ export const LoadPage = () => {
                           <div className="imgMini">
                             <ProduVideoPlay>
                               <Video>
-                                <source src={image[6]} type='video/webm'/>
+                                <source src={image[5]} type='video/webm'/>
                               </Video>
                             </ProduVideoPlay>
                           </div> : ""
@@ -1725,21 +1725,6 @@ export const LoadPage = () => {
           
           <InfoSection>
             <Description>
-            <h4 style={{fontWeight: "bold", textAlign: "center"}}>Modo de Usar</h4>
-             {dataProductFilter.map(video => {
-              const {image} = video
-              console.log(image)
-
-              return (
-                image[0] ?
-                  <ProduVideoPlay>
-                    <Video>
-                      <source src={image[5]} type='video/webm'/>
-                    </Video>
-                  </ProduVideoPlay> : ""
-              )
-             })}
-            
               <div>
                 <p>
                   <VerifiedUserIcon />{" "}

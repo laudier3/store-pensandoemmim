@@ -169,7 +169,7 @@ export const Comentarios = () => {
                             style={{
                               position: "absolute",
                               marginLeft: "83%",
-                              marginTop: 30,
+                              marginTop: 25,
                               width: 30,
                               border: "none",
                               background: "red",

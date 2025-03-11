@@ -40,10 +40,10 @@ export const ImageProducts = styled.div`
     width: 620px;
 
     @media (max-width: 720px) and (max-width: 1200px)  {
-      width: 380px;
-      margin-left: -32px;
+      width: 114%;
+      margin-left: -16px;
       //border: solid 1px;
-      margin-top: -15px;
+      margin-top: 0px;
     }
   }
 
