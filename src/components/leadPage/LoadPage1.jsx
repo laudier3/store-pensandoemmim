@@ -16,7 +16,7 @@ import { LoadingPage } from "../products/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
-import { Comentarios } from "./comentarios";
+import { Comentarios } from "./comentarios1";
 import { Realacionandos } from "./relacionados1";
 import "react-html5video/dist/styles.css";
 import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard

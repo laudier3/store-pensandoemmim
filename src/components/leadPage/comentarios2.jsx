@@ -31,7 +31,7 @@ export const Comentarios = () => {
   //const localId = localStorage.getItem("id");
   //let url = window.location.pathname;
   //let parts = url.split("/");
-  let localId = "8e33da79-81fa-4b22-9e70-f703b5bfe863"
+  let localId = "30e1fbd1-8a0b-4c1b-abe2-dc24c071af91"
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );
