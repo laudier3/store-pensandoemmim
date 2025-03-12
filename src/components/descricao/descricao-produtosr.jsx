@@ -113,7 +113,7 @@ export const DescriptionProducts = () => {
 
   useEffect(() => {
     const handlePopState = () => {
-      return window.history.pushState({}, "", `/`) || window.location.reload()
+      return window.history.back() || window.location.reload()
     };
 
     window.addEventListener("popstate", handlePopState);

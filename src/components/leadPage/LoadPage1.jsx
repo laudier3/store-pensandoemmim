@@ -17,7 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
 import { Comentarios } from "./comentarios";
-import { Realacionandos } from "./relacionados";
+import { Realacionandos } from "./relacionados1";
 import "react-html5video/dist/styles.css";
 import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
 import Footer from "./footer/footer";
@@ -47,7 +47,7 @@ setTimeout(() => {
   scrollToTop();
 }, 500);
 
-export const LoadPage = () => {
+export const LoadPage1 = () => {
   const [dataSlug, setdataSlug] = useState("");
   const [dataCores, setDatacores] = useState("");
   const [dataTamanho, setTamanho] = useState("");
@@ -60,6 +60,20 @@ export const LoadPage = () => {
   /*window.addEventListener("click", () => {
     window.history.go(-1);
   })*/
+
+    /*window.history.pushState({}, "", `/bloqueadordear`);
+  
+    useEffect(() => {
+      const handlePopState = () => {
+        return window.history.pushState({}, "", `/eletronicos`)
+      };
+  
+      window.addEventListener("popstate", handlePopState);
+  
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+      };
+    }, []);*/
 
   //window.history.go(1);
   //const ts = window.history.length
@@ -93,10 +107,10 @@ export const LoadPage = () => {
   };*/
 
 
-  if (!window.location.hash) {
+  /*if (!window.location.hash) {
     window.location = window.location + "#products#description";
     window.location.reload();
-  }
+  }*/
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
@@ -105,7 +119,7 @@ export const LoadPage = () => {
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
-  let lastPart2 = "f7bdbd1d-cf6e-49b8-a716-9b1690360388"
+  let lastPart2 = "aae48de5-a18b-4833-94fc-3888a281a298"
   //console.log(lastPart2);
 
   const navigate = useNavigate();

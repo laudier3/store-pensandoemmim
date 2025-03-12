@@ -42,6 +42,8 @@ import { Ferramenta } from "./components/categorys/Ferramenta";
 import { Shortm } from "./components/categorys/Shortm";
 import { Calcam } from "./components/categorys/Calcam";
 import { ContainerAppPai } from "./stylesComponents";
+import { LoadPage1 } from "./components/leadPage/LoadPage1";
+import { LoadPage2 } from "./components/leadPage/LoadPage2";
 //import { HistoryProvider } from "./components/Context/HistoryContext";
 
 //console.log("teste ls")
@@ -94,8 +96,18 @@ function App() {
     },
 
     {
-      path: "/novidades",
+      path: "/escovaalisadora",
       element: <LoadPage />,
+    },
+
+    {
+      path: "/bloqueadordear",
+      element: <LoadPage1 />,
+    },
+
+    {
+      path: "/lixadordepe",
+      element: <LoadPage2 />,
     },
 
     {

@@ -93,10 +93,24 @@ export const LoadPage = () => {
   };*/
 
 
-  if (!window.location.hash) {
+  /*if (!window.location.hash) {
     window.location = window.location + "#products#description";
     window.location.reload();
   }
+
+  window.history.pushState({}, "", `/escovaalisadora`);
+    
+    useEffect(() => {
+      const handlePopState = () => {
+        return window.history.pushState({}, "", `/eletronicos`)
+      };
+  
+      window.addEventListener("popstate", handlePopState);
+  
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+      };
+    }, []);*/
 
   //let url = window.location.pathname;
   //let parts = url.split("/");

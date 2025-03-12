@@ -47,7 +47,7 @@ setTimeout(() => {
   scrollToTop();
 }, 500);
 
-export const LoadPage = () => {
+export const LoadPage2 = () => {
   const [dataSlug, setdataSlug] = useState("");
   const [dataCores, setDatacores] = useState("");
   const [dataTamanho, setTamanho] = useState("");
@@ -93,10 +93,10 @@ export const LoadPage = () => {
   };*/
 
 
-  if (!window.location.hash) {
+  /*if (!window.location.hash) {
     window.location = window.location + "#products#description";
     window.location.reload();
-  }
+  }*/
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
@@ -105,7 +105,7 @@ export const LoadPage = () => {
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
-  let lastPart2 = "f7bdbd1d-cf6e-49b8-a716-9b1690360388"
+  let lastPart2 = "30e1fbd1-8a0b-4c1b-abe2-dc24c071af91"
   //console.log(lastPart2);
 
   const navigate = useNavigate();
