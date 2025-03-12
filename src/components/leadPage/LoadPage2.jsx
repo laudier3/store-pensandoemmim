@@ -25,8 +25,8 @@ import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "./styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
-//import { ProduVideoPlay, ProduVideoPlay2 } from './ReactVideoPlay'
-//import { DefaultPlayer  as Video } from "react-html5video"
+import { ProduVideoPlay } from './ReactVideoPlay'
+import { DefaultPlayer  as Video } from "react-html5video"
 //import "react-html5video/dist/styles.css"
 //import LocationOnIcon from "@material-ui/icons/LocationOn";
 //import ReactImageZoom from 'react-image-zoom';
@@ -574,7 +574,7 @@ export const LoadPage2 = () => {
                           />
                         </div> : ""
                         }
-                        {/*
+                        {
                           image[5] ? 
                           <div className="imgMini">
                             <ProduVideoPlay>
@@ -583,7 +583,7 @@ export const LoadPage2 = () => {
                               </Video>
                             </ProduVideoPlay>
                           </div> : ""
-                        */}
+                        }
                       </div>
                     </ProductImageMini2>
                     
@@ -1725,6 +1725,20 @@ export const LoadPage2 = () => {
           
           <InfoSection>
             <Description>
+              <h4 style={{fontWeight: "bold", textAlign: "center"}}>Modo de Usar</h4>
+                {dataProductFilter.map(video => {
+                const {image} = video
+                console.log(image)
+  
+                return (
+                  image[0] ?
+                    <ProduVideoPlay>
+                      <Video>
+                        <source src={image[5]} type='video/webm'/>
+                      </Video>
+                    </ProduVideoPlay> : ""
+                )
+                })}
               <div>
                 <p>
                   <VerifiedUserIcon />{" "}
