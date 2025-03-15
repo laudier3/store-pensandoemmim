@@ -232,6 +232,10 @@ export const ProductProd = styled.div`
 
     @media (max-width: 923px) {
       width: 30%;
+      height: 38vh;
+      border: solid 1px;
+      margin: 2px;
+      border-color:rgba(32, 140, 255, 0.57);
 
       & h5 {
         font-size: 0.7rem;
@@ -279,7 +283,7 @@ export const ProductProd = styled.div`
       }
       
       & img {
-        width: 110px;
+        width: 100%;
         height: 55%;
         border-radius: 10px;
         margin-bottom: 2px;

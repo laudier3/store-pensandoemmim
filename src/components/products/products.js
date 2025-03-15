@@ -230,7 +230,6 @@ export const ProductProd = styled.div`
       color: #000000;
       opacity: 0.7;
       padding: 3px;
-
     }
     
     & .oldPricereal {
