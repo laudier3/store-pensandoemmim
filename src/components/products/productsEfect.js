@@ -227,18 +227,17 @@ export const ProductProd = styled.div`
     & .oldPricereal {
       
     }
-    
-
 
     @media (max-width: 923px) {
       width: 30%;
-      height: 38vh;
+      height: 28vh;
       border: solid 1px;
       margin: 2px;
-      border-color:rgba(32, 140, 255, 0.57);
+      border-color:rgb(32, 140, 255);
 
       & h5 {
         font-size: 0.7rem;
+        margin-bottom: -5px;
       }
 
       & .oldPricereal {
@@ -284,7 +283,7 @@ export const ProductProd = styled.div`
       
       & img {
         width: 100%;
-        height: 55%;
+        height: 46%;
         border-radius: 10px;
         margin-bottom: 2px;
 
