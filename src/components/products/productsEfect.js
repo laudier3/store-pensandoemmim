@@ -233,7 +233,7 @@ export const ProductProd = styled.div`
       height: 30vh;
       border: solid 1px;
       margin: 2px;
-      border-color:rgba(32, 140, 255, 0.41);
+      border-color:rgba(32, 140, 255, 0.29);
 
       & h5 {
         font-size: 0.7rem;
