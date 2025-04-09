@@ -111,7 +111,7 @@ export const Smartphone = () => {
           </ProductProd>
         </div>
       )}
-     {/*{/* <SlidsListProducts />*/}*/}
+     {/* <SlidsListProducts />*/}
       <Footer />
     </>
   );
