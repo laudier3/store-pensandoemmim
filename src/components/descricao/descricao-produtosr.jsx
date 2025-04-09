@@ -28,6 +28,8 @@ import * as JivoSite from "react-jivosite";
 import { useEffect } from "react";
 import { ProduVideoPlay } from './ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
+//import Base64UrlWithName from "./teste/personalibse";
+//import { UpdateImage } from "./upload";
 //import "react-html5video/dist/styles.css"
 //import LocationOnIcon from "@material-ui/icons/LocationOn";
 //import ReactImageZoom from 'react-image-zoom';
@@ -58,6 +60,11 @@ export const DescriptionProducts = () => {
   const [bordersTamnho, setBorderTamnho] = useState("");
   //const [ setCartIsVisible] = useState(false);
 
+  //lastIndexOf() ou substr()
+  //let text = "https://pensandoemmim.com"
+  //let result = text.lastIndexOf("mp4");
+  //console.info(result === -1 ? "É" : result)
+
  /*window.addEventListener("click", () => {
     window.location.reload()
   })*/
@@ -67,7 +74,7 @@ export const DescriptionProducts = () => {
   //console.info(ts)//
 //
   //if(ts == 50){
-  //  Navigate("/")
+  //  Navigate("/")+
   //}
 
   /*const handleCartClick = () => {
@@ -419,6 +426,7 @@ export const DescriptionProducts = () => {
       {dataProductFilter[0]?.id ?
       <div>
         <JivoSite.Widget id="OArtCYonnR" />
+        {/*<Base64UrlWithName/>*/}
         <Container>
           <ProductWrapper>
             <ImageSection>
@@ -1701,10 +1709,10 @@ export const DescriptionProducts = () => {
                 <h4 style={{fontWeight: "bold", textAlign: "center"}}>Modo de Usar</h4>
                 {dataProductFilter.map(video => {
                   const {image} = video
-                  console.log(image)
+                  //console.log(image)
     
                   return (
-                    image[0] ?
+                    image[5] ?
                       <ProduVideoPlay>
                         <Video>
                           <source src={image[5]} type='video/webm'/>

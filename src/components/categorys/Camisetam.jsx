@@ -157,7 +157,7 @@ export const Camisetam = () => {
           </ProductProd>
         </div>
       )}
-      <SlidsListProducts />
+     {/* <SlidsListProducts />*/}
       <Footer />
     </>
   );

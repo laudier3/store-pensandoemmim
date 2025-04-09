@@ -51,7 +51,9 @@ export const ConatinerModal = styled.div`
           width: 100%;
           margin-top: 10px;
           border-radius: 6px;
-          border: none;
+          padding: 10px;
+          margin-left: -15px;
+          //border: none;
           outline: none;
 
           &:focus {
@@ -64,7 +66,9 @@ export const ConatinerModal = styled.div`
           width: 100%;
           margin-top: 10px;
           border-radius: 6px;
-          border: none;
+          //border: none;
+          padding: 10px;
+          margin-left: -15px;
           outline: none;
 
            &:focus {

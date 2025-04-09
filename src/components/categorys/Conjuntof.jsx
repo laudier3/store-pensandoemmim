@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../api/api";
 import { Header } from "../header";
-import { SlidsListProducts } from "./SlidsListProducts";
+//import \{ SlidsListProducts \} from "\./SlidsListProducts";
 import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
 
@@ -128,7 +128,7 @@ export const Conjuntof = () => {
           </ProductProd>
         </div>
       )}
-      <SlidsListProducts />
+     {/* <SlidsListProducts />*/}
       <Footer />
     </>
   );

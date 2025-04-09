@@ -44,6 +44,7 @@ import { Calcam } from "./components/categorys/Calcam";
 import { ContainerAppPai } from "./stylesComponents";
 import { LoadPage1 } from "./components/leadPage/LoadPage1";
 import { LoadPage2 } from "./components/leadPage/LoadPage2";
+import { ShareButtons } from "./components/descricao/share";
 //import { HistoryProvider } from "./components/Context/HistoryContext";
 
 //console.log("teste ls")
@@ -83,6 +84,11 @@ function App() {
     {
       path: "/",
       element: <Products />,
+    },
+
+    {
+      path: "/share",
+      element: <ShareButtons />,
     },
 
     {

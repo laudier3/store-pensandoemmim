@@ -5,8 +5,35 @@ export const ContainerComentarioPai = styled.div`
   display: flex;
   width: 90%;
   margin-top: 5%;
-`
 
+  & .comentar {
+    width: 12%;
+    height: 30px;
+    border-radius: 8px;
+    border-color:rgba(131, 128, 128, 0.33);
+    position: absolute;
+    margin-left: 40%;
+    margin-top: -40px;
+
+    &:hover {
+      background:rgb(69, 212, 8);
+    }
+
+    @media (max-width: 723px) and (max-width: 1200px) {
+      font-size: 12px;
+      width: 40%;
+      margin-top: -10px;
+    }
+  }
+
+  & h3 {
+    font-size: 20px;
+
+    @media (max-width: 723px) and (max-width: 1200px) {
+      font-size: 12px;
+    }
+  }
+`
 
 export const ContainerComentario = styled.div`
   margin-top:60px;

@@ -195,6 +195,14 @@ export const Comentarios = () => {
             );
           })}
         </div>
+        {/*<button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal" 
+          className="comentar"
+        >
+          Deixe seu comentario
+        </button>*/}
       </>
     </ContainerComentarioPai>
   );

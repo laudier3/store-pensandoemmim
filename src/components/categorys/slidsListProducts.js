@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const CoontainerSlids = styled.div`
   width: 100%;
   margin: 0 auto;
-  background-image: linear-gradient(to bottom, yellow);
+  background-image: linear-gradient(to bottom, white);
   margin-top: -40px;
 
   @media screen and (max-width: 768px) {
@@ -107,7 +107,7 @@ export const CoontainerSlids = styled.div`
     margin-left: -1%;
     //margin-top: 162px;
 
-    @media (max-width: 968px){
+    @media (max-width: 923px){
       width: 30%;
       height: 170px;
       color: whitesmoke;
@@ -180,6 +180,7 @@ export const ButtonComponent = styled.div`
       height: 170px;
       color: whitesmoke;
       display: none;
+      background-color: white
     }
   }
 
@@ -214,6 +215,7 @@ export const ButtonComponent = styled.div`
       height: 170px;
       color: whitesmoke;
       display: none;
+      background-color: white
     }
   }
 `
