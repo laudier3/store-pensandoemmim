@@ -154,7 +154,7 @@ export default function Footer() {
         <div>
           <h4>Politicas do site</h4>
           <a href="politica" className="links" rel="noopener noreferrer">
-            Politicas
+            Politica de privacidade
           </a>
           <br />
           <a
