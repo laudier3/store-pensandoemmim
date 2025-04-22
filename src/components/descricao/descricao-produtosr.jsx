@@ -19,7 +19,7 @@ import { EffectCreative } from "swiper/modules";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
 import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
-import Footer from "./footer/footer";
+import Footer from "../footer/footer";
 import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "../leadPage/styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
@@ -1760,9 +1760,9 @@ export const DescriptionProducts = () => {
         </ProductDetails>
       </Container>
       </div> : CarregandoPagina()}
-    <ProductDetails>
+    
       <Footer />
-    </ProductDetails>
+   
     </>
   );
 };

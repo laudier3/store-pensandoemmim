@@ -97,7 +97,7 @@ export const ContainerFooter = styled.div`
   & h2 {
     font-weight: bold;
     font-size: 2.5vw;
-    text-shadow: 0 5px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+    text-shadow: 0 5px 0 rgb(121, 116, 116), 0 3px 0 #013d3d, 0 1px 0 #bbb,
       0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
       0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
       0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),

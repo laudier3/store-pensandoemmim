@@ -1,16 +1,5 @@
-/* eslint-disable eqeqeq */
-import React, { useState } from "react";
-import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from "./styles";
-import { Link } from "react-router-dom";
-import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
-import correios from "./images/correios@2x.png";
-import pac from "./images/pac@2x.png";
-import sedex from "./images/sedex@2x.png";
-import trasport from "./images/transportadoras.jpg";
-import seloSeguranca from "./images/selo-seguranca.png";
-//import { ShareSocial } from "react-share-social";
-//import apk from "./PensandoEmMim.apk";
+import React from "react";
+import "./footer2.css"
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -26,201 +15,66 @@ import {
 import { SiGooglemaps } from "react-icons/si";
 
 export default function Footer() {
-  const [name, setName] = useState([]);
-  const [email, setEmail] = useState([]);
-
-  function sendEmail(e) {
-    e.preventDefault();
-
-    const templetEmail = {
-      from_name: name,
-      email: email,
-    };
-
-    if (name == "" || email == "") {
-      toast.error(`Os compos tem que está preechidos!`);
-    }
-
-    emailjs
-      .send(
-        "service_mu6fcse",
-        "template_vkb1i55",
-        templetEmail,
-        "H_LKfhQ_8yndus8Af"
-      )
-      .then(
-        (result) => {
-          toast.success(
-            "Mensagem enviada com sucesso! 👍 Em breve você receberá um E-mail de com novidades!"
-          );
-        },
-        (error) => {
-          toast.error("Houve um erro tente novamente mais tarde!");
-        }
-      );
-
-    e.target.reset();
-  }
-
-  const imgCart = [
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/aura@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/elo@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/hipercard@2x.png",
-    },
-    {
-      img: "https://www.designi.com.br/images/preview/10028350.jpg",
-    },
-  ];
-
-  const formaEnvio = [
-    {
-      envio: correios,
-    },
-    {
-      envio: pac,
-    },
-    {
-      envio: sedex,
-    },
-    {
-      envio: trasport,
-    },
-  ];
-
-  const seguranca = [
-    /*{
-      seguro: ssl,
-    },*/
-    {
-      seguro: seloSeguranca,
-    },
-  ];
-
-  //"https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
 
   return (
     <>
-      <ContainerFooter>
-        <Link to="/">
+      <footer className="footer">
+        {/*<Link to="/">
           <h2>PensandoEmMim</h2>
-        </Link>
+        </Link>*/}
+        <div className="footer-container">
+          <div className="footer-section contato">
+          <h4>Contato</h4>
+          <p>Email: laudiersantanamei@gmail.com</p>
+          <p>WhatsApp: (75) 998239680</p>
+          </div>
 
-        <form onSubmit={sendEmail} name="contact" nelify>
-          <h5>Receba novidades em primeira mão, deixe seu e-mail aqui!</h5>
-          <input
-            type="text"
-            placeholder="Nome"
-            name="name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input type="submit" value="Enviar" className="btnInput" />
-          {/*<textarea name="message" id="" cols="100%" rows="4" placeholder='Message'></textarea>*/}
-        </form>
-        {/*<div className="a">
-          <img
-            src="https://w7.pngwing.com/pngs/638/295/png-transparent-android-software-development-logo-android-text-grass-desktop-wallpaper-thumbnail.png"
-            alt="img"
-            className="a-img"
-          />
-          <a href={apk} target="_blank" rel="noopener noreferrer" className="t">
-            BAIXAR APK
-          </a>
-        </div>*/}
-      </ContainerFooter>
-      <ContainerFooter2>
-        <div>
-          <h4>Politicas do site</h4>
-          <a href="politica" className="links" rel="noopener noreferrer">
-            Politica de privacidade
-          </a>
-          <br />
-          <a
-            href="politicatrocadevolucao"
-            className="links"
-            rel="noopener noreferrer"
-          >
-            Devolucao
-          </a>
-        </div>
-        <div>
-          <h4>Bandeira</h4>
-          {imgCart.map((img) => (
-            <img src={img.img} alt="im" />
-          ))}
-        </div>
-        <div>
-          <h4>Meios de envio</h4>
-          {formaEnvio.map((img) => (
-            <img src={img.envio} alt="im" />
-          ))}
-        </div>
-        <div className="imgSeg">
-          {seguranca.map((seg) => (
-            <img src={seg.seguro} alt="im" />
-          ))}
-        </div>
-      </ContainerFooter2>
+          <div className="footer-section politicas">
+          <h4>Políticas</h4>
+          <a href="/politica">Política de Privacidade</a>
+          <a href="/politicatrocadevolucao">Política de Devolução</a>
+          </div>
 
-      <ContainerFooter1>
-        <div>
-          <strong>
-            Trabalhamos com total responsabilidade para que você, receba seu
-            produto ou devolvemos seu dinheiro d volta.
-          </strong>
-          <p>&copy; Todos os direitos reservado PensandoEmMim</p>
-          <p>
-            <SiGooglemaps style={{ marginRight: 5, marginTop: "-5px" }} />
-            <b>Endereço: </b> Rua Marquez de Olinda | Bairoor Jardim Munhoz |
-            Guarulhos | Sp
-          </p>
-        </div>
-        <div>
-          <url>
-            <li>E-mail: laudiersantanamei@gmail.com</li>
-            <li>Phone: (75) 998239680</li>
-            <li>CPF: 034.322.725-88</li>
-          </url>
+          <div className="footer-section pagamento">
+          <h4>Formas de Pagamento</h4>
+          <img src="https://http2.mlstatic.com/D_NQ_NP_886378-MLB43190337161_082020-O.webp" alt="Mercado Pago" className="logo-pagamento"/>
+          </div>
+
+          <div className="footer-section seguranca">
+          <h4>Segurança</h4>
+          {/*<img src="https://img.icons8.com/color/48/000000/secured-letter--v1.png" alt="Site Seguro" className="icone-seguranca"/>*/}
+          <div className="mg">
+            <FacebookShareButton url="https://pensandoemmim.com/novidades">
+              <FacebookIcon className="social" />
+            </FacebookShareButton>
+            <WhatsappShareButton url="https://pensandoemmim.com/novidades">
+              <WhatsappIcon className="social" />
+            </WhatsappShareButton>
+            <TelegramShareButton url="https://pensandoemmim.com/novidades">
+              <TelegramIcon className="social" />
+            </TelegramShareButton>
+            <RedditShareButton url="https://pensandoemmim.com/novidades">
+              <RedditIcon className="social" />
+            </RedditShareButton>
+            <TumblrShareButton url="https://pensandoemmim.com/novidades">
+              <TumblrIcon className="social" />
+            </TumblrShareButton>
+          </div>
           <br />
-          <FacebookShareButton url="https://pensandoemmim.com/novidades">
-            <FacebookIcon className="social" />
-          </FacebookShareButton>
-          <WhatsappShareButton url="https://pensandoemmim.com/novidades">
-            <WhatsappIcon className="social" />
-          </WhatsappShareButton>
-          <TelegramShareButton url="https://pensandoemmim.com/novidades">
-            <TelegramIcon className="social" />
-          </TelegramShareButton>
-          <RedditShareButton url="https://pensandoemmim.com/novidades">
-            <RedditIcon className="social" />
-          </RedditShareButton>
-          <TumblrShareButton url="https://pensandoemmim.com/novidades">
-            <TumblrIcon className="social" />
-          </TumblrShareButton>
+          <p>Site 100% Seguro</p>
+          <p>CPF: 034.322.725-88</p>
+          </div>
         </div>
-      </ContainerFooter1>
+
+        <div className="footer-bottom">
+            <p>&copy; 2025 Sua Loja. Todos os direitos reservados.</p>
+            <p>
+              <SiGooglemaps style={{ marginRight: 5, marginTop: "-5px" }} />
+              <b>Endereço: </b> Rua Marquez de Olinda | Bairoor Jardim Munhoz |
+              Guarulhos | Sp
+            </p>
+        </div>
+        </footer>
     </>
   );
 }

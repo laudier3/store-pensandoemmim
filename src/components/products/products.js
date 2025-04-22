@@ -362,7 +362,7 @@ export const ContainerVerMais = styled.div`
       font-size: 1.3rem;
 
       &:hover {
-        background: aquamarine;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.705), #013d3d);
       }
 
       @media (max-width: 768px) {

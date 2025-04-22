@@ -146,15 +146,15 @@ export const Logo = styled.div`
   font-weight: bold;
   font-size: 2.5vw;
   color: aqua;
-  text-shadow: 0 5px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+  text-shadow: 0 1px 0 rgb(248, 240, 240), 0 1px 0 #c9c9c9, 0 1px 0 #bbb,
     0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
     0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px transparent;
 
   & .a-color {
     margin-left: 1px;
-    color: aqua;
+    color: #111;
     text-decoration: none;
     text-align: center;
 
