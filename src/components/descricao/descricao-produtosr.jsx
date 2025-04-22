@@ -16,7 +16,6 @@ import { LoadingPage } from "../products/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
-import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
 import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
@@ -28,6 +27,7 @@ import * as JivoSite from "react-jivosite";
 import { useEffect } from "react";
 import { ProduVideoPlay } from './ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
+//import { Comentarios } from "./comentarios";
 //import Base64UrlWithName from "./teste/personalibse";
 //import { UpdateImage } from "./upload";
 //import "react-html5video/dist/styles.css"
@@ -1756,7 +1756,7 @@ export const DescriptionProducts = () => {
           </ProductWrapper>
           
         <ProductDetails>
-          <Comentarios />
+          {/*<Comentarios />*/}
         </ProductDetails>
       </Container>
       </div> : CarregandoPagina()}

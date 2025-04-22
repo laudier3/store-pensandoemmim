@@ -17,7 +17,6 @@ import { LoadingPage } from "../products/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
-import { Comentarios } from "./comentarios";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
 import { ImageMovel, MarginTop, Pricipal, PositionCard, ButtonsImagesColor } from "./desc"; //PositionCard
@@ -28,6 +27,7 @@ import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { FaCartPlus } from "react-icons/fa";
 import { ButtonsDesc } from "./desc";
 import { FaArrowLeftLong } from "react-icons/fa6";
+//import { Comentarios } from "./comentarios";
 //import { P, DefaultPlayer as Video } from "react-html5video";
 //import { ProduVideoPlay2 } from "./ReactVideoPlay";
 //import { ImageList } from "@material-ui/core";
@@ -1287,7 +1287,7 @@ export const DescriptionProducts = () => {
         </footer>
       </Pricipal>
       <Realacionandos />
-      <Comentarios />
+      {/*<Comentarios />*/}
       <Footer />
     </>
   );

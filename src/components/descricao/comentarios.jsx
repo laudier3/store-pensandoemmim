@@ -7,6 +7,8 @@ import { ModalImageComentario } from "../modal/ModalImageComentario";
 import { useState } from "react";
 import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
+import { ProductReviewForm } from "./avaliacao";
+//import { ProductReviewForm } from "./mod";
 ///import { Widgets } from "@material-ui/icons"
 
 export const Comentarios = () => {
@@ -195,15 +197,16 @@ export const Comentarios = () => {
             );
           })}
         </div>
-        {/*<button
+        {<button
           type="button"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal" 
           className="comentar"
         >
           Deixe seu comentario
-        </button>*/}
+        </button>}
       </>
+      <ProductReviewForm/>
     </ContainerComentarioPai>
   );
 };
