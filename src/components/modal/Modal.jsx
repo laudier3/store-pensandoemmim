@@ -108,7 +108,7 @@ export function Modal() {
 
         <div>
           <label>Nome:</label><br />
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required style={{ width: '100%', padding: 2 }} />
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required style={{ width: '100%', padding: 5 }} />
         </div>
 
         <div>
@@ -126,7 +126,7 @@ export function Modal() {
 
         <div>
           <label>Mensagem:</label><br />
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows="4" style={{ width: '100%' }} />
+          <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows="4" style={{ width: '100%', padding: 5 }} />
         </div>
 
         <div style={{ marginTop: 20 }}>
