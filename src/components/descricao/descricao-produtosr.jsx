@@ -27,7 +27,7 @@ import * as JivoSite from "react-jivosite";
 import { useEffect } from "react";
 import { ProduVideoPlay } from './ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
-//import { Comentarios } from "./comentarios";
+import { Comentarios } from "./comentariosVPS";
 //import Base64UrlWithName from "./teste/personalibse";
 //import { UpdateImage } from "./upload";
 //import "react-html5video/dist/styles.css"
@@ -1756,7 +1756,7 @@ export const DescriptionProducts = () => {
           </ProductWrapper>
           
         <ProductDetails>
-          {/*<Comentarios />*/}
+          {<Comentarios />}
         </ProductDetails>
       </Container>
       </div> : CarregandoPagina()}

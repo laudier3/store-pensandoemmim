@@ -1,238 +1,160 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-dupe-keys */
-/* eslint-disable eqeqeq */
-import React, { useState } from 'react';
-import ImageUploading from 'react-images-uploading';
-import { ImCloudUpload } from "react-icons/im";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { GrUpdate } from "react-icons/gr";
-import { CFontainerImageProduct, ConatinerModal } from './modal';
-import api from '../../api/api';
-import { toast } from 'react-toastify';
+import React, { useState, useRef } from 'react';
+import axios from 'axios';
 
-export const Modal = () => {
+export function Modal() {
+  const [name, setName] = useState('');
+  const [stars, setStars] = useState('');
+  const [message, setMessage] = useState('');
+  const [images, setImages] = useState([]);
+  const [previewUrls, setPreviewUrls] = useState([]);
+  const [imgName, setImgName] = useState(null);
+  const [imgNamePreview, setImgNamePreview] = useState('');
+  const fileInputRef = useRef(null);
 
   let url = window.location.pathname;
   let parts = url.split("/");
   let localId = parts.pop() || parts.pop();
 
-  //const localId = localStorage.getItem("id")
+  //console.log("ts", localId)
 
-  const [images, setImages] = useState("");
-  const [imagesLista1, setLista1] = useState("");
-  const [imageUm, setImageUm] = useState("")
-  //const [imageDois, setImageDois] = useState("")
-  const [name, setName] = useState("");
-  const [estrela, setEstrela] = useState("");
-  const [message, setMessage] = useState("");
-  const maxNumber = 69;
-
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    
-    setImages(imageList);
+  const handleProductImages = (e) => {
+    const files = Array.from(e.target.files).slice(0, 4); // no máximo 4
+    setImages(files);
+    setPreviewUrls(files.map(file => URL.createObjectURL(file)));
   };
 
-  const onChange0 = (imageList, addUpdateIndex) => {
-    // data for submit
-  
-    setImageUm(imageList[0].data_url);
-    
-    setLista1(imageList);
-
-    //console.log(imageList)
+  const handleImgName = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImgName(file);
+      setImgNamePreview(URL.createObjectURL(file));
+    }
   };
 
-  const onChange4 = (e) => {
-    // data for submit
-    
-    setName(e);
-  };
-  const onChange5 = (e) => {
-    // data for submit
-    
-    setEstrela(e);
-  };
-  const onChange6 = (e) => {
-    // data for submit
-    
-    setMessage(e);
-  };
+  //const url = process.env.URL_VIWER
 
-  /*const dataList = {
-    imgName: images,
-    name: name,
-    estrela: estrela,
-    message: message,
-    idProduct: localId
-  }*/
+  //console.log(url)
 
-  const listmap = imagesLista1 ? imagesLista1.map((res) => res.data_url) : ""
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleProcess = async (e) => {
+    if (stars === 0) {
+      alert('Por favor, selecione uma quantidade de estrelas.');
+      return;
+    }
 
-    e.preventDefault()
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('estrela', stars.toString());
+      formData.append('message', message);
+      formData.append('idProduct', localId);
 
-    if(imageUm){
-
-      const dataListPronto = {
-        image: listmap,
-        ts: listmap,
-        imgName: images[0].data_url,
-        name: name,
-        estrela: estrela,
-        message: message,
-        idProduct: localId
+      if (imgName) {
+        formData.append('imgName', imgName); // Agora enviamos a imagem real
       }
 
-      console.log(dataListPronto)
-    
-      /*await api.post("/comentario", dataListPronto).then((response) => {
+      const campos = ['imageUm', 'imageDois', 'imageTres', 'imageQuatro'];
+      images.forEach((img, i) => {
+        formData.append(campos[i], img);
+      });
 
-      try {
-        setTimeout(() => {
-        }, 10000)
- 
-       toast.success(`Obrigado por da sua opinião!`)
- 
-         const dataRelations2 = {
-           id_comentario: `${response.data.comentario.id}`,
-           id_product: `${localId}`
-         }
-     
-         api.post("/comentariorelation", dataRelations2).then((catego) => {
-           toast.success(`O relacionamento foi feito!`)
-         })
-        } catch (error) {
-          throw error
-          //console.log(error.response.data)
-        }
-      })*/
+      /*const payload = {
+        name: name,
+        imgName: imgName,
+        estrela: stars,
+        message: message,        
+        idProduct: localId,
+        imageUm: images[0]?.name,
+        imageDois: images[1]?.name,
+        imageTres: images[2]?.name,
+        imageQuatro: images[3]?.name
+      }*/
+      
+      const res = await axios.post('http://103.199.187.229:3000/comentario', formData);
+      console.log('Resposta:', res.data);
+      alert('Avaliação enviada com sucesso!');
+
+      // Reset
+      setName('');
+      setStars(0);
+      setMessage('');
+      setImages([]);
+      setPreviewUrls([]);
+      setImgName(null);
+      setImgNamePreview('');
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    } catch (err) {
+      console.error('Erro ao enviar avaliação:', err);
+      alert('Erro ao enviar avaliação.');
     }
-  }
+  };
 
   return (
-    <ConatinerModal>
-      <div className="container col-sm-8 bg-img1">
-        <ul>
-          <h5>Sua Imagem</h5>
-          <li className='liImageName'>
-          <ImageUploading
-            multiple
-            value={images}
-            onChange={onChange}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemoveAll,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              // write your building UI
-              <div>
-                {imageList == "" ?
-                <>
-                   <button
-                      style={{marginLeft: "-10px", border: "none"}}
-                      className='btn-outline-warning btn-block'
-                      onClick={onImageUpload}
-                      {...dragProps}
-                    >
-                    <div>
-                      <ImCloudUpload style={{width: 210, height: 80, cursor: "pointer", margin: "auto", display: "flex"}}/>
-                    </div>
-                    </button>
-                    &nbsp;
-                </>
-                : 
-               
-                imageList.map((image, index) => (
-                  <div style={{display: "inline-block", margin: 5}}>
-                    <div key={index} >
-                    <button style={
-                      {width: 30, fontSize: 15, fontWeight: "bold", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px", margin: "auto", background: "#F62D2D", border: "none", padding: "5px", borderRadius: "6px"}
-                      } onClick={() => onImageRemove(index)}>
-                      X
-                    </button>
-                      <img src={image['data_url']} alt="" width="200" height="200" style={
-                        {borderRadius: "100px", border: "solid 1px", padding: "10px", margin: "5px"}
-                      }/>
-                    </div>
-                    
-                    <div>
-                  </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </ImageUploading>
-            </li>
-            <li>
-              {' '}
-              <input type="text" placeholder='Seu nome' name='name' onChange={(e) => onChange4(e.target.value)} />
-            </li>
-            <li>
-              <input type="text" placeholder='quantas estrelas' name='estrela' onChange={(e) => onChange5(e.target.value)} />
-            </li>
-            <li>
-              <textarea type="text" maxlength="200" placeholder='Sua message' name='message' onChange={(e) => onChange6(e.target.value)} />
-            </li>
-          </ul>
-          <CFontainerImageProduct>
-          <div className='imageName'>
-          <h5>Imagem do produto</h5>
-          <ImageUploading
-          multiple
-          onChange={onChange0}
-          value={imagesLista1}
-          maxNumber={maxNumber}
-          dataURLKey="data_url"
-        >
-          {({
-            imageList,
-            onImageUpload,
-            onImageRemoveAll,
-            onImageUpdate,
-            onImageRemove,
-            isDragging,
-            dragProps,
-          }) => (
-            // write your building UI
-            <div className="upload__image-wrapper">
-             
-              {imageList.map((image, index) => (
-                <div key={index} className="image-item" style={{display: "inline-block", margin: 1, marginTop: 5}}>
-                  <img src={image['data_url']} alt="" width="70" height="70"/>
-                  <div className="image-item__btn-wrapper">
-                    <button onClick={() => onImageUpdate(index)}><GrUpdate style={{width: 30, color: "red",}}/></button>
-                    <button onClick={() => onImageRemove(index)}><RiDeleteBin6Line style={{width: 30, color: "red",}}/></button>
-                  </div>
-                </div>
-              ))}
-              <br />
-              <br />
-               <button
-                style={{border: "none", borderRadius: 8, color: "aqua", backgroundColor: "#716b6bf", display: "inline-blocks", margin: 5, padding: 5, backgroundColor: "gray"}}
-                onClick={onImageUpload}
-                {...dragProps}
-              >
-                Add Image
-              </button>
-              &nbsp;
-              <button onClick={onImageRemoveAll} style={{border: "none", borderRadius: 8, color: "aqua", backgroundColor: "#fffff", display: "inline-blocks", margin: 5, padding: 5, backgroundColor: "gray"}}>Remove Tudo</button>
-            </div>
+    <div style={{ maxWidth: 500, margin: '0 auto', padding: 20, border: '1px solid #ccc', borderRadius: 10 }}>
+      <h2>Deixe sua Avaliação</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Imagem do Usuário (imgName):</label><br />
+          <input type="file" accept="image/*" onChange={handleImgName} />
+          {imgNamePreview && (
+            <img
+              src={imgNamePreview}
+              alt="preview-user"
+              style={{ marginTop: 10, width: 80, height: 80, objectFit: 'cover', borderRadius: '50%' }}
+            />
           )}
-        </ImageUploading>
+        </div>
+
+        <div>
+          <label>Nome:</label><br />
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required style={{ width: '100%', padding: 2 }} />
+        </div>
+
+        <div>
+          <label>Estrelas:</label><br />
+          {['1', '2', '3', '4', '5'].map((n) => (
+            <span
+              key={n}
+              style={{ cursor: 'pointer', color: n <= stars ? 'gold' : 'gray', fontSize: 24 }}
+              onClick={() => setStars(n)}
+            >
+              ★
+            </span>
+          ))}
+        </div>
+
+        <div>
+          <label>Mensagem:</label><br />
+          <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows="4" style={{ width: '100%' }} />
+        </div>
+
+        <div style={{ marginTop: 20 }}>
+          <label>Imagens do Produto (máx. 4):</label><br />
+          <input
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleProductImages}
+            ref={fileInputRef}
+          />
+          <div style={{ marginTop: 10, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {previewUrls.map((url, idx) => (
+              <img key={idx} src={url} alt={`preview-${idx}`} style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }} />
+            ))}
           </div>
-          
-        </CFontainerImageProduct>
-      </div>
-      <button type="submit" className='btn btn-info btn-block' onClick={handleProcess}>Enviar</button>
-    </ConatinerModal>
+        </div>
+
+        <button type="submit" style={{ marginTop: 20, padding: '10px 20px' }}>Enviar Avaliação</button>
+      </form>
+    </div>
   );
-};
+}
+
+
+//name"
+//imgName"
+//image"	
+//message"
+//estrela"
+//idProduct"

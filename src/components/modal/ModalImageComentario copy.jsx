@@ -1,11 +1,28 @@
 /* eslint-disable eqeqeq */
-//import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ConatinerModalImageSlids } from "./modal";
 import { Swiper, SwiperSlide } from "swiper/react";
+import axios from 'axios';
 
 //console.clear()
 export const ModalImageComentario = ({ data, comnetario }) => {
-  //const arrey = [comnetario];
+  const arrey = [comnetario];
+
+  const [dataList, setData] = useState([]);
+
+  useEffect(() => {
+    (async() => {
+      const req = await axios.get("http://103.199.187.229:3000/comentario")
+      const res = await req.data;
+
+      setData(res)
+    })()
+  },[])
+
+  //const localId = localStorage.getItem("id");
+  let url = window.location.pathname;
+  let parts = url.split("/");
+  let localId = parts.pop() || parts.pop();
 
   //window.history.pushState(null, null, "/desc")
   //const ev = window.history.back()
@@ -19,10 +36,14 @@ export const ModalImageComentario = ({ data, comnetario }) => {
     });
   }
 
-  const filterImage = comnetario?.filter((resp) => resp.id == data);
- // const listImagens = [filterImage]
+  const filterImage = arrey[0]?.filter((resp) => resp.id == data);
 
-  //console.log(data, "k", filterImage, "l")
+  const comnetFilterVPS = dataList?.filter(
+    (comentData) => comentData.idProduct === localId
+  );
+
+
+  console.log(comnetFilterVPS[0], "k")
   return (
     <ConatinerModalImageSlids>
       <>
@@ -34,10 +55,9 @@ export const ModalImageComentario = ({ data, comnetario }) => {
             navigation
             style={{ width: "100%", height: "80vh", color: "aqua" }}
           >
-            {filterImage.map((imgData) => {
+            {comnetFilterVPS.map((imgData) => {
               const { images } = imgData;
               const loopImg = [images[0], images[1], images[2], images[3]];
-              //console.log(loopImg)
 
               return (
                 <div key={ImageData}>

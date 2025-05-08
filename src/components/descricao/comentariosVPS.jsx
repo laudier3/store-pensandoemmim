@@ -47,6 +47,12 @@ export const Comentarios = () => {
     (comentData) => comentData.idProduct === localId
   );
 
+  const comnetFilterVPS = data?.filter(
+    (comentData) => comentData.idProduct === localId
+  );
+
+  //console.log(comnetFilterVPS, "Teste 2", comnetFilter)
+
   useEffect(() => {
     (async() => {
       const req = await axios.get("http://103.199.187.229:3000/comentario")
@@ -55,8 +61,7 @@ export const Comentarios = () => {
       setData(res)
     })()
   },[])
-
-  console.log(data, "t isso é um teste");
+  //console.log(data, " t");
 
   return (
     <ContainerComentarioPai>
@@ -117,35 +122,57 @@ export const Comentarios = () => {
               </div>
             </div>
           </div>
-          {/*data.map(res => {
-            const {id, name, estrela, idProduct, imgName, images} = res
-            
-            return (
-              <div id={res.id}>
-                <img src={`http://103.199.187.229:3000/uploads/${res.images[0]}`} alt="imgAvalietions"/>
-              </div>
-            )
-          })*/}
-          {comnetFilter.map((rescoment) => {
-            const { id, name, message, image, imgName } = rescoment;
 
-            const imgList = [image];
+          {/*comnetFilterVPS.map(res => {
+              const {id, name, estrela, idProduct, imgName, images} = res
 
-            //console.log(imgList)
+              console.log(res)
+              
+              return (
+                <div id={res.id}>
+                  <img src={`http://103.199.187.229:3000/uploads/${res.images[0]}`} alt="imgAvalietions" className="imgList"/>
+                </div> 
+              )
+            })*/}
+          {comnetFilterVPS.map((rescoment) => {
+            const { id, name, message, images, imgName, estrela } = rescoment;
 
+            const imgList = [images];
+
+           // console.log(imgName)
             return (
               <ContainerComentario>
                 <div>
-                  <img src={imgName} alt="img" className="imgName" />
+                  <img src={`http://103.199.187.229:3000/uploads/${imgName}`} alt="img" className="imgName" />
                   <h5>
                     {name} <br />
-                    <GoStarFill className="text-warning estrelas2" />
-                    <GoStarFill className="text-warning estrelas2" />
-                    <GoStarFill className="text-warning estrelas2" />
-                    <GoStarFill className="text-warning estrelas2" />
-                    <TiStarHalfOutline className="text-warning estrelas" />
                   </h5>
                 </div>
+                    {estrela === 1 ? <span>
+                      <GoStarFill className="text-warning estrelas2" />
+                    </span> : ""}
+                    {estrela === 2 ? <span>
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                    </span> : ""}
+                    {estrela === 3 ? <span>
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                    </span> : ""}
+                    {estrela === 4 ? <span>
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                    </span> : ""}
+                    {estrela === 5 ? <span>
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning estrelas2" />
+                    </span> : ""}
                 <div>
                   <p>{message}</p>
                 </div>
@@ -165,7 +192,7 @@ export const Comentarios = () => {
                           ""
                         ) : (
                           <img
-                            src={resImg}
+                            src={`http://103.199.187.229:3000/uploads/${resImg}`}
                             alt="comentarios"
                             className="imgList"
                           />
@@ -208,7 +235,7 @@ export const Comentarios = () => {
                         <div className="modal-body text-dark">
                           <ModalImageComentario
                             data={datacoment}
-                            comnetario={comnetFilter}
+                            comnetario={comnetFilterVPS}
                           />
                         </div>
                       </div>
