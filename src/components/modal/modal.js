@@ -1,5 +1,28 @@
 import styled from "styled-components";
 
+export const Button = styled.div`
+  & .model{
+    width: 100%;
+    background-image: linear-gradient(#03EBEB, #001414);
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+
+    &:hover{
+      background-image: linear-gradient(#03EBEB,rgb(148, 214, 214));
+      color: #001414;
+    }
+  }
+`
+
+export const Texto  = styled.div`
+  @media(max-width: 923px){
+    font-size: 13px;
+  }
+`
+
 export const ConatinerModal = styled.div`
   
   & div {

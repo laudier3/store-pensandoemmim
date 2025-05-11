@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import { Button, Texto } from './modal'
 
 export function Modal() {
   const [name, setName] = useState('');
@@ -96,7 +97,9 @@ export function Modal() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Imagem do Usuário (imgName):</label><br />
-          <input type="file" accept="image/*" onChange={handleImgName} />
+          <Texto>
+            <input type="file" accept="image/*" onChange={handleImgName}/>
+          </Texto>
           {imgNamePreview && (
             <img
               src={imgNamePreview}
@@ -131,21 +134,24 @@ export function Modal() {
 
         <div style={{ marginTop: 20 }}>
           <label>Imagens do Produto (máx. 4):</label><br />
-          <input
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={handleProductImages}
-            ref={fileInputRef}
-          />
+          <Texto>
+            <input
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleProductImages}
+              ref={fileInputRef}
+            />
+          </Texto>
           <div style={{ marginTop: 10, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {previewUrls.map((url, idx) => (
               <img key={idx} src={url} alt={`preview-${idx}`} style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }} />
             ))}
           </div>
         </div>
-
-        <button type="submit" style={{ marginTop: 20, padding: '10px 20px' }}>Enviar Avaliação</button>
+        <Button>
+          <button type="submit" className='model'>Enviar Avaliação</button>
+        </Button>
       </form>
     </div>
   );

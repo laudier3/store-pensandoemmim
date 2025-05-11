@@ -149,7 +149,7 @@ export const Comentarios = () => {
                   </h5>
                 </div>
                     {estrela === 1 ? <span>
-                      <GoStarFill className="text-warning estrelas2" />
+                      <GoStarFill className="text-warning" />
                     </span> : ""}
                     {estrela === 2 ? <span>
                       <GoStarFill className="text-warning estrelas2" />
