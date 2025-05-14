@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: "https://apinonshops.store"
+    baseURL: "https://app1.apinonshops.store"
     //baseURL: "https://api-pensamdoemmim.onrender.com" //isso foi auterado em 29/11/2024
     //baseURL: "https://apinonshops.store"
     //baseURL: "http://35.193.184.30"

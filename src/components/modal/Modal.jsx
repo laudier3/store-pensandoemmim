@@ -72,7 +72,7 @@ export function Modal() {
         imageQuatro: images[3]?.name
       }*/
       
-      const res = await axios.post('http://103.199.187.229:3000/comentario', formData);
+      const res = await axios.post('https://app2.apinonshops.store/comentario', formData);
       console.log('Resposta:', res.data);
       alert('Avaliação enviada com sucesso!');
 
