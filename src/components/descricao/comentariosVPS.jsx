@@ -5,7 +5,7 @@ import { Modal } from "../modal/Modal";
 import { ContainerComentario, ContainerComentarioPai } from "./stylesComentarios";
 import { ModalImageComentario } from "../modal/ModalImageComentario";
 import { useState } from "react";
-import { TiStarHalfOutline } from "react-icons/ti";
+//import { TiStarHalfOutline } from "react-icons/ti";
 import { GoStarFill } from "react-icons/go";
 import { useEffect } from "react";
 import axios from "axios";
@@ -55,7 +55,7 @@ export const Comentarios = () => {
 
   useEffect(() => {
     (async() => {
-      const req = await axios.get("http://103.199.187.229:3000/comentario")
+      const req = await axios.get("https://app2.apinonshops.store/comentario")
       const res = await req.data;
 
       setData(res)
@@ -143,7 +143,7 @@ export const Comentarios = () => {
             return (
               <ContainerComentario>
                 <div>
-                  <img src={`http://103.199.187.229:3000/uploads/${imgName}`} alt="img" className="imgName" />
+                  <img src={`https://app2.apinonshops.store/uploads/${imgName}`} alt="img" className="imgName" />
                   <h5>
                     {name} <br />
                   </h5>

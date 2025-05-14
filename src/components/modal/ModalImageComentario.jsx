@@ -48,7 +48,7 @@ export const ModalImageComentario = ({ data, comnetario }) => {
                         style={{ width: "100%", height: "80vh" }}
                       >
                         <img
-                          src={`http://103.199.187.229:3000/uploads/${res}`}
+                          src={`https://app2.apinonshops.store/uploads/${res}`}
                           //style={{ width: "100%", height: "70vh" }}
                           id="logo"
                           alt="Imagem não encontrada"
