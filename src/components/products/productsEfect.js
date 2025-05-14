@@ -58,6 +58,16 @@ export const ProductProd = styled.div`
   padding: 12px;
   //border: "solid 1px";
 
+  & .precarregamentoProducts {
+    width: 100%;
+    height: 200px;
+  }
+
+  & .precarregamentoProductsDetails {
+    width: 100%;
+    height: 18px;
+  }
+
   @media (max-width: 1650px) {
     width: 100%;
   }
@@ -234,6 +244,17 @@ export const ProductProd = styled.div`
       border: solid 1px;
       margin: 2px;
       border-color:rgba(32, 140, 255, 0.29);
+
+      & .precarregamentoProducts {
+        width: 100%;
+        height: 12vh;
+      }
+
+      & .precarregamentoProductsDetails {
+        width: 100%;
+        height: 10px;
+      }
+
 
       & h5 {
         font-size: 0.7rem;

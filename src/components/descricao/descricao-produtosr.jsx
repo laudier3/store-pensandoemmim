@@ -28,6 +28,8 @@ import { useEffect } from "react";
 import { ProduVideoPlay } from './ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
 import { Comentarios } from "./comentariosVPS";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 //import Base64UrlWithName from "./teste/personalibse";
 //import { UpdateImage } from "./upload";
 //import "react-html5video/dist/styles.css"
@@ -421,7 +423,7 @@ export const DescriptionProducts = () => {
   /*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/
 
   return (
-    <>
+    <SkeletonTheme baseColor="#eee" highlightColor="#f5f5f5">
       <HeaderDesc />
       {dataProductFilter[0]?.id ?
       <div>
@@ -467,12 +469,13 @@ export const DescriptionProducts = () => {
                       >
                         {imgList.map((resImg) => (
                         <SwiperSlide key={id}>
+                          {resImg > "" ?
                           <img
                             src={dataSlug ? dataSlug : resImg}
                             id="logo"
                             alt="img"
                             className="imgDiv"
-                          />
+                          /> : <Skeleton className="imgePreviewDesc" />}
                         </SwiperSlide>
                           
                         ))}
@@ -1763,6 +1766,6 @@ export const DescriptionProducts = () => {
     
       <Footer />
    
-    </>
+    </SkeletonTheme>
   );
 };

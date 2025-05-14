@@ -11,8 +11,6 @@ import api from "../../api/api";
 import "react-html5video/dist/styles.css";
 import SlidsProducts from "../header/SlidsProducts";
 import { Header } from "../header";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'
 //import * as JivoSite from "react-jivosite";
 
 export const Products = () => {
@@ -165,7 +163,7 @@ export const Products = () => {
   //console.log(data)
 
   return (
-    <SkeletonTheme baseColor="#eee" highlightColor="#f5f5f5">
+    <>
       {/*<HeaderList />*/}
       <Header/>
       <SlidsProducts/>
@@ -197,18 +195,18 @@ export const Products = () => {
                   return (
                     <Link to={`/desc/${id}`}>
                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg"/>
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h1 className="oldPricereal"> R$ {novo_price},00</h1>
                       </div>
                     </Link>
                   );
@@ -239,18 +237,18 @@ export const Products = () => {
                   return (
                     <Link to={"/desc/" + id}>
                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -280,19 +278,19 @@ export const Products = () => {
 
                   return (
                     <Link to={"/desc/" + id}>
-                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -324,18 +322,18 @@ export const Products = () => {
                   return (
                     <Link to={"/desc/" + id}>
                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -364,19 +362,19 @@ export const Products = () => {
 
                   return (
                     <Link to={"/desc/" + id}>
-                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -416,19 +414,19 @@ export const Products = () => {
 
                   return (
                     <Link to={"/desc/" + id}>
-                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -459,19 +457,19 @@ export const Products = () => {
 
                   return (
                     <Link to={"/desc/" + id}>
-                       <div key={id}>
-                        {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                        {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                        {res > "" ? <span> 
+                      <div key={id}>
+                        <img src={image[0]} alt="img" />
+                        <h5>{name}</h5>
+                        <b className="frete">Frete Gratis</b>
+                        <img src="card.jpg" alt="img" className="cartImg" />
+                        <span>
                           <p className="p">
                             <FaCreditCard className="cartao" /> Em até 12x sem
                             juros
                           </p>
-                        </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                        { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                        </span>
+                        <h3 className="oldPrice">R${price},00 </h3>
+                        <h4 className="oldPricereal"> R$ {novo_price},00</h4>
                       </div>
                     </Link>
                   );
@@ -510,19 +508,26 @@ export const Products = () => {
 
                         return (
                           <Link to={"/desc/" + id}>
-                             <div key={id}>
-                              {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                              {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                              {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                              {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                              {res > "" ? <span> 
+                            <div key={id}>
+                              <img src={image[0]} alt="img" />
+                              <h5>{name}</h5>
+                              <b className="frete">Frete Gratis</b>
+                              <img
+                                src="card.jpg"
+                                alt="img"
+                                className="cartImg"
+                              />
+                              <span>
                                 <p className="p">
-                                  <FaCreditCard className="cartao" /> Em até 12x sem
-                                  juros
+                                  <FaCreditCard className="cartao" /> Em até 12x
+                                  sem juros
                                 </p>
-                              </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                              { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                              { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                              </span>
+                              <h3 className="oldPrice">R${price},00 </h3>
+                              <h4 className="oldPricereal">
+                                {" "}
+                                R$ {novo_price},00
+                              </h4>
                             </div>
                           </Link>
                         );
@@ -548,18 +553,25 @@ export const Products = () => {
                           return (
                             <Link to={"/desc/" + id}>
                               <div key={id}>
-                                {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                                {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                                {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                                {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                                {res > "" ? <span> 
+                                <img src={image[0]} alt="img" />
+                                <h5>{name}</h5>
+                                <b className="frete">Frete Gratis</b>
+                                <img
+                                  src="card.jpg"
+                                  alt="img"
+                                  className="cartImg"
+                                />
+                                <span>
                                   <p className="p">
-                                    <FaCreditCard className="cartao" /> Em até 12x sem
-                                    juros
+                                    <FaCreditCard className="cartao" /> Em até
+                                    12x sem juros
                                   </p>
-                                </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                                { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                                { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                                </span>
+                                <h3 className="oldPrice">R${price},00 </h3>
+                                <h4 className="oldPricereal">
+                                  {" "}
+                                  R$ {novo_price},00
+                                </h4>
                               </div>
                             </Link>
                           );
@@ -607,19 +619,26 @@ export const Products = () => {
                               return (
                                 <Link to={"/desc/" + id}>
                                   <div key={id}>
-                                  {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                                  {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                                  {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                                  {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                                  {res > "" ? <span> 
-                                    <p className="p">
-                                      <FaCreditCard className="cartao" /> Em até 12x sem
-                                      juros
-                                    </p>
-                                  </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                                  { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                                  { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
-                                </div>
+                                    <img src={image[0]} alt="img" />
+                                    <h5>{name}</h5>
+                                    <b className="frete">Frete Gratis</b>
+                                    <img
+                                      src="card.jpg"
+                                      alt="img"
+                                      className="cartImg"
+                                    />
+                                    <span>
+                                      <p className="p">
+                                        <FaCreditCard className="cartao" /> Em
+                                        até 12x sem juros
+                                      </p>
+                                    </span>
+                                    <h3 className="oldPrice">R${price},00 </h3>
+                                    <h4 className="oldPricereal">
+                                      {" "}
+                                      R$ {novo_price},00
+                                    </h4>
+                                  </div>
                                 </Link>
                               );
                             })
@@ -661,18 +680,27 @@ export const Products = () => {
                                 return (
                                   <Link to={"/desc/" + id}>
                                     <div key={id}>
-                                      {res > "" ?<img src={image[0]} alt="img" /> : <Skeleton className="precarregamentoProducts" />}
-                                      {res > "" ? <h5>{name}</h5> : <Skeleton className="precarregamentoProductsDetails" />}
-                                      {res > "" ? <b className="frete">Frete Gratis</b> : <Skeleton className="precarregamentoProductsDetails" />}
-                                      {res > "" ? <img src="card.jpg" alt="img" className="cartImg"/> : <Skeleton className="precarregamentoProductsDetails" />}
-                                      {res > "" ? <span> 
+                                      <img src={image[0]} alt="img" />
+                                      <h5>{name}</h5>
+                                      <b className="frete">Frete Gratis</b>
+                                      <img
+                                        src="card.jpg"
+                                        alt="img"
+                                        className="cartImg"
+                                      />
+                                      <span>
                                         <p className="p">
-                                          <FaCreditCard className="cartao" /> Em até 12x sem
-                                          juros
+                                          <FaCreditCard className="cartao" /> Em
+                                          até 12x sem juros
                                         </p>
-                                      </span> : <Skeleton className="precarregamentoProductsDetails" />}
-                                      { res > "" ? <h3 className="oldPrice">R${price},00 </h3> : <Skeleton className="precarregamentoProductsDetails" />}
-                                      { res > "" ? <h1 className="oldPricereal"> R$ {novo_price},00</h1> : <Skeleton className="precarregamentoProductsDetails" />}
+                                      </span>
+                                      <h3 className="oldPrice">
+                                        R${price},00{" "}
+                                      </h3>
+                                      <h4 className="oldPricereal">
+                                        {" "}
+                                        R$ {novo_price},00
+                                      </h4>
                                     </div>
                                   </Link>
                                 );
@@ -690,6 +718,6 @@ export const Products = () => {
         </div>
       )}
       <Footer />
-    </SkeletonTheme>
+    </>
   );
 };

@@ -32,6 +32,11 @@ export const ImageProducts = styled.div`
   //border: solid 1px;
   margin-left: 130px;
 
+  & .imgePreviewDesc {
+    width: 100%;
+    height: 60vh;
+  }
+
   & img {
     width: 100%;
   }
@@ -47,11 +52,18 @@ export const ImageProducts = styled.div`
     }
   }
 
-  @media (max-width: 720px) and (max-width: 1200px) {
+  @media (max-width: 923px) and (max-width: 1200px) {
     width: 80%;
     margin-top: 5px;
     //border: solid 1px;
     margin-left: 0px;
+
+    & .imgePreviewDesc {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 40vh;
+    }
   }
 `
 
@@ -62,6 +74,13 @@ export const ProductImageMini2 = styled.div`
 
   & .imgMini {
     margin: 1px;
+
+    & .imgePreviewMini {
+      width: 100%;
+      height: 8vh;
+      border-radius: 6px;
+      margin: 3px;
+    }
     
     & img {
       width: 5vw;
