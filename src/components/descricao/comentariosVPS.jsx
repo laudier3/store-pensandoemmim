@@ -192,7 +192,7 @@ export const Comentarios = () => {
                           ""
                         ) : (
                           <img
-                            src={`http://103.199.187.229:3000/uploads/${resImg}`}
+                            src={`https://app2.apinonshops.store/uploads/${resImg}`}
                             alt="comentarios"
                             className="imgList"
                           />
