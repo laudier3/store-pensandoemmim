@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProduVideoPlay, ProduVideoPlay2 } from './ReactVideoPlay'
+import { ProduVideoPlay, ProduVideoPlay2 } from './styles/ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
 import "react-html5video/dist/styles.css"
 //import video from "./videos/ts.mp4"

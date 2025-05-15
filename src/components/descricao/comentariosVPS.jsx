@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { Modal } from "../modal/Modal";
 //import { SlidsDescriptionOfertas } from "./SlidsDescriptionOfertas"
-import { ContainerComentario, ContainerComentarioPai } from "./stylesComentarios";
+import { ContainerComentario, ContainerComentarioPai } from "./styles/stylesComentarios";
 import { ModalImageComentario } from "../modal/ModalImageComentario";
 import { useState } from "react";
 //import { TiStarHalfOutline } from "react-icons/ti";

@@ -18,14 +18,14 @@ import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
 import { Realacionandos } from "./relacionados";
 import "react-html5video/dist/styles.css";
-import { ProductImageMini2, ImageProducts } from "./desc"; //PositionCard
+import { ProductImageMini2, ImageProducts } from "./styles/desc"; //PositionCard
 import Footer from "../footer/footer";
 import { FaCartPlus } from "react-icons/fa";
 import { Container, Description, ImageSection, InfoSection, Price, ProductDetails, ProductWrapper, RelationsProducts, Title } from "../leadPage/styles/componentDescription";
 import imgcart2 from "./images/card.jpg";
 import * as JivoSite from "react-jivosite";
 import { useEffect } from "react";
-import { ProduVideoPlay } from './ReactVideoPlay'
+import { ProduVideoPlay } from './styles/ReactVideoPlay'
 import { DefaultPlayer  as Video } from "react-html5video"
 import { Comentarios } from "./comentariosVPS";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
