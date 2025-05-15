@@ -30,16 +30,6 @@ import { DefaultPlayer  as Video } from "react-html5video"
 import { Comentarios } from "./comentariosVPS";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
-//import Base64UrlWithName from "./teste/personalibse";
-//import { UpdateImage } from "./upload";
-//import "react-html5video/dist/styles.css"
-//import LocationOnIcon from "@material-ui/icons/LocationOn";
-//import ReactImageZoom from 'react-image-zoom';
-//import Cart from "../cart";
-//import { SlBasket, SlBasketLoaded } from "react-icons/sl";
-//import { ButtonsDesc } from "./desc";
-//import { FaArrowLeftLong } from "react-icons/fa6";
-//import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -60,63 +50,10 @@ export const DescriptionProducts = () => {
   const [categoroy, setCategory] = useState([]);
   const [borders, setBorder] = useState("");
   const [bordersTamnho, setBorderTamnho] = useState("");
-  //const [ setCartIsVisible] = useState(false);
-
-  //lastIndexOf() ou substr()
-  //let text = "https://pensandoemmim.com"
-  //let result = text.lastIndexOf("mp4");
-  //console.info(result === -1 ? "É" : result)
-
- /*window.addEventListener("click", () => {
-    window.location.reload()
-  })*/
-
-  //window.history.go(1);
-  //const ts = window.history.length
-  //console.info(ts)//
-//
-  //if(ts == 50){
-  //  Navigate("/")+
-  //}
-
-  /*const handleCartClick = () => {
-    setCartIsVisible(true);
-  };*/
-
-  //const length = useSelector((state) => state.cart.cartItems.length);
-
-  /*const [visitorCount, setVisitorCount] = useState(0);
-  const [city, setCity] = useState('');
-
-  const apiKey = '667c1973e05849fa9eb1972746e9f4c1'; // Substitua pela sua chave de API da ipgeolocation.io
-
-  // Função para obter o nome da cidade do visitante baseado no IP
-  const getCityByIP = async () => {
-    try {
-      const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`);
-      const data = await response.json();
-      setCity(data.city || 'Cidade não encontrada');
-    } catch (error) {
-      console.error('Erro ao obter cidade por IP', error);
-      setCity('Erro ao obter cidade');
-    }
-  };*/
-
-
-  //if (!window.location.hash) {
-  //  window.location = window.location + "#products#description";
-  //  window.location.reload();
-  //}
-
-  //let url = window.location.pathname;
-  //let parts = url.split("/");
-  //let lastPart = parts.pop() || parts.pop();
-  //const lastPart = localStorage.getItem("id");
-
+ 
   let url = window.location.pathname;
   let parts = url.split("/");
   let lastPart2 = parts.pop() || parts.pop();
-  //console.log(lastPart2);
 
   window.history.pushState({}, "", `/desc/${lastPart2}`);
 
@@ -156,11 +93,6 @@ export const DescriptionProducts = () => {
 
   const contItems = dataProductFilterBarcodeList.length;
 
-  //console.log(contItems)
-  //console.log(filterProducts1[0].image[0])
-
-  //const [borderCor, setBordercor] = useState("red")
-
   const dataProductFilter = productList[0]?.filter(
     (productData) => productData.id === lastPart2
   );
@@ -175,12 +107,10 @@ export const DescriptionProducts = () => {
   const ProcessoImageCor = async () => {
     
     const res = "category";
-    //console.log(res);
 
     const response = await imgFilterImg6;
     setDataImm5(response);
     setCategory(res);
-    //setCategoryData(res);
   };
 
   localStorage.setItem("tm", divideSizeArrey[0]);
@@ -334,7 +264,6 @@ export const DescriptionProducts = () => {
   let aumento3 = priceFilter * percentual3;
   let novo_price3 = priceFilter - aumento3;
 
-  //imagem de meio de pagamentos bandeiras
   const imgCart = [
     {
       img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png",
@@ -389,10 +318,6 @@ export const DescriptionProducts = () => {
     </LoadingPage>
   );
 
-  //const frete = {
-  //  frete: "FRETE GRATIS PARA DODO O BRASIL",
-  //};
-
   const priceAtual =
     dataTamanho == "64GB"
       ? novo_price0
@@ -403,7 +328,6 @@ export const DescriptionProducts = () => {
       : dataTamanho == "512GB"
       ? novo_price3
       : novo_price;
-  //console.log(priceAtual);
 
   const productProntoAddCard = [
     {
@@ -420,25 +344,19 @@ export const DescriptionProducts = () => {
     },
   ];
 
-  /*<script src="//code.jivosite.com/widget/OArtCYonnR" async=""></script>*/
-
   return (
     <SkeletonTheme baseColor="#eee" highlightColor="#f5f5f5">
       <HeaderDesc />
       {dataProductFilter[0]?.id ?
       <div>
         <JivoSite.Widget id="OArtCYonnR" />
-        {/*<Base64UrlWithName/>*/}
         <Container>
           <ProductWrapper>
             <ImageSection>
               <ImageProducts>
-                {/*<img id="logo" src={imgs[0]} alt="img"/>*/}
                 {dataProductFilter == "" ? <CarregandoPagina /> : 
                   dataProductFilter.map((res) => {
                     const { id, image } = res;
-
-                    //const props = {width: 700, height: 350, zoomWidth: 2000, img: image[0]}
 
                     const imgList = [
                       image[0],
@@ -451,7 +369,6 @@ export const DescriptionProducts = () => {
                   
                     return (
                       <>
-                      {/*<ReactImageZoom {...props} />*/}
                       <Swiper
                         className="padraoImg"
                         grabCursor={true}
@@ -558,16 +475,6 @@ export const DescriptionProducts = () => {
                             />
                           </div> : ""
                           }
-                          {/*
-                            image[5] ? 
-                            <div className="imgMini">
-                              <ProduVideoPlay>
-                                <Video>
-                                  <source src={image[5]} type='video/webm'/>
-                                </Video>
-                              </ProduVideoPlay>
-                            </div> : ""
-                          */}
                         </div>
                       </ProductImageMini2>
                       
@@ -579,7 +486,7 @@ export const DescriptionProducts = () => {
             </ImageSection>
             <InfoSection>
             { dataProductFilter.map((res) => {
-                const { name, quantity, color, slug, frete} = res; //image para videos
+                const { name, quantity, color, slug, frete} = res; 
 
                 return (
                   <>

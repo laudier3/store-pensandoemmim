@@ -215,19 +215,10 @@ export const Products = () => {
               )}
             </main>
           </ProductProd>
-          {/*<TitleProduct>
-            <h2 className="titleProduct">
-              {filterCategoryCalcados === ""
-                ? ""
-                : filterCategoryCalcados[0]?.name}
-            </h2>
-            <hr />
-          </TitleProduct>*/}
           <ProductProd>
             <main>
               {Calcado[0]?.map((res) =>
                 res.map((req) => {
-                  //console.log(filterCategoryVestido)
 
                   const { id, name, image, price } = req.products;
 
@@ -257,20 +248,10 @@ export const Products = () => {
               )}
             </main>
           </ProductProd>
-          {/*<TitleProduct>
-            <h2 className="titleProduct">
-              {filterCategoryVestido === ""
-                ? ""
-                : filterCategoryVestido[0]?.name}
-            </h2>
-            <hr />
-          </TitleProduct>*/}
           <ProductProd>
             <main>
               {Vestidos[0]?.map((res) =>
                 res.map((req) => {
-                  //console.log(filterCategoryVestido)
-
                   const { id, name, image, price } = req.products;
 
                   let percentual = 0.25;
@@ -299,21 +280,10 @@ export const Products = () => {
               )}
             </main>
           </ProductProd>
-          {/*<TitleProduct>
-            <h2 className="titleProduct">
-              {filterCategoryFerramenta === "Conjunto F"
-                ? nameCategory1
-                : filterCategoryFerramenta[0]?.name}
-            </h2>
-            <hr />
-          </TitleProduct>*/}
-
           <ProductProd>
             <main>
               {Ferramentas[0]?.map((res) =>
                 res.map((req) => {
-                  //console.log(filterCategoryVestido)
-
                   const { id, name, image, price } = req.products;
 
                   let percentual = 0.25;
@@ -342,18 +312,10 @@ export const Products = () => {
               )}
             </main>
           </ProductProd>
-          {/*<TitleProduct>
-            <h2 className="titleProduct">
-              {filterCategoryBone === "" ? "" : filterCategoryBone[0]?.name}
-            </h2>
-            <hr />
-          </TitleProduct>*/}
-
           <ProductProd>
             <main>
               {Bones[0]?.map((res) =>
                 res.map((req) => {
-                  //console.log(filterCategoryVestido)
 
                   const { id, name, image, price } = req.products;
 
@@ -435,20 +397,11 @@ export const Products = () => {
               )}
             </main>
           </ProductProd>
-          {/*<TitleProduct>
-            <h2 className="titleProduct">
-              {filterCategoryEstetica === ""
-                ? ""
-                : filterCategoryEstetica[0]?.name}
-            </h2>
-            <hr />
-          </TitleProduct>*/}
-
+          
           <ProductProd>
             <main>
               {Esteticas[0]?.map((res) =>
                 res.map((req) => {
-                  //console.log(filterCategoryVestido)
 
                   const { id, name, image, price } = req.products;
 
@@ -486,20 +439,12 @@ export const Products = () => {
               </button>
             ) : (
               <>
-                {/*<TitleProduct>
-                  <h2 className="titleProduct">
-                    {filterCategoryEletronico === ""
-                      ? ""
-                      : filterCategoryEletronico[0]?.name}
-                  </h2>
-                  <hr />
-                </TitleProduct>*/}
+               
 
                 <ProductProd>
                   <main>
                     {Eletronicos[0]?.map((res) =>
                       res.map((req) => {
-                        //console.log(filterCategoryVestido)
 
                         const { id, name, image, price } = req.products;
 
@@ -536,7 +481,6 @@ export const Products = () => {
                     <main>
                       {BolsaFemininas[0]?.map((res) =>
                         res.map((req) => {
-                          //console.log(filterCategoryVestido)
 
                           const { id, name, image, price } = req.products;
 
@@ -567,20 +511,6 @@ export const Products = () => {
                     </main>
                   </ProductProd>
                 )}
-                {/*<TitleProduct>
-                  {Intimo === "" ? (
-                    ""
-                  ) : (
-                    <>
-                      <h2 className="titleProduct">
-                        {filterCategoryInformatica === ""
-                          ? ""
-                          : filterCategoryInformatica[0]?.name}
-                      </h2>
-                      <hr />
-                    </>
-                  )}
-                </TitleProduct>*/}
 
                 {vernais2 === 0 ? (
                   <button className="vermais" onClick={() => setVermais2(1)}>
@@ -595,7 +525,6 @@ export const Products = () => {
                         <main>
                           {Intimos[0]?.map((res) =>
                             res.map((req) => {
-                              //console.log(filterCategoryVestido)
 
                               const { id, name, image, price } = req.products;
 
@@ -627,20 +556,6 @@ export const Products = () => {
                       </ProductProd>
                     )}
                     
-                    {/*<TitleProduct>
-                      {Intimo === "" ? (
-                        ""
-                      ) : (
-                        <>
-                          <h2 className="titleProduct">
-                            {filterCategoryIntimo === ""
-                              ? ""
-                              : filterCategoryIntimo[0]?.name}
-                          </h2>
-                          <hr />
-                        </>
-                      )}
-                    </TitleProduct>*/}
                     <>
                       {Intimo === "" ? (
                         ""
@@ -649,7 +564,6 @@ export const Products = () => {
                           <main>
                             {Informaticas[0]?.map((res) =>
                               res.map((req) => {
-                                //console.log(filterCategoryVestido)
 
                                 const { id, name, image, price } = req.products;
 
