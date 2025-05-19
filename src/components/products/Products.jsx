@@ -36,7 +36,7 @@ export const Products = () => {
   //const ts = window.history
   //console.info(ts)//
 
-  //console.log(data);
+  console.log(data);
 
   const [vernais, setVermais] = useState(0);
   const [vernais2, setVermais2] = useState(0);
@@ -45,7 +45,7 @@ export const Products = () => {
   const tsLoading = [categorys];
   const listCategory = tsLoading.map((res) => res.items);
 
-  //console.log(categorys, "teste") 790e0e23-e3ec-4084-b61d-986aa062e8c6
+  console.log(listCategory, "teste") //790e0e23-e3ec-4084-b61d-986aa062e8c6
 
   //Filtragem de categorias por id
   const filterCategoryShortFeminino = listCategory[0]?.filter(
